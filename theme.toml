@@ -1,15 +1,20 @@
 # theme.toml template for a Hugo theme
 # See https://github.com/spf13/hugoThemes#themetoml for an example
 
-name = "Ananke Gohugo Theme"
+name = "Dananke Hugo Theme"
 license = "MIT"
-licenselink = "https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/LICENSE.md"
-description = "A Base theme for building full featured Hugo sites"
-homepage = "https://github.com/theNewDynamic/gohugo-theme-ananke"
-tags = ["website", "starter", "responsive", "Disqus", "blog", "Tachyons", "Multilingual", "Stackbit"]
+licenselink = "https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/LICENSE.md"
+description = "Enhanced version of Ananke theme"
+homepage = "https://github.com/danielfdickinson/dananke-theme-hugo-dfd"
+tags = ["website", "starter", "responsive", "blog", "Tachyons", "Multilingual"]
 features = ["posts", "shortcodes", "related content", "comments"]
-min_version = "0.64.0"
+min_version = "0.91.1"
 
 [author]
+  name = "Daniel F. Dickinson"
+  homepage = "https://www.wildtechgarden.ca/"
+  email = "dfdpublic@wildtechgarden.ca"
+
+[original]
   name = "theNewDynamic"
   homepage = "https://www.thenewdynamic.com/"

@@ -1,3 +1,2 @@
-module github.com/theNewDynamic/gohugo-theme-ananke
-
-go 1.12
+module github.com/danielfdickinson/dananke-theme-hugo-dfd
+go 1.17

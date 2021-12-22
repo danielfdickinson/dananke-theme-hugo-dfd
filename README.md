@@ -1,10 +1,8 @@
-# Ananke, A theme for [Hugo](http://gohugo.io/), a framework for building websites.
+# Dananke, A theme for [Hugo](http://gohugo.io/), a framework for building websites.
 
-The intent of this theme is to provide a solid starting place for Hugo sites with basic features and include best practices for performance, accessibility, and rapid development.
+The intent of this theme is to provide a fairly complete theme for Daniel F. Dickinson's Hugo sites with important features, and include best practices for performance, and accessibility.
 
-![screenshot](https://raw.githubusercontent.com/budparr/gohugo-theme-ananke/master/images/screenshot.png)
-
-[DEMO](https://gohugo-ananke-theme-demo.netlify.com/)
+It is derived from [Ananke Hugo Theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
 
 Features
 
@@ -12,10 +10,8 @@ Features
 - Accessible
 - Contact form
 - Custom Robots.txt (changes values based on environment)
-- Internal templates for meta data, google analytics, and DISQUS or COMMENTO comments
 - RSS Discovery
 - Table of Contents (must declare `toc: true` in post parameter)
-- Stackbit configuration ([Stackbit](https://www.stackbit.com))
 
 Also includes examples of Hugo Features or Functions:
 
@@ -45,8 +41,6 @@ Also includes examples of Hugo Features or Functions:
 
 This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](http://tachyons.io/).
 
-
-
 ## Installation
 
 ### As a Hugo Module (recommended)
@@ -66,7 +60,7 @@ This theme uses the "Tachyons" CSS library. This will allow you to manipulate th
 2. Add the theme's repo to your `config.toml`:
 
    ```toml
-   theme = ["github.com/theNewDynamic/gohugo-theme-ananke"]
+   theme = ["github.com/danielfdickinson/dananke-theme-hugo-dfd"]
    ```
 
 ### As Git Submodule
@@ -74,7 +68,7 @@ This theme uses the "Tachyons" CSS library. This will allow you to manipulate th
 Inside the folder of your Hugo site run:
 
 ```
-$ git submodule add https://github.com/theNewDynamic/gohugo-theme-ananke.git themes/ananke
+$ git submodule add https://github.com/danielfdickinson/dananke-theme-hugo-dfd.git themes/ananke
 ```
 For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
 
@@ -87,7 +81,7 @@ After installing the theme successfully it requires a just a few more steps to g
 
 ### The config file
 
-Take a look inside the [`exampleSite`](https://github.com/theNewDynamic/gohugo-theme-ananke/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
+Take a look inside the [`exampleSite`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
 
 You may need to delete the line: `themesDir = "../.."`
 
@@ -150,7 +144,7 @@ _n.b. in future versions we will likely separate the typeface and other body cla
 
 ### CSS
 
-Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibiliy. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
+Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibility. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
 
 Ananke uses [Tachyon.io](http://tachyons.io/) utility class library.
 
@@ -170,7 +164,7 @@ For example, if your css files are `assets/ananke/css/custom.css` and `assets/an
     custom_css = ["custom.css","special.css"]
 ```
 
-__Note on retrocompatibiliy for custom css__: If the files registered through the `custom_css` setting are not found in `assets/ananke/css` the theme will expect them to live at the given path relative to the static directory and load them as <link> requests.
+__Note on retro-compatibility for custom css__: If the files registered through the `custom_css` setting are not found in `assets/ananke/css` the theme will expect them to live at the given path relative to the static directory and load them as <link> requests.
 
 ### Show Reading Time and Word Count
 
@@ -229,11 +223,6 @@ hugo
 
 ## Contributing
 
-If you find a bug or have an idea for a feature, feel free to use the [issue tracker](https://github.com/theNewDynamic/gohugo-theme-ananke/issues) to let me know.
+If you find a bug feel free to use the [issue tracker](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/issues) to let me know.
 
-
-
-
-TODO:
-
-- fix hard-coded link to [section](https://github.com/theNewDynamic/gohugo-theme-ananke/blob/master/layouts/index.html#L32)
+For questions, ideas, and feature suggestions please use the [discussions](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/discussions).

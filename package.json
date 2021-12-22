@@ -1,7 +1,7 @@
 {
- "author": "budparr",
+ "author": "danielfdickinson",
  "bugs": {
-  "url": "https://github.com/theNewDynamic/gohugo-theme-ananke/issues"
+  "url": "https://github.com/danielfdickinson/dananke-theme-hugo-dfd/issues"
  },
  "comments": {
   "dependencies": {},
@@ -14,29 +14,24 @@
   }
  },
  "dependencies": {},
- "description": "Theme Ananke",
+ "description": "Dananke Theme",
  "devDependencies": {
-  "auto-changelog": "^1.16.1",
   "cssnano": "^3.10.0",
   "postcss-cli": "^7.1.0",
   "postcss-cssnext": "^2.10.0",
   "tachyons": "^4.9.1"
  },
- "homepage": "https://github.com/theNewDynamic/gohugo-theme-ananke#readme",
+ "homepage": "https://github.com/danielfdickinson/dananke-theme-hugo-dfd#readme",
  "keywords": [
   "hugo",
   "gohugo"
  ],
  "license": "MIT",
  "main": "index.js",
- "name": "gohugo-theme-ananke",
+ "name": "dananke-theme-hugo-dfd",
  "repository": {
   "type": "git",
-  "url": "git+https://github.com/theNewDynamic/gohugo-theme-ananke.git"
+  "url": "git+https://github.com/danielfdickinson/dananke-theme-hugo-dfd.git"
  },
- "scripts": {
-  "version": "auto-changelog -p --template keepachangelog --commit-limit 0 \u0026\u0026 git add CHANGELOG.md",
-  "deploy": " cd exampleSite; hugo;"
- },
- "version": "2.7.0"
+ "version": "0.1.0"
 }

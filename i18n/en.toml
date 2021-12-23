@@ -11,7 +11,7 @@ other = "Recent {{.Title }}"
 other = "read more"
 
 [whatsInThis]
-other = "What's in this {{ .Type }}"
+other = "What's in this article"
 
 [related]
 other = "Related"

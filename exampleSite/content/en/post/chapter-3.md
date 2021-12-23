@@ -1,5 +1,6 @@
 ---
 date: 2017-04-11T11:13:32-04:00
+author: "Ananke authors"
 description: "Monsieur the Cardinal"
 featured_image: ""
 tags: []

@@ -1,5 +1,6 @@
 ---
 title: Contact
+author: "Auteurs Ananke"
 featured_image: "images/notebook.jpg"
 omit_header_text: true
 description: Laissez-nous un message!

@@ -69,6 +69,7 @@
         "attr-case": "off",
         "no-redundant-role": "off",
         "heading-level": "off",
-        "prefer-native-element": "off"
+        "prefer-native-element": "off",
+        "wcag/h67": "off"
     }
 }

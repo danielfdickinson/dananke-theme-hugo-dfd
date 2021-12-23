@@ -71,6 +71,7 @@
         "heading-level": "off",
         "prefer-native-element": "off",
         "attr-quotes": "off",
-        "doctype-style": "off"
+        "doctype-style": "off",
+        "wcag/h67": "off"
     }
 }

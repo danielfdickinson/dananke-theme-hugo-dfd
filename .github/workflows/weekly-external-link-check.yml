@@ -1,0 +1,28 @@
+name: weekly-external-link-check
+on:
+  schedule:
+    # At 1:40 AM -0500 on each Thursday strictly check all external links (301 Moved is a failure not just a warning)
+    - cron: '40 6 * * 4'
+jobs:
+  build-unminified-site:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: "Build Site with Hugo and Audit"
+        uses: danielfdickinson/hugo-action-build-audit@v0.1.1
+        with:
+          upload-site-as: unminified-site
+          use-lfs: true
+          source-directory: exampleSite
+  check-external-links:
+    needs: build-unminified-site
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - name: Run hugo-action-check-links
+        uses: danielfdickinson/hugo-action-check-links@v0.1.9
+        with:
+          canonical-root: https://www.example.com/
+          check-external: true
+          check-external-strict: true
+          upload-logs-as: failing-weekly-external-check
+          upload-logs-retention: 4

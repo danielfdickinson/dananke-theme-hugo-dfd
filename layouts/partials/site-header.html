@@ -1,7 +1,16 @@
 {{ $featured_image := .Param "featured_image"}}
-{{ if $featured_image }}
+{{ $linkToCover := "" }}
+{{ $img := (.Resources.ByType "image").GetMatch "*cover*" }}
+{{ with $img }}
+    {{ $linkToCover = .RelPermalink }}
+{{ end }}
+{{ if ne $linkToCover "" }}
+  {{ $featured_image = $linkToCover | absURL }}
+{{ else if $featured_image }}
   {{/* Trimming the slash and adding absURL make sure the image works no matter where our site lives */}}
-  {{ $featured_image := (trim $featured_image "/") | absURL }}
+  {{ $featured_image = (trim $featured_image "/") | absURL }}
+{{ end }}
+{{ if $featured_image }}
   <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
     <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
       {{ partial "site-navigation.html" .}}

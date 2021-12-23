@@ -1,0 +1,12 @@
+<ul class="list">
+  {{ range .Pages.ByDate.ByTitle }}
+    <li class="pa1">
+      <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{ .Title }}</a>
+    {{ if .Pages }}
+      {{ partial "walk.html" . }}
+    </li>
+    {{ else }}
+    </li>
+    {{ end }}
+  {{ end }}
+</ul>

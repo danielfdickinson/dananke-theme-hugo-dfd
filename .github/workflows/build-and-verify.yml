@@ -28,6 +28,7 @@ jobs:
           upload-site-as: unminified-site
           use-lfs: false
           source-directory: src
+          hugo-version: "0.91.1"
   validate-unminified-html:
     needs: build-unminified-site
     runs-on: ubuntu-20.04

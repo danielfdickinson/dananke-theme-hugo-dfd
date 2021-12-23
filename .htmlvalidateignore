@@ -1,0 +1,13 @@
+/public/*
+!/public/about
+!/public/deploy-admin
+/public/deploy-admin/page/1
+!/public/devel
+/public/devel/page/1
+!/public/education-academic
+/public/education-academic/page/1
+!/public/blog
+/public/blog/page/1
+!/public/disambiguation
+!/public/index.html
+!/public/404.html

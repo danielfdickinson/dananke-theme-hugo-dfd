@@ -32,3 +32,6 @@ partials/structure/stylesheet.html
 
 #Hugo
 .hugo_build.lock
+node_modules
+check-links.log
+html-validate.log

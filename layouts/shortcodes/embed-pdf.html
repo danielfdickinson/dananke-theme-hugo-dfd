@@ -1,0 +1,1 @@
+<div{{ with .Get "class"}} class="{{ . }}"{{ end }}><object{{ with .Get "object-class" }} class="{{ . }}"{{ end }}{{ with .Get "data" }} data="{{ . }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }} type="application/pdf"></object></div>

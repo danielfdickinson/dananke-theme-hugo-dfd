@@ -1,0 +1,42 @@
+<figure{{ with .Get "class" }} class="{{ . }}"{{ end }}>
+    {{- $doAddLink := true -}}
+    {{- if .Get "link" -}}
+        <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
+        {{- $doAddLink = false -}}
+    {{- end -}}
+    {{- $alt := "" -}}
+    {{- if or (.Get "alt") (.Get "caption") }}
+        {{- with (.Get "alt") -}}
+            {{- $alt = . -}}
+        {{- else -}}
+            {{- $alt = (.Get "caption") | markdownify| plainify }}
+        {{- end -}}
+    {{- end -}}
+    {{- $destination := split (.Get "src") "#" }}
+    {{- $fullImage := resources.Get (index $destination 0) -}}
+    {{- if not $fullImage -}}
+        {{- $fullImage = (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (index $destination 0)) -}}
+    {{- end -}}
+    {{- if $fullImage }}
+        {{- $final_destination := cond (isset $destination 1) (printf "%s#%s" ($fullImage.RelPermalink) (index $destination 1)) ($fullImage.RelPermalink) -}}
+<img src="{{ $fullImage.RelPermalink }}" alt="{{ $alt }}"{{ with (.Get "title") }} title="{{ . }}" {{ end }} width="{{ $fullImage.Width }}" height="{{ $fullImage.Height }}">
+    {{- else }}
+<img src="{{ (index $destination 0) | safeURL }}" alt="{{ $alt }}" {{ with (.Get "title") }} title="{{ . }}" {{ end }}>
+    {{- end -}}
+    {{- if .Get "link" }}</a>{{ end -}}
+    {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
+        <figcaption>
+            {{ with (.Get "title") -}}
+                <h4>{{ . }}</h4>
+            {{- end -}}
+            {{- if or (.Get "caption") (.Get "attr") -}}<p>
+                {{- .Get "caption" | markdownify -}}
+                {{- with .Get "attrlink" }}
+                    <a href="{{ . }}">
+                {{- end -}}
+                {{- .Get "attr" | markdownify -}}
+                {{- if .Get "attrlink" }}</a>{{ end }}</p>
+            {{- end }}
+        </figcaption>
+    {{- end }}
+</figure>

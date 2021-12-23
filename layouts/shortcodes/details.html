@@ -1,0 +1,6 @@
+<details>
+<summary>{{ .Get 0 | .Page.RenderString | safeHTML }}</summary>
+<div>
+{{ .Inner | .Page.RenderString | htmlUnescape | safeHTML }}
+</div>
+</details>

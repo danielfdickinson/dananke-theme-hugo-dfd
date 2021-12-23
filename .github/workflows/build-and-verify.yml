@@ -27,7 +27,7 @@ jobs:
         with:
           upload-site-as: unminified-site
           use-lfs: false
-          source-directory: src
+          source-directory: exampleSite
           hugo-version: "0.91.1"
   validate-unminified-html:
     needs: build-unminified-site

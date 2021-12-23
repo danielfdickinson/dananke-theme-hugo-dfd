@@ -11,8 +11,9 @@ jobs:
         uses: danielfdickinson/hugo-action-build-audit@v0.1.1
         with:
           upload-site-as: unminified-site
-          use-lfs: true
+          use-lfs: false
           source-directory: exampleSite
+          hugo-version: "0.91.1"
   check-external-links:
     needs: build-unminified-site
     runs-on: ubuntu-20.04

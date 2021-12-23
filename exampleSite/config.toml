@@ -22,18 +22,6 @@ timeout = 30000
   favicon = ""
   site_logo = ""
   description = "Definitely not the last theme you'll ever need."
-  facebook = ""
-  twitter = ""
-  instagram = ""
-  youtube = ""
-  github = "https://github.com/danielfdickinson"
-  gitlab = ""
-  linkedin = "https://ca.linkedin.com/in/danielfdickinson"
-  mastodon = ""
-  slack = ""
-  stackoverflow = ""
-  rss = ""
-  tiktok = ""
   show_reading_time = "true"
   mainSections = [ "post" ]
   
@@ -97,3 +85,15 @@ disable = true
 
   [[module.imports]]
     path = "github.com/danielfdickinson/dananke-theme-hugo-dfd"
+
+[[params.ananke_socials]]
+  name= "github"
+  url = "https://github.com/danielfdickinson"
+
+[[params.ananke_socials]]
+  name = "linkedin"
+  url = "https://ca.linkedin.com/in/danielfdickinson"
+
+[[params.ananke_socials]]
+  name = "rss"
+  url = "/index.xml"

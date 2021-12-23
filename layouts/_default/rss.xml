@@ -35,7 +35,7 @@
       <title>{{ .Title }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
-      {{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}
+      {{ if or (not .Params.author) (eq .Params.author .Site.Author.name) }}{{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}{{end}}
       <guid>{{ .Permalink }}</guid>
       <description>{{ .Description | default .Params.description | default .Params.summary | default .Summary | html }}</description>
     </item>

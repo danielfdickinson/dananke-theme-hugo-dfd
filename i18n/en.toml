@@ -44,3 +44,6 @@ other = "{{ .Count }} words"
 
 [pageTitle]
 other = "{{ .Name }} page"
+
+[translations]
+other = "Translations"

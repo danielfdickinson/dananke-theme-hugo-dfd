@@ -11,7 +11,7 @@ other = "{{.Title }} récents"
 other = "lire plus"
 
 [whatsInThis]
-other = "Ce qui est dans {{ .Type }}"
+other = "Ce qui en c'est article"
 
 [related]
 other = "Lié"
@@ -44,3 +44,6 @@ other = "{{ .Count }} mots"
 
 [pageTitle]
 other = "{{ .Name }} page"
+
+[translations]
+other = "Traductions"

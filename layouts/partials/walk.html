@@ -1,12 +1,14 @@
 <ul class="list">
-  {{ range .Pages.ByDate.ByTitle }}
+  {{ range .Pages.GroupByParam "weight" }}
+    {{ range (.Pages.ByDate).Reverse }}
     <li class="pa1">
       <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{ .Title }}</a>
-    {{ if .Pages }}
-      {{ partial "walk.html" . }}
+      {{ if .Pages }}
+        {{ partial "walk.html" . }}
     </li>
-    {{ else }}
+      {{ else }}
     </li>
+      {{ end }}
     {{ end }}
   {{ end }}
 </ul>

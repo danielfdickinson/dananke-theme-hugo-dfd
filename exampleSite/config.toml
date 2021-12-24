@@ -38,6 +38,9 @@ timeout = 30000
   date = ["date", "publishDate", ":git", "lastmod", ":fileModTime"]
   publishDate = ["publishDate", "date", ":git", "lastmod", ":fileModTime"]
 
+[cascade]
+  weight = "1000"
+
 [privacy.disqus]
 disable = true
 

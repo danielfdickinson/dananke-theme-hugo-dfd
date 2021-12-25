@@ -15,9 +15,15 @@
         {{with .CurrentSection.Title }}{{. | upper }}{{end}}
       </aside>
       {{ partial "social-share.html" . }}
+      {{ if not .Params.omit_header_text }}
+      <h2 class="f2 athelas mt3 mb1">
+        {{- .Title -}}
+      </h2>
+      {{ else }}
       <h1 class="f1 athelas mt3 mb1">
         {{- .Title -}}
       </h1>
+      {{ end }}
       {{ with .Params.author | default .Site.Params.author }}
       <p class="tracked">
           By <strong>

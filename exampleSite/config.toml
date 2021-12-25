@@ -76,6 +76,19 @@ disable = true
     title = "My blog"
     weight = 1
     contentDir = "content/en"
+
+    [[languages.en.menu.footer_links]]
+      name = "Contact"
+      url = "/contact"
+
+    [[languages.en.menu.footer_links]]
+      name = "Sitemap"
+      url = "/about/user-sitemap"
+
+    [[languages.en.menu.footer_links]]
+      name = "Tags"
+      url = "/tags"
+
   [languages.fr]
     title = "Mon blogue"
     weight = 2

@@ -3,15 +3,11 @@
   <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3 nowrap" href="{{ .Site.BaseURL }}" >
     {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end }}
   </a>
-  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="/contact">
-    Contact
-  </a>
-  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="/about/user-sitemap">
-    Sitemap
-  </a>
-  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="/tags">
-    Tags
-  </a>
-    <div class="f4 fw4 hover-white no-underline white-70 pv2 ph3">{{ partial "social-follow.html" . }}</div>
+  {{- with site.Menus.footer_links -}}
+    {{- range . }}    
+  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="{{ .URL }}">{{ .Name }}</a>
+    {{- end -}}
+  {{- end }}
+  <div class="f4 fw4 hover-white no-underline white-70 pv2 ph3">{{ partial "social-follow.html" . }}</div>
   </div>
 </footer>

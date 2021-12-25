@@ -6,20 +6,16 @@
  "comments": {
   "dependencies": {},
   "devDependencies": {
-   "auto-changelog": "project",
-   "cssnano": "project",
-   "postcss-cli": "project",
-   "postcss-cssnext": "project",
-   "tachyons": "project"
+   "html-validate": "project",
+   "hyperlink": "project",
+   "tap-spot": "project"
   }
  },
- "dependencies": {},
  "description": "Dananke Theme",
  "devDependencies": {
-  "cssnano": "^3.10.0",
-  "postcss-cli": "^7.1.0",
-  "postcss-cssnext": "^2.10.0",
-  "tachyons": "^4.9.1"
+  "html-validate": "^6.1.4",
+  "hyperlink": "^5.0.3",
+  "tap-spot": "^1.1.1"
  },
  "homepage": "https://github.com/danielfdickinson/dananke-theme-hugo-dfd#readme",
  "keywords": [

@@ -78,11 +78,11 @@ disable = true
 
     [[languages.en.menu.footer_links]]
       name = "Contact"
-      url = "/contact"
+      pageref = "contact"
 
     [[languages.en.menu.footer_links]]
       name = "Sitemap"
-      url = "/about/user-sitemap"
+      pageref = "user-sitemap"
 
     [[languages.en.menu.footer_links]]
       name = "Tags"

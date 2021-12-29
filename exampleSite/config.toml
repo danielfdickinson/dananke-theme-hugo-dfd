@@ -1,7 +1,6 @@
 title = "Notre-Dame de Paris"
 baseURL = "https://example.com/"
 languageCode = "en-us"
-resourceDir = "../resources"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number

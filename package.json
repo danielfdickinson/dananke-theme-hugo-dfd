@@ -13,7 +13,7 @@
  },
  "description": "Dananke Theme",
  "devDependencies": {
-  "html-validate": "^6.1.4",
+  "html-validate": "^6.1.5",
   "hyperlink": "^5.0.3",
   "tap-spot": "^1.1.1"
  },
@@ -23,11 +23,10 @@
   "gohugo"
  ],
  "license": "MIT",
- "main": "index.js",
  "name": "dananke-theme-hugo-dfd",
  "repository": {
   "type": "git",
   "url": "git+https://github.com/danielfdickinson/dananke-theme-hugo-dfd.git"
  },
- "version": "0.1.0"
+ "version": "0.2.0"
 }

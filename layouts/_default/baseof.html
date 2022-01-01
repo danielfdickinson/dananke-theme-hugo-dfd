@@ -17,9 +17,20 @@
     {{ replace hugo.Generator " /" "" | safeHTML }}
     {{- /* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */ -}}
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-      <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-    {{ else }}
-      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+        {{- if and .Permalink (ne .Page.Params.notCanonical true) (or (eq (.Param "taxCanonical") true) (not (or (.Data.Singular) (.Data.Plural)))) }}
+    <link rel="canonical" href="{{ .Permalink }}">
+        {{- else if .Page.Params.toCanonical }}
+    <link rel="canonical" href="{{ .Page.Params.toCanonical }}">
+        {{- end }}
+    {{- else }}
+    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+        {{- if and .Permalink (ne .Page.Params.notCanonical true) (or (eq (.Param "taxCanonical") true) (not (or (.Data.Singular) (.Data.Plural)))) }}
+    <link rel="alternate" data="will-be-canonical" href="{{ .Permalink }}">
+        {{- else if .Page.Params.toCanonical }}
+    <link rel="alternate" data="will-be-canonical" href="{{ .Page.Params.toCanonical }}">
+        {{- end -}}
+    {{- end }}
     {{- partial "site-style.html" . -}}
     {{- partial "site-scripts.html" . -}}
     {{ block "favicon" . }}

@@ -102,7 +102,7 @@ disable = true
     path = "github.com/danielfdickinson/dananke-theme-hugo-dfd"
 
 [[params.ananke_socials]]
-  name= "github"
+  name = "github"
   url = "https://github.com/danielfdickinson"
 
 [[params.ananke_socials]]

@@ -6,10 +6,16 @@
 {{ define "main" }}
   <article class="mw7 center ph3">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
+      {{ if .Params.omit_header_text }}
       <h1 class="f1 athelas mt3 mb1">
         {{- .Title -}}
       </h1>
-      {{- .Content -}}
+      {{ else }}
+      <h2 class="f2 athelas mt3 mb1">
+        {{- .Title -}}
+      </h2>
+      {{ end }}
+      {{- partial "handle-content" .Content -}}
     </section>
     <section class="mt5 mw-100">
     {{ partial "walk.html" $.Site.Home.Data }}

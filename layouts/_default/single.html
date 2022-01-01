@@ -55,7 +55,7 @@
       {{ end }}
     </header>
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links nested-img {{ $.Param "text_color" | default "mid-gray" }} pr4-l w-two-thirds-l">
-      {{- .Content -}}
+      {{- partial "handle-content" .Content -}}
       {{- partial "tags.html" . -}}
       <div class="mt6 instapaper_ignoref">
       {{ if .Site.DisqusShortname }}

@@ -6,15 +6,15 @@
 {{ define "main" }}
   {{- $ctx := . }}
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+    {{ if .Params.omit_header_text }}
     <header>
-      {{ if .Params.omit_header_text }}
       <h1 class="f1">
         {{ .Title }}
       </h1>
-      {{ end }}
     </header>
+    {{ end }}
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "mid-gray" }}">
-      {{ .Content }}
+      {{ partial "handle-content" .Content }}
     </section>
     <section class="flex-ns flex-wrap justify-around mt5">
       {{- $pages := union .Pages .Sections -}}
@@ -24,7 +24,7 @@
         </div>
       {{ end }}
     </section>
-    {{- template "_internal/pagination.html" . -}}
+    {{- template "_internal/pagination.html" . }}
   </article>
   {{- with .Params.page_footnote -}}
   <div>{{ . | $ctx.RenderString }}</div>

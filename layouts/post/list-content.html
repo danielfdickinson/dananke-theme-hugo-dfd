@@ -20,9 +20,9 @@
         {{- .Title -}}
       </h1>
       {{ else }}
-      <h1 class="f2 athelas mt3 mb1">
+      <h2 class="f2 athelas mt3 mb1">
         {{- .Title -}}
-      </h1>
+      </h2>
       {{ end }}
       {{ with .Params.author | default .Site.Params.author }}
       <p class="tracked">
@@ -54,7 +54,7 @@
       {{ end }}
     </header>
     <div class="nested-copy-line-height lh-copy {{ $.Param "post_content_classes"  | default "serif"}} f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
-      {{- .Content -}}
+      {{- partial "handle-content" .Content -}}
       {{- partial "tags.html" . -}}
       <div class="mt6 instapaper_ignoref">
       {{ if .Site.DisqusShortname }}

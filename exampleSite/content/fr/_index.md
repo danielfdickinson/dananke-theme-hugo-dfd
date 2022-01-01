@@ -1,8 +1,8 @@
 ---
-title: "Ananke: Un thème pour Hugo"
+title: "Dananke: Un thème pour Hugo"
 author: "Auteurs Ananke"
 featured_image: '/images/gohugo-default-sample-hero-image.jpg'
-description: "Le dernier thème dont vous aurez besoin. Peut-être"
+description: "Vraiment, ce n'est pas le dernier thème dont vous aurez besoin."
 ---
 Bienvenu sur mon blog!
 

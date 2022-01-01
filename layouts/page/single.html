@@ -8,11 +8,11 @@
         </p>
         {{ if .Params.omit_header_text }}
         <h1 class="f1">
-          {{ .Title }}
+          {{- partial "page-title" . -}}
         </h1>
         {{ else }}
         <h2 class="f2">
-          {{ .Title }}
+          {{- partial "page-title" . -}}
         </h2>
         {{ end }}
       </header>

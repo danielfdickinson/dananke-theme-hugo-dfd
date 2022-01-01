@@ -9,7 +9,7 @@
     {{ if .Params.omit_header_text }}
     <header>
       <h1 class="f1">
-        {{ .Title }}
+        {{- partial "page-title" . -}}
       </h1>
     </header>
     {{ end }}

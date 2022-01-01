@@ -5,10 +5,10 @@
     {{/* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>
     {{- block "title" . -}}
-        {{- with .Params.Title -}}
-          {{- . }}{{- if lt (len ((printf "%s | %s" . site.Title) | htmlEscape)) 70 }} | {{ site.Title -}}{{ end -}}
+        {{- if (partial "page-title" .) -}}
+          {{- (partial "page-title" .) }}{{- if lt (len ((printf "%s | %s" (partial "page-title" .) (partial "site-title" .)) | htmlEscape)) 70 }} | {{ partial "site-title" . -}}{{ end -}}
         {{ else -}}
-          {{- .Site.Title -}}
+          {{- partial "site-title" . -}}
         {{ end -}}
     {{- end -}}
     </title>

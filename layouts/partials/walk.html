@@ -2,7 +2,7 @@
   {{ range .Pages.GroupByParam "weight" }}
     {{ range (.Pages.ByDate).Reverse }}
     <li class="pa1">
-      <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{- partial "page-title" . -}}</a>
       {{ if .Pages }}
         {{ partial "walk.html" . }}
     </li>

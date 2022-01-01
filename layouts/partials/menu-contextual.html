@@ -24,7 +24,7 @@
 	   {{ range . }}
 	     <li  class="mb2">
           <a href="{{ .RelPermalink }}">
-            {{- .Title -}}
+            {{- partial "page-title" . -}}
           </a>
         </li>
 	    {{ end }}

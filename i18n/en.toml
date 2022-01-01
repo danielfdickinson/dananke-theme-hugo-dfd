@@ -47,3 +47,9 @@ other = "{{ .Name }} page"
 
 [translations]
 other = "Translations"
+
+[untitledSite]
+other = "Untitled Site"
+
+[untitledPage]
+other = "Untitled Page"

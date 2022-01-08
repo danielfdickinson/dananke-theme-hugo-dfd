@@ -5,7 +5,7 @@
 {{/* Only allowed one h1 per page */}}
 {{- if eq (len (findRE "<h1.*?>(.|\n)*?</h1>" .Page.Content)) 1 -}}
     {{- range (findRE "<h1.*?>(.|\n)*?</h1>" .Page.Content 1) -}}
-        {{- $contentTitle = . -}}
+        {{- $contentTitle = replaceRE "<h1.*?>((.|\n)*)?</h1>" "$1" . -}}
     {{- end -}}
 {{- else if gt (len (findRE "<h1.*?>(.|\n)*?</h1>" .Page.Content)) 1 -}}
     {{- errorf "More than one H1 element in content. This is against recommended best practises: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements#multiple_h1_elements_on_one_page" -}}

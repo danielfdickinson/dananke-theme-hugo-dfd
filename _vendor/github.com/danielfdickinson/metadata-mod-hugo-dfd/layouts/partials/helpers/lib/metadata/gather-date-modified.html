@@ -1,0 +1,5 @@
+{{- $date := .Lastmod.UTC -}}
+{{- if (eq (.Params.datesPreserveTimezone | default .Site.Params.datesPreserveTimezone) true) -}}
+    {{- $date = .Lastmod -}}
+{{- end -}}
+{{- return $date -}}

@@ -4,15 +4,16 @@
 name = "Dananke Hugo Theme"
 license = "MIT"
 licenselink = "https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/LICENSE.md"
-description = "Enhanced version of Ananke theme"
+description = "Tweaked version of Ananke theme"
 homepage = "https://github.com/danielfdickinson/dananke-theme-hugo-dfd"
 tags = ["website", "starter", "responsive", "blog", "Tachyons", "Multilingual"]
 features = ["posts", "shortcodes", "related content", "comments"]
-min_version = "0.91.1"
+min_version = "0.80.0"
 
 [author]
   name = "Daniel F. Dickinson"
-  homepage = "https://www.wildtechgarden.ca/"
+  homepage = "https://www.wildtechgarden.ca/about/"
+  copyright = "© 2021-2022 Daniel F. Dickinson"
   email = "dfdpublic@wildtechgarden.ca"
 
 [original]

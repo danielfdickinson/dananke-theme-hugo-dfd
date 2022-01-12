@@ -1,5 +1,0 @@
-{{- $date := .PublishDate.UTC -}}
-{{- if (eq (.Params.datesPreserveTimezone | default .Site.Params.datesPreserveTimezone) true) -}}
-    {{- $date = .PublishDate -}}
-{{- end -}}
-{{- return $date -}}

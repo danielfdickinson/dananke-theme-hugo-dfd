@@ -1,5 +1,0 @@
-{{- $date := .ExpiryDate.UTC -}}
-{{- if (eq (.Params.datesPreserveTimezone | default .Site.Params.datesPreserveTimezone) true) -}}
-    {{- $date = .ExpiryDate -}}
-{{- end -}}
-{{- return $date -}}

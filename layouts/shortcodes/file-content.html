@@ -1,5 +1,0 @@
-{{- $filename := .Get "filename" -}}
-{{- $fileResource := .Page.Resources.GetMatch $filename -}}
-{{- with $fileResource -}}
-{{ .Content }}
-{{- end -}}

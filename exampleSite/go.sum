@@ -1,1 +1,4 @@
-
+github.com/danielfdickinson/image-handling-mod-hugo-dfd v0.2.2/go.mod h1:kNVVgHmpgJuzxUjeCKdanFYzmDjFjUm8yDo/pZV0Fbg=
+github.com/danielfdickinson/link-handling-mod-hugo-dfd v0.1.4/go.mod h1:inb1U/NMQWMjoDBEhpabB/cI06SkgWnbM4dHKFHCG60=
+github.com/danielfdickinson/metadata-mod-hugo-dfd v0.1.4 h1:axAys+PEM64jjPMBNXrAM5Wal3qTjwPGupIzSnCxopQ=
+github.com/danielfdickinson/metadata-mod-hugo-dfd v0.1.4/go.mod h1:lcdbtyDflyUauY7XOPcZrkTd/M3CAoqprYlOX8QXIvU=

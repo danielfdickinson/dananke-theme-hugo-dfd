@@ -2,7 +2,7 @@
   {{ range .Pages.GroupByParam "weight" }}
     {{ range (.Pages.ByDate).Reverse }}
     {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
-    <li class="pa1">
+    <li class="pa2">
       <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{- index $page_metadata "title-page" -}}</a>
       {{ if .Pages }}
         {{ partial "walk.html" . }}

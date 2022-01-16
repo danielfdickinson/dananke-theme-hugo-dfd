@@ -1,20 +1,21 @@
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) -}}
 <nav class="pv3 ph3 ph4-ns bg-dark-blue" role="navigation">
-  <div class="flex-l justify-between items-center center">
-    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white no-underline white-90 dib">
-      {{ with .Site.Params.site_logo }}
-        <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ $.Site.Title }}" />
-      {{ else }}
-        {{ partial "site-title" . }}
-      {{ end }}
+<div class="flex flex-column flex-row-ns justify-start items-center-ns center">
+    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white no-underline white-90 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
+      {{- with .Site.Params.site_logo -}}
+        <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ index $page_metadata "title-site" }}" />
+      {{- else -}}
+        {{- index $page_metadata "title-site" -}}
+      {{- end -}}
     </a>
-    <div class="flex-l items-center">
+    <div class="flex flex-column flex-row-ns items-center-ns mw-100 mw8-ns mw9-l">
       {{ partial "i18nlist.html" . }}
       {{ if .Site.Menus.main }}
         <ul class="pl0 pb0 mr3">
           {{ range .Site.Menus.main }}
-          <li class="list f5 f4-ns fw4 dib pr3 pb3">
+          <li class="list f4 fw4 dib pr3 pb3 pb0-l">
             <a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
-              {{ .Name }}
+              {{- .Name -}}
             </a>
           </li>
           {{ end }}

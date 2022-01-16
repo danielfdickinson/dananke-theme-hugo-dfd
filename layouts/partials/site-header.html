@@ -1,5 +1,5 @@
 {{- $featured_image := partial "helpers/featured-image-link" .Page -}}
-{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "description")) -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "description-no-fallback")) -}}
 {{- if $featured_image -}}
   <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
     <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
@@ -8,7 +8,7 @@
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
       {{- index $page_metadata "title-page" -}}
         </h1>
-      {{- with (index $page_metadata "description") }}
+      {{- with (index $page_metadata "description-no-fallback") }}
         <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
         {{- . | safeHTML -}}
           </h2>
@@ -24,7 +24,7 @@
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
         {{- index $page_metadata "title-page" -}}
         </h1>
-        {{- with (index $page_metadata "description") }}
+        {{- with (index $page_metadata "description-no-fallback") }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
             {{- . -}}
           </h2>

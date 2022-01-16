@@ -5,12 +5,14 @@
       <header>
         {{ if not .Params.omit_header_text }}
         <h2 class="f2">
-          {{- partial "page-title" . -}}
-        </h2>
+          {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
+          {{- index $page_title_metadata "title-page" }}
+          </h2>
         {{ else }}
         <h1 class="f1">
-          {{- partial "page-title" . -}}
-        </h1>
+          {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
+          {{- index $page_title_metadata "title-page" }}
+          </h1>
         {{ end }}
       </header>
       <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">

@@ -16,6 +16,7 @@
 */}}
 
 {{ $related := .Site.RegularPages.Related . | first 15 }}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
 
 {{ with $related }}
   <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
@@ -24,7 +25,7 @@
 	   {{ range . }}
 	     <li  class="mb2">
           <a href="{{ .RelPermalink }}">
-            {{- partial "page-title" . -}}
+            {{- index $page_metadata "title-page" -}}
           </a>
         </li>
 	    {{ end }}

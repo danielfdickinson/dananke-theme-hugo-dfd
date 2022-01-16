@@ -1,28 +1,18 @@
-{{- $featured_image := .Param "featured_image" -}}
-{{- $linkToCover := "" -}}
-{{- $img := (.Resources.ByType "image").GetMatch "*cover*" -}}
-{{- with $img -}}
-    {{- $linkToCover = .RelPermalink -}}
-{{- end -}}
-{{- if ne $linkToCover "" -}}
-  {{- $featured_image = $linkToCover | absURL -}}
-{{- else if $featured_image -}}
-  {{- /* Trimming the slash and adding absURL make sure the image works no matter where our site lives */ -}}
-  {{- $featured_image = (trim $featured_image "/") | absURL -}}
-{{- end -}}
-{{- if $featured_image }}
+{{- $featured_image := partial "helpers/featured-image-link" .Page -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "description")) -}}
+{{- if $featured_image -}}
   <header class="cover bg-top" style="background-image: url('{{ $featured_image }}');">
     <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}">
       {{- partial "site-navigation.html" . }}
       <div class="tc-l pv4 pv6-l ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-          {{- partial "page-title" . -}}
+      {{- index $page_metadata "title-page" -}}
         </h1>
-        {{- with .Params.description }}
-          <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
-            {{- . -}}
+      {{- with (index $page_metadata "description") }}
+        <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
+        {{- . | safeHTML -}}
           </h2>
-        {{- end }}
+      {{- end }}
       </div>
     </div>
   </header>
@@ -32,9 +22,9 @@
       {{- partial "site-navigation.html" . }}
       <div class="tc-l pv3 ph3 ph4-ns">
         <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
-          {{- partial "page-title" . -}}
+        {{- index $page_metadata "title-page" -}}
         </h1>
-        {{- with .Params.description }}
+        {{- with (index $page_metadata "description") }}
           <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
             {{- . -}}
           </h2>

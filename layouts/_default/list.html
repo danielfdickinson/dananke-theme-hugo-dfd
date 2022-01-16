@@ -9,7 +9,8 @@
     {{ if .Params.omit_header_text }}
     <header>
       <h1 class="f1">
-        {{- partial "page-title" . -}}
+        {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) -}}
+        {{- index $page_title_metadata "title-page" }}
       </h1>
     </header>
     {{ end }}

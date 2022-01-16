@@ -1,4 +1,5 @@
 {{- $pctx := . -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "title-site" "description")) -}}
 {{- $pages := slice -}}
 {{- if .IsHome -}}
   {{- $pctx = .Site -}}
@@ -18,9 +19,9 @@
 {{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ if eq (partial "page-title" .) (partial "site-title" .) }}(partial "site-title" .){{ else }}{{ with (partial "page-title" .) }}{{.}} on {{ end }}{{partial "site-title" . }}{{ end }}</title>
+    <title>{{ if eq (index $page_metadata "title-page") (index $page_metadata "title-site") }}(index $page_metadata "title-site"){{ else }}{{ with (index $page_metadata "title-page") }}{{.}} on {{ end }}{{index $page_metadata "title-site"}}{{ end }}</title>
     <link>{{ .Permalink }}</link>
-    <description>Recent content {{ if ne (partial "page-title" .) (partial "site-title" .) }}{{ with (partial "page-title" .) }}in {{.}} {{ end }}{{ end }}on {{ (partial "site-title" .) }}</description>
+    <description>Recent content {{ if ne (index $page_metadata "title-page") (index $page_metadata "title-site") }}{{ with (index $page_metadata "title-page") }}in {{.}} {{ end }}{{ end }}on {{ (index $page_metadata "title-site") }}</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
     <language>{{.}}</language>{{end}}{{ with .Site.Author.email }}
     <managingEditor>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</managingEditor>{{end}}{{ with .Site.Author.email }}
@@ -32,12 +33,12 @@
     {{- end -}}
     {{ range $pages }}
     <item>
-      <title>{{ partial "page-title" . }}</title>
+      <title>{{ index $page_metadata "title-page" }}</title>
       <link>{{ .Permalink }}</link>
       <pubDate>{{ .Date.Format "Mon, 02 Jan 2006 15:04:05 -0700" | safeHTML }}</pubDate>
       {{ if or (not .Params.author) (eq .Params.author .Site.Author.name) }}{{ with .Site.Author.email }}<author>{{.}}{{ with $.Site.Author.name }} ({{.}}){{end}}</author>{{end}}{{end}}
       <guid>{{ .Permalink }}</guid>
-      <description>{{ .Description | default .Params.description | default .Params.summary | default .Summary | html }}</description>
+      <description>{{ index $page_metadata "description" | html }}</description>
     </item>
     {{ end }}
   </channel>

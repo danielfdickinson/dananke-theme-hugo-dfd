@@ -5,6 +5,7 @@
 
 {{ define "main" }}
   {{ $section := .Site.GetPage "section" .Section }}
+  {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
       <aside class="instapaper_ignoref b helvetica tracked">
@@ -17,11 +18,11 @@
       {{ partial "social-share.html" . }}
       {{ if .Params.omit_header_text }}
       <h1 class="f1 athelas mt3 mb1">
-        {{- partial "page-title" . -}}
+        {{- index $page_metadata "title-page" -}}
       </h1>
       {{ else }}
       <h2 class="f2 athelas mt3 mb1">
-        {{- partial "page-title" . -}}
+        {{- index $page_metadata "title-page" -}}
       </h2>
       {{ end }}
 

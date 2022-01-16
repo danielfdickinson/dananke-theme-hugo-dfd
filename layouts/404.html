@@ -1,8 +1,10 @@
 {{ define "header" }}{{ partial "page-header.html" . }}{{ end }}
 {{ define "main" }}
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
+    <article class="center cf pv5">
+      <h1 class="f2 center measure avenir tc pa3 mb5 db moon-gray bg-near-black br-pill">This is not the page you were looking for</h1>
+      <ul class="f3 w-100 w-40-ns center navy bg-lightest-blue br4 pa4 ">
+        <li class="ml4 pa3">You may wish to view the <a class="dark-blue" href="/about/user-sitemap">Site Map</a></li>
+        <li class="ml4 pa3">Or go to the <a class="dark-blue" href="/">Home Page</a></li>
+      </ul>
     </article>
 {{ end }}

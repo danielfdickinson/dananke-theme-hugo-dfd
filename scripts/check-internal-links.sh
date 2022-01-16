@@ -1,4 +1,4 @@
-npx hyperlink public/sitemap.xml --canonicalroot https://example.com/ \
+npx hyperlink public/index.html --canonicalroot https://example.com/ \
     --internal \
     --skip "https://www.facebook.com/sharer.php" \
     --skip "https://linkedin.com/shareArticle" \
@@ -8,4 +8,4 @@ npx hyperlink public/sitemap.xml --canonicalroot https://example.com/ \
     --skip "example.net" \
     --todo "301 http" \
     --todo "fragment-redirect" \
-    -r -p public/sitemap.xml | tee check-links.log | npx tap-spot
+    -r -p public/index.html | tee check-links.log | npx tap-spot

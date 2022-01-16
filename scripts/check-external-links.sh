@@ -13,8 +13,8 @@ example.net"
 SKIPS=""; for skip in ${SKIP_CHECK_PATTERNS}; do SKIPS="${SKIPS}${SKIPS:+ }--skip \"${skip}\""; done ; \
 export SKIPS
 
-npx hyperlink public/sitemap.xml --canonicalroot https://example.com/ \
+npx hyperlink public/index.html --canonicalroot https://example.com/ \
     ${SKIPS} \
     --todo "301 http" \
     --todo "fragment-redirect" \
-    -r -p public/sitemap.xml | tee check-links.log | npx tap-spot
+    -r -p public/index.html | tee check-links.log | npx tap-spot

@@ -30,7 +30,7 @@ jobs:
         with:
           hugo-version: ${{ matrix.hugo }}
           upload-site-as: unminified-site-${{ matrix.hugo }}
-          use-lfs: false
+          use-lfs: true
           source-directory: exampleSite
   validate-unminified-html:
     needs: build-unminified-site

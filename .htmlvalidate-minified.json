@@ -61,17 +61,9 @@
         "svg-focusable": "off",
         "no-raw-characters": "off",
         "require-sri": "off",
-        "void-style": "off",
-        "no-trailing-whitespace": "off",
         "prefer-tbody": "off",
         "no-inline-style": "off",
-        "element-case": "off",
-        "attr-case": "off",
-        "no-redundant-role": "off",
-        "heading-level": "off",
-        "prefer-native-element": "off",
         "attr-quotes": "off",
-        "doctype-style": "off",
-        "wcag/h67": "off"
+        "doctype-style": "off"
     }
 }

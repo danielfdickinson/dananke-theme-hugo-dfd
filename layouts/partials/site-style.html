@@ -1,9 +1,10 @@
+{{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-closing" }}
 {{- with partialCached "func/style/GetMainCSS" "style/GetMainCSS" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}" >
+    <link rel="stylesheet" href="{{ .RelPermalink }}"{{ if $self_close }} /{{ end }}>
 {{- end -}}
 
 {{ range site.Params.custom_css -}}
   {{- with partialCached "func/style/GetResource" . . }}{{- else }}
-    <link rel="stylesheet" href="{{ relURL (.) }}">
+    <link rel="stylesheet" href="{{ relURL (.) }}"{{ if $self_close }} /{{ end }}>
   {{- end -}}
 {{- end -}}

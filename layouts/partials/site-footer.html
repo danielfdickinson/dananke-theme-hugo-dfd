@@ -1,13 +1,15 @@
-<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
+<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3">
   <div class="flex flex-column flex-row-ns flex-wrap justify-between">
-  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3 nowrap" href="{{ .Site.BaseURL }}" >
-    {{ with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end }}
-  </a>
-  {{- with site.Menus.footer_links -}}
-    {{- range . }}    
-  <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="{{ .URL }}">{{ .Name }}</a>
-    {{- end -}}
-  {{- end }}
-  <div class="f4 fw4 hover-white no-underline white-70 pv2 ph3">{{ partial "social-follow.html" . }}</div>
+    <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3 nowrap" href="{{ .Site.BaseURL }}">
+      {{- with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end -}}
+    </a>
+    {{- with site.Menus.footer_links -}}
+      {{- range . }}
+    <a class="f4 fw4 hover-white no-underline white-70 dib pv2 ph3" href="{{ .URL }}">{{ .Name }}</a>
+      {{- end -}}
+    {{- end }}
+    <div class="f4 fw4 hover-white no-underline white-70 pv2 ph3">
+      {{- partial "social-follow.html" . }}
+    </div>
   </div>
 </footer>

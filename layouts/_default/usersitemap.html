@@ -1,26 +1,21 @@
-{{ define "header" }}
-   {{/* We can override any block in the baseof file be defining it in the template */}}
-  {{ partial "page-header.html" . }}
-{{ end }}
-
 {{ define "main" }}
   <article class="mw7 center ph3">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-      {{ if .Params.omit_header_text }}
+      {{- if .Params.omit_header_text }}
       <h1 class="f1 athelas mt3 mb1">
         {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
         {{- index $page_title_metadata "title-page" }}
       </h1>
-      {{ else }}
+      {{- else }}
       <h2 class="f2 athelas mt3 mb1">
         {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
         {{- index $page_title_metadata "title-page" }}
       </h2>
-      {{ end }}
+      {{- end -}}
       {{- partial "handle-content" .Content -}}
     </section>
     <section class="f4 mt5 mw-100">
-    {{ partial "walk.html" $.Site.Home.Data }}
+    {{- partial "walk.html" $.Site.Home.Data -}}
     </section>
   </article>
 {{ end }}

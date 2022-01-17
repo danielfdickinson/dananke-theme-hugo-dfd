@@ -1,15 +1,15 @@
 <ul class="list">
-  {{ range .Pages.GroupByParam "weight" }}
-    {{ range (.Pages.ByDate).Reverse }}
-    {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
+  {{- range .Pages.GroupByParam "weight" -}}
+    {{- range (.Pages.ByDate).Reverse -}}
+    {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
     <li class="pa2">
       <a class="link hover-white hover-bg-dark-blue" href="{{ .RelPermalink }}">{{- index $page_metadata "title-page" -}}</a>
-      {{ if .Pages }}
+      {{- if .Pages }}
         {{ partial "walk.html" . }}
     </li>
-      {{ else }}
+      {{- else }}
     </li>
-      {{ end }}
-    {{ end }}
-  {{ end }}
+      {{- end -}}
+    {{- end -}}
+  {{- end }}
 </ul>

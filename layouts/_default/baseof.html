@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
+{{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-closing" }}
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1"{{ if $self_close }} /{{ end }}>
     {{- /* NOTE: the Site's title, and if there is a page title, that is set too */}}
     <title>
     {{- block "title" . -}}
@@ -12,18 +13,18 @@
     </title>
     {{- /* NOTE: For Production make sure you add `HUGO_ENV="production"` before your build command */ -}}
     {{ if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production")  }}
-    <META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
+    <meta name="robots" content="index, follow"{{ if $self_close }} /{{ end }}>
         {{- if and .Permalink (ne .Page.Params.notCanonical true) (or (eq (.Param "taxCanonical") true) (not (or (.Data.Singular) (.Data.Plural)))) }}
-    <link rel="canonical" href="{{ .Permalink }}">
+    <link rel="canonical" href="{{ .Permalink }}"{{ if $self_close }} /{{ end }}>
         {{- else if .Page.Params.toCanonical }}
-    <link rel="canonical" href="{{ .Page.Params.toCanonical }}">
+    <link rel="canonical" href="{{ .Page.Params.toCanonical }}"{{ if $self_close }} /{{ end }}>
         {{- end }}
     {{- else }}
-    <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    <meta name="robots" content="noindex, nofollow"{{ if $self_close }} /{{ end }}>
         {{- if and .Permalink (ne .Page.Params.notCanonical true) (or (eq (.Param "taxCanonical") true) (not (or (.Data.Singular) (.Data.Plural)))) }}
-    <link rel="alternate" data="will-be-canonical" href="{{ .Permalink }}">
+    <link rel="alternate" data="will-be-canonical" href="{{ .Permalink }}"{{ if $self_close }} /{{ end }}>
         {{- else if .Page.Params.toCanonical }}
-    <link rel="alternate" data="will-be-canonical" href="{{ .Page.Params.toCanonical }}">
+    <link rel="alternate" data="will-be-canonical" href="{{ .Page.Params.toCanonical }}"{{ if $self_close }} /{{ end }}>
         {{- end -}}
     {{- end }}
     {{- partial "site-style.html" . -}}
@@ -33,11 +34,11 @@
     {{ end }}
     {{- if .OutputFormats.Get "RSS" -}}
       {{- with .OutputFormats.Get "RSS" }}
-    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}">
-    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}">
+    <link href="{{ .RelPermalink }}" rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}"{{ if $self_close }} /{{ end }}>
+    <link href="{{ .RelPermalink }}" rel="feed" type="application/rss+xml" title="{{ $.Site.Title }}"{{ if $self_close }} /{{ end }}>
       {{- end -}}
-    {{- end -}}
-    {{- partial "head/metadata" . -}}
+    {{- end }}
+    {{ partial "head/metadata" . -}}
     {{- if eq (getenv "HUGO_ENV") "production" | or (eq .Site.Params.env "production") -}}
       {{- template "_internal/google_analytics_async.html" . -}}
     {{- end -}}
@@ -45,12 +46,16 @@
     {{- partial "head-additions.html" . -}}
   {{- end }}
   </head>
-
   <body class="ma0 {{ $.Param "body_classes" | default "avenir bg-near-white"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
-    {{- block "header" . -}}{{- partial "site-header.html" . -}}{{- end }}
-    <main class="pb7" role="main">
-      {{- block "main" . }}{{ end }}
+  {{- block "header" . -}}
+    {{- partial "site-header.html" . -}}
+  {{- end }}
+    <main class="pb7">
+  {{- block "main" . }}
+  {{- end }}
     </main>
-    {{ block "footer" . }}{{ partialCached "site-footer.html" . }}{{ end }}
+  {{- block "footer" . }}
+{{ partialCached "site-footer.html" . -}}
+  {{- end }}
   </body>
 </html>

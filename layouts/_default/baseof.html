@@ -47,15 +47,17 @@
   {{- end }}
   </head>
   <body class="ma0 {{ $.Param "body_classes" | default "avenir bg-light-gray"}}{{ with getenv "HUGO_ENV" }} {{ . }}{{ end }}">
+    <div class="flex flex-column flex-nowrap">
   {{- block "header" . -}}
     {{- partial "site-header.html" . -}}
   {{- end }}
-    <main class="pb7">
+      <main class="pb5 order-1 order-2-ns">
   {{- block "main" . }}
   {{- end }}
-    </main>
+      </main>
   {{- block "footer" . }}
 {{ partialCached "site-footer.html" . -}}
   {{- end }}
+    </div>
   </body>
 </html>

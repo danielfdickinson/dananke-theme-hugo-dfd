@@ -1,13 +1,13 @@
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) }}
-<div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
+<div class="relative w-100 mb4 bg-white gray nested-copy-line-height">
+  <div class="mb3 pa4 overflow-hidden">
     <span class="f4 db">{{ humanize .Section }}</span>
     <h2 class="f3 near-black">
       <a href="{{ .RelPermalink }}" class="link black dim">
         {{- index $page_metadata "title-page" -}}
       </a>
     </h2>
-    <div class="nested-links f5 measure-narrow f4-ns lh-copy nested-copy-line-height">
+    <div class="nested-links f5 measure-narrow bg-white dark-gray f4-ns lh-copy nested-copy-line-height">
       {{ index $page_metadata "summary" }}
     </div>
   </div>

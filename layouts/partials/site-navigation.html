@@ -1,8 +1,8 @@
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-closing" -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
-<nav class="pv3 ph3 ph4-ns bg-dark-blue">
+<nav class="pv3 ph3 ph4-ns {{ .Site.Params.background_color_class | default "bg-black" }}">
 <div class="flex flex-column flex-row-ns justify-start items-center-ns center">
-    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw2 hover-white no-underline white-90 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
+    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
       {{- with .Site.Params.site_logo -}}
         <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ index $page_metadata "title-site" }}"{{ if $self_close }} /{{ end }}>
       {{- else -}}

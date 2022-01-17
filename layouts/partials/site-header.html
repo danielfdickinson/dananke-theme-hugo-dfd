@@ -1,55 +1,56 @@
-{{- $featured_image := partial "helpers/featured-image-link" .Page -}}
+{{- $curPage := .Page -}}
+<div class="order-3 order-1-ns">
+{{- partial "site-navigation.html" . }}
+{{- $featured_image := partial "helpers/featured-image" .Page -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "description-no-fallback")) -}}
 {{- if $featured_image -}}
-  {{- $featured_size := .Params.cover_image_size | default "cover" -}}
-  <header class="{{ $featured_size }} bg-top" style="background-image: url('{{ $featured_image }}');">
-    <div class="{{ .Site.Params.cover_dimming_class | default "bg-black-60" }}{{ if not .IsHome }} pb3-m pb6-l{{ end }}">
-      {{- partial "site-navigation.html" . }}
-      <div class="tc-l pv4 pv6-l ph3 ph4-ns">
+  <header class="relative-ns z-0 vh-75-ns {{ .Page.Params.image_padding_color_class | default .Page.Site.Params.image_padding_color_class | default "bg-dark-gray" }}">
+    <div class="{{ if .IsHome }}pb2-m pb3-l{{ end }} relative-ns z-1">
+      <div class="tc-l ph3 ph4-ns relative-ns z-3 pt1">
   {{- if .IsHome }}
-        <h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
+        <h1 class="f2 f-subheadline-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
       {{- index $page_metadata "title-page" -}}
         </h1>
       {{- with (index $page_metadata "description-no-fallback") }}
-        <h2 class="fw1 f5 f3-l white-80 measure-wide-l center mt3">
+        <h2 class="fw4 f4 f3-l measure-wide-l center mt3 pb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
         {{- . | safeHTML -}}
         </h2>
       {{- end }}
   {{- else -}}
     {{- if not .Params.omit_header_text }}
-  <h1 class="f2 f1-l fw2 white-90 mb0 lh-title">{{- index $page_metadata "title-page" -}}</h1>
+  <h1 class="f2 f1-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">{{- index $page_metadata "title-page" -}}</h1>
       {{- with (index $page_metadata "description-no-fallback") }}
-    <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+    <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb4 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
         {{- . | safeHTML -}}
     </h2>
       {{- end -}}
     {{- end -}}
   {{- end }}
       </div>
+      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "imageWrapper" "div" "class" "absolute-ns top-0-ns bottom-0-ns left-0-ns right-0-ns z-1" "imageClass" (printf "img db center h-auto vh-75-ns w-auto %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
     </div>
   </header>
 {{- else }}
-  <header>
-    <div class="{{ if .IsHome }}pb3-m pb6-l {{ end }}{{ .Site.Params.background_color_class | default "bg-black" }}">
-  {{- partial "site-navigation.html" . }}
-      <div class="tc-l pv3 ph3 ph4-ns">
+  <header class="relative-ns z-0 {{ .Page.Params.image_padding_color_class | default .Page.Site.Params.image_padding_color_class | default "bg-dark-gray" }}">
+    <div class="{{ if .IsHome }}pb3-m pb5-l{{ end }} relative-ns z-1">
+      <div class="tc-l ph3 ph4-ns relative-ns z-3 pt1 pb2 pb5-ns">
   {{- if .IsHome }}
-        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+        <h1 class="f2 f-subheadline-l fw5 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
     {{- index $page_metadata "title-page" -}}
         </h1>
     {{- with (index $page_metadata "description-no-fallback") }}
-        <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+        <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
           {{- . -}}
         </h2>
     {{- end -}}      
   {{- else -}}
     {{- if not .Params.omit_header_text }}
-      <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+      <h1 class="f2 f-subheadline-l fw5 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
         {{- index $page_metadata "title-page" -}}
       </h1>
       {{- with (index $page_metadata "description-no-fallback") }}
-      <h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
-        {{- . |safeHTML -}}
+      <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
+        {{- . | safeHTML -}}
       </h2>
       {{- end -}}
     {{- end -}}
@@ -58,3 +59,4 @@
     </div>
   </header>
 {{ end -}}
+</div>

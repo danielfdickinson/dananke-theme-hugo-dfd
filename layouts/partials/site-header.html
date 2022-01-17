@@ -27,7 +27,7 @@
     {{- end -}}
   {{- end }}
       </div>
-      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "imageWrapper" "div" "class" "absolute-ns top-0-ns bottom-0-ns left-0-ns right-0-ns z-1" "imageClass" (printf "img db center h-auto vh-75-ns w-auto %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
+      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "imageWrapper" "div" "class" "absolute-ns top-0-ns bottom-0-ns left-0-ns right-0-ns z-1" "imageClass" (printf "img db center h-auto vh-75-ns w-auto %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
     </div>
   </header>
 {{- else }}

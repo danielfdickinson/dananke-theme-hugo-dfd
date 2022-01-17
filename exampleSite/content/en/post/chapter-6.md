@@ -2,7 +2,9 @@
 date: 2017-04-14T11:25:05-04:00
 description: "Esmeralda"
 author: "Ananke authors"
-featured_image: "/images/esmeralda.jpg"
+featured_image:
+    src: "/images/esmeralda.jpg"
+    alt: "A medieval era coloured woman dancing, watched by a crowd of Parisian onlookers"
 tags: []
 title: "Chapter VI: Esmeralda"
 disable_share: false

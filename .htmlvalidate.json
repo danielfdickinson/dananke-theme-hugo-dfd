@@ -62,6 +62,7 @@
         "no-raw-characters": "off",
         "require-sri": "off",
         "prefer-tbody": "off",
-        "no-inline-style": "off"
+        "no-inline-style": "off",
+        "prefer-native-element": "off"
     }
 }

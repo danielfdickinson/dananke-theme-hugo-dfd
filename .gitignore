@@ -35,3 +35,4 @@ partials/structure/stylesheet.html
 node_modules
 check-links.log
 html-validate.log
+hugo-audit.log

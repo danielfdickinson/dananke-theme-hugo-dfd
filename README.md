@@ -31,7 +31,6 @@ Also includes examples of Hugo Features or Functions:
 - `where`
 - Content Views
 - Partials
-- Template layouts (type "post" uses a special list template, single template, and a content view)
 - Tags
 - `len`
 - Conditionals
@@ -279,6 +278,14 @@ Dates of blog posts and single pages are rendered with the default date format c
 
 See hugo's documentation of the [`dateFormat` function](https://gohugo.io/functions/dateformat/) for more details.
 
+### Point to a Custom Sitemap on the 404 Page
+
+By default the 404 page will include text and a link to ``/about/user-sitemap``, if present. You can specify a different page using the ``sitemap404`` param (site-level only; not per-page).
+
+```toml
+[params]
+  sitemap404 = "asitemap"
+```
 
 ### Nearly finished
 

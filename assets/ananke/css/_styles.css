@@ -27,6 +27,10 @@
   max-height: 100%;
 }
 
+.mxh9 {
+  max-height: 9em;
+}
+
 .h-max-content {
   height: max-content;
 }

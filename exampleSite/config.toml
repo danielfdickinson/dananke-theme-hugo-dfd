@@ -37,11 +37,11 @@ disableKinds = [ "sitemap" ] # Make sure we never advertise this site as canonic
 
 [languages]
   [languages.fr]
-    title = "Mon blogue"
+    title = "Nôtre-Dame de Paris"
     weight = 2
     contentDir = "content/fr"
   [languages.en]
-    title = "My blog"
+    title = "The Hunchback of Notre-Dame"
     weight = 1
     contentDir = "content/en"
 

@@ -4,6 +4,7 @@ languageCode = "en-us"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
+summaryLength = 25
 googleAnalytics = ""
 enableRobotsTXT = true
 timeout = 30000

@@ -16,7 +16,7 @@
       {{- $pages := union .Pages .Sections -}}
       {{- range (.Paginate $pages).Pages.ByPublishDate.Reverse }}
         <div class="relative w-100 mb4">
-          {{- partial "summary-with-image.html" . }}
+          {{- .Render "summary-with-image" }}
         </div>
       {{- end }}
     </section>

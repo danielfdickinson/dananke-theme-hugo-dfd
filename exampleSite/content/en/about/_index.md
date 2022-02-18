@@ -2,10 +2,9 @@
 title: "About"
 author: "Ananke authors"
 description: "A few years ago, while visiting or, rather, rummaging about Notre-Dame, the author of this book found, in an obscure nook of one of the towers, the following word, engraved by hand upon the wall: —ANANKE."
-imageFeatured:
-  src: /images/Victor_Hugo-Hunchback.jpg
-  alt: "Illustration of a person hanging onto a cornice of a Gothic building with gargoyles watching and large birds flying"
-  title: "Illustration from Victor Hugo et son temps (1881)"
+imageFeatured: /images/Victor_Hugo-Hunchback.jpg
+imageFeaturedAlt: "Illustration of a person hanging onto a cornice of a Gothic building with gargoyles watching and large birds flying"
+imageFeaturedTitle: "Illustration from Victor Hugo et son temps (1881)"
 header_image_opacity: o-20
 layout: list-content
 ---

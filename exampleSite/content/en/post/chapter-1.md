@@ -2,9 +2,8 @@
 date: 2017-04-09T10:58:08-04:00
 author: "Ananke authors"
 description: "The Grand Hall"
-featured_image:
-    src: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
-    alt: "Pope Edouard de Beaumont: 1844"
+imageFeatured: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
+imageFeaturedAlt: "Pope Edouard de Beaumont: 1844"
 tags: ["scene"]
 title: "Chapter I: The Grand Hall"
 ---

@@ -1,6 +1,6 @@
 {{ define "main" }}
   {{- $ctx := . }}
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
+  <article class="pa3 pa4-ns nested-copy-line-height">
     {{- if .Params.omit_header_text }}
     <header>
       <h1 class="f1">
@@ -12,7 +12,7 @@
     <section class="cf ph3 ph5-l pv3 pv4-l f3 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "dark-gray" }}">
       {{- partial "handle-content" .Content }}
     </section>
-    <section class="flex-ns flex-wrap justify-around mt5">
+    <section class="flex-ns flex-wrap justify-around mt5 w-100 w-70-ns mh-auto">
       {{- $pages := union .Pages .Sections -}}
       {{- range (.Paginate $pages).Pages.ByPublishDate.Reverse }}
         <div class="relative w-100 mb4">

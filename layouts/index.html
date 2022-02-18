@@ -9,7 +9,7 @@
   {{- /* Check to see if the section is defined for ranging through it */ -}}
   {{- $n_posts := $.Param "recent_posts_number" | default 3 -}}
   <div class="pa3 pa4-ns pv0 w-100 center">
-    <section class="w-100">
+    <section class="w-100 w-70-ns mh-auto">
       <h2 class="f1 tc mv0">Recent Articles</h2>
       <div class="flex-ns flex-wrap justify-around mt3">
   {{- range first $n_posts $sectionPages.ByPublishDate.Reverse }}

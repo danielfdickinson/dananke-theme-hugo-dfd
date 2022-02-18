@@ -18,7 +18,13 @@
       {{- end }}
   {{- else -}}
     {{- if not .Params.omit_header_text }}
-  <h1 class="f2 f1-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">{{- index $page_metadata "title-page" -}}</h1>
+  <h1 class="f2 f1-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
+      {{- if not .Data.Singular -}}
+        {{- index $page_metadata "title-page" -}}
+      {{- else -}}
+        {{- .Data.Singular | humanize }}: {{ index $page_metadata "title-page" -}}
+      {{- end -}}
+  </h1>
       {{- with (index $page_metadata "description-no-fallback") }}
     <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb4 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
         {{- . | safeHTML -}}

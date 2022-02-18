@@ -6,17 +6,14 @@
     </div>
   </article>
   <div class="mw8 center">
-    <section class="ph4">
+    <section class="ph4 f3">
+      <ul>
       {{- range $key, $value := .Data.Terms }}
-        <h2 class="f1">
-          <a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
-            {{- $.Data.Singular | humanize }}: {{ $key -}}
-          </a>
-        </h2>
-        {{- range $value.Pages -}}
-          {{- .Render "summary" -}}
-        {{- end -}}
+        <li><a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
+        {{ $key -}}
+        </a></li>
       {{- end }}
+      </ul>
     </section>
   </div>
 {{- end -}}

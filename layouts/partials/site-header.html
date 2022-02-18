@@ -27,7 +27,7 @@
     {{- end -}}
   {{- end }}
       </div>
-      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "imageWrapper" "div" "class" "absolute absolute--fill z-0 flex flex-column flex-nowrap items-center content-center justify-center" "imageClass" (printf "img db vh-75 w-auto min-h-fit-content %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
+      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "title" (cond (isset $featured_image "title") $featured_image.title "") "noVisibleCaption" true "imageWrapper" "div" "class" "absolute absolute--fill z-0 flex flex-column flex-nowrap items-center content-center justify-center" "imageClass" (printf "img db vh-75 w-auto min-h-fit-content %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
     </div>
   </header>
 {{- else }}

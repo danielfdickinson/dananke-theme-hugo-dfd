@@ -2,7 +2,7 @@
 date: 2017-04-10T11:00:59-04:00
 author: "Ananke authors"
 description: "Pierre Gringoire"
-featured_image: ""
+imageFeatured: ""
 tags: []
 title: "Chapter II: Pierre Gringoire"
 ---

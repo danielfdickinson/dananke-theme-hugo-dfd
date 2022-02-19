@@ -1,19 +1,21 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-closing" -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
-<nav class="pv3 ph3 ph4-ns {{ .Site.Params.background_color_class | default "bg-black" }}">
+<nav class="pv3 ph3 ph4-ns {{ $curPage.Site.Params.background_color_class | default "bg-black" }}">
 <div class="flex flex-column flex-row-ns justify-start items-center-ns center">
-    <a href="{{ .Site.Home.RelPermalink }}" class="f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
-      {{- with .Site.Params.site_logo -}}
-        <img src="{{ relURL . }}" class="w100 mw5-ns" alt="{{ index $page_metadata "title-site" }}"{{ if $self_close }} /{{ end }}>
-      {{- else -}}
+    {{- with $curPage.Site.Params.site_logo -}}
+        {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "w-100 mw5-ns" "linkClass" "f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l" "link" $curPage.Site.Home.RelPermalink) }}
+    {{- else -}}
+      <a href="{{ $curPage.Site.Home.RelPermalink }}" class="f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
         {{- index $page_metadata "title-site" -}}
-      {{- end -}}
-    </a>
+      </a>
+    {{- end -}}
     <div class="flex flex-column flex-row-ns items-center-ns mw-100 mw8-ns mw9-l">
       {{- partial "i18nlist.html" . -}}
-      {{- if .Site.Menus.main }}
+      {{- if $curPage.Site.Menus.main }}
         <ul class="pl0 pb0 mr3">
-          {{- range .Site.Menus.main }}
+          {{- range $curPage.Site.Menus.main }}
           <li class="list f4 fw4 dib pr3 pb3 pb0-l"><a class="hover-white no-underline white-90" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
               {{- .Name -}}
           </a></li>

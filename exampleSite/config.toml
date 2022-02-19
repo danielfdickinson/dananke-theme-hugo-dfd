@@ -1,12 +1,14 @@
 title = "Notre-Dame de Paris"
 baseURL = "https://example.com/"
-languageCode = "en-us"
+languageCode = "en"
 DefaultContentLanguage = "en"
 SectionPagesMenu = "main"
-Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
-summaryLength = 25
 googleAnalytics = ""
+Paginate = 4 # this is set low for demonstrating with dummy content. Set to a higher number
+summaryLength = 25
 enableRobotsTXT = true
+enableGitInfo = true
+disableAliases = false
 timeout = 30000
 disableKinds = [ "sitemap" ] # Make sure we never advertise this site as canonical
 # Google considers sitemap entries as a canonical hint
@@ -78,6 +80,10 @@ disableKinds = [ "sitemap" ] # Make sure we never advertise this site as canonic
   lastmod = ["lastmod", ":git", ":fileModTime", "date", "publishDate"]
   date = ["date", "publishDate", ":git", "lastmod", ":fileModTime"]
   publishDate = ["publishDate", "date", ":git", "lastmod", ":fileModTime"]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
 
 [privacy.disqus]
 disable = true

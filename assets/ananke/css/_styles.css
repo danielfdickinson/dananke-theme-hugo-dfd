@@ -57,3 +57,53 @@
 img[src*=".svg"].w-mc {
   width: auto;
 }
+
+.presentation-pdf div {
+  overflow: auto;
+  resize: both;
+}
+
+.presentation-pdf div object {
+  border: 2px solid;
+  display: block;
+  height: 760px;
+  margin-right: .8em;
+  resize: both;
+  width: 100%;
+}
+
+@media (max-height: 499px) {
+  .presentation-pdf div object {
+      height: 100vh;
+  }
+}
+
+@media (max-height: 900px) {
+  .presentation-pdf div object {
+      height: 480px;
+  }
+}
+
+.intro-card-pdf-gallery {
+  display: inline-block;
+  margin-left: .8em;
+  margin-right: .8em;
+  margin-top: .3em;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.intro-card-pdf-gallery div {
+  height: 665px;
+  overflow: auto;
+  text-align: center;
+  width: 700px;
+}
+
+.intro-card-pdf-gallery object {
+  border: 2px solid;
+  display: block;
+  height: 100%;
+  margin-right: .8em;
+  width: 100%;
+}

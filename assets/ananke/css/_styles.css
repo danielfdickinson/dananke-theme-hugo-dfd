@@ -43,3 +43,17 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.mvh-75 {
+  min-height: 1vh;
+  max-height: 75vh;
+}
+
+.w-mc {
+  min-width: 1vw;
+  width: max-content;
+}
+
+img[src*=".svg"].w-mc {
+  width: auto;
+}

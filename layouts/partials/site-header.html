@@ -1,8 +1,11 @@
 {{- $curPage := .Page -}}
+{{- $featured_image := partial "helpers/featured-image" $curPage -}}
+{{- if $featured_image -}}
+    {{- partial "helpers/wrapped-image" (dict "page" $curPage "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "title" (cond (isset $featured_image "title") $featured_image.title "") "noVisibleCaption" true "imageWrapper" "div" "class" "absolute-ns db dn-ns pt4 pt0-ns absolute--fill z-0 flex flex-column flex-nowrap items-center content-center justify-center" "imageClass" "db dn-ns mvh-75 w-auto h-auto") -}}
+{{- end -}}
 <div class="order-3 order-1-ns">
 {{- partial "site-navigation.html" . }}
-{{- $featured_image := partial "helpers/featured-image" .Page -}}
-{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "description-no-fallback")) -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page" "description-no-fallback")) -}}
 {{- if $featured_image -}}
   <header class="relative-ns z-0 vh-75-ns {{ .Page.Params.image_padding_color_class | default .Page.Site.Params.image_padding_color_class | default "bg-dark-gray" }}">
     <div class="{{ if .IsHome }}pb2-m pb3-l{{ end }} relative-ns h-100 w-100 z-1">
@@ -33,7 +36,7 @@
     {{- end -}}
   {{- end }}
       </div>
-      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "title" (cond (isset $featured_image "title") $featured_image.title "") "noVisibleCaption" true "imageWrapper" "div" "class" "absolute absolute--fill z-0 flex flex-column flex-nowrap items-center content-center justify-center" "imageClass" (printf "db mvh-75 w-auto h-auto %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
+      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "alt" (cond (isset $featured_image "alt") $featured_image.alt "") "title" (cond (isset $featured_image "title") $featured_image.title "") "noVisibleCaption" true "imageWrapper" "div" "class" "dn absolute-ns absolute--fill z-0 flex-ns flex-column flex-nowrap items-center content-center justify-center" "imageClass" (printf "dn db-ns mvh-75 w-auto h-auto %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
     </div>
   </header>
 {{- else }}

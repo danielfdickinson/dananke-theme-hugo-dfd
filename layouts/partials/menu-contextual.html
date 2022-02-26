@@ -1,3 +1,5 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
 {{- /*
      * Use Hugo's native Table of contents feature. You must set `toc: true` in your parameters for this to show.
      * https://gohugo.io/content-management/toc/
@@ -12,15 +14,15 @@
      * Use Hugo's native related content feature to pull in content that may have similar parameters, like tags. etc.
      * https://gohugo.io/content-management/related/
      */ -}}
-{{- $related := .Site.RegularPages.Related . | first 10 -}}
+{{- $related := partial "helpers/return-pages-see-also" . -}}
 {{- with $related }}
   <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
     <p class="f5 b mb3">{{ i18n "related" }}</p>
     <ul class="pa0 list">
-	   {{- range . }}
-     {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+	    {{- range . -}}
+          {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
      <li  class="mb2"><a href="{{ .RelPermalink }}">
-            {{- index $page_metadata "title-page" -}}
+          {{- index $page_metadata "title-page" -}}
       </a></li>
 	    {{- end }}
     </ul>

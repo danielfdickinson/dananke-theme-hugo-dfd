@@ -10,7 +10,7 @@ enableRobotsTXT = true
 enableGitInfo = true
 disableAliases = false
 timeout = 30000
-disableKinds = [ "sitemap" ] # Make sure we never advertise this site as canonical
+disableKinds = ["sitemap","RSS"] # Make sure we never advertise this site as canonical
 # Google considers sitemap entries as a canonical hint
 # See https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls#sitemap-method
 #[sitemap]

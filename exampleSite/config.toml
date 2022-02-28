@@ -21,32 +21,50 @@ disableKinds = ["sitemap","RSS"] # Make sure we never advertise this site as can
 [taxonomies]
   tag = "tags"
 
-[menu]
-  [[menu.footer_links]]
-    name = "Contact"
-    url = "/contact"
-    # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-    # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
-
-  [[menu.footer_links]]
-    name = "Sitemap"
-    url = "/about/user-sitemap"
-    # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-    # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
-
-  [[menu.footer_links]]
-    name = "Tags"
-    url = "/tags"
-
 [languages]
   [languages.fr]
     title = "Nôtre-Dame de Paris"
     weight = 2
     contentDir = "content/fr"
+
+    [languages.fr.menu]
+      [[languages.fr.menu.footer_links]]
+        name = "Contact"
+        url = "/fr/contact"
+        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+
+      [[languages.fr.menu.footer_links]]
+        name = "Sitemap"
+        url = "/fr/about/user-sitemap"
+        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+
+      [[languages.fr.menu.footer_links]]
+        name = "Tags"
+        url = "/fr/tags"
+
   [languages.en]
     title = "The Hunchback of Notre-Dame"
     weight = 1
     contentDir = "content/en"
+
+    [languages.en.menu]
+      [[languages.en.menu.footer_links]]
+        name = "Contact"
+        url = "/contact"
+        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+
+      [[languages.en.menu.footer_links]]
+        name = "Sitemap"
+        url = "/about/user-sitemap"
+        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+
+      [[languages.en.menu.footer_links]]
+        name = "Tags"
+        url = "/tags"
 
 [params]
   author = "Daniel F. Dickinson"
@@ -63,6 +81,7 @@ disableKinds = ["sitemap","RSS"] # Make sure we never advertise this site as can
   linkWrapperClassMarkdown = "dark-blue pv1 mv1"
   linkClassMarkdown = "link underline"
   imageConvertTo = "webp"
+  imageLinkFull = "true"
 
 [[params.ananke_socials]]
   name = "github"

@@ -10,8 +10,7 @@
       <ul>
       {{- range $key, $value := .Data.Terms }}
         <li><a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
-        {{ $key -}}
-        </a></li>
+        {{ $key }} ({{ .Count }})</a></li>
       {{- end }}
       </ul>
     </section>

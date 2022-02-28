@@ -28,8 +28,20 @@
 }
 
 @media screen and (min-width: 30em) {
+  img.ih1:not([src*=".svg"]) {
+    height: fit-content;
+  }
+
+  img.ih1[src*=".svg"] {
+    height: auto;
+  }
+
   .mxh9-ns {
     max-height: 9em;
+  }
+
+  .vh-70-ns {
+    height: 70vh;
   }
 }
 
@@ -46,9 +58,9 @@
   margin-right: auto;
 }
 
-.mvh-75 {
+.mvh-70 {
   min-height: 1vh;
-  max-height: 75vh;
+  max-height: 70vh;
 }
 
 .w-mc {

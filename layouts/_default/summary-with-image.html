@@ -10,9 +10,9 @@
     </div>
     {{- end }}
     <div class="db{{ if $featured_image }} w-70-ns pl3-ns{{ end }}">
-      <h2 class="f3 fw1 athelas mt0 lh-title measure-narrow"><a href="{{.RelPermalink}}" class=" ba b--gray bg-moon-gray br2 ph2 color-inherit dim link">
+      <h2 class="f3 fw1 athelas mt0 lh-title measure-narrow"><a href="{{.RelPermalink}}" class="color-inherit dim link"><span class="dib ba b--gray bg-moon-gray br2 ph2">
     {{- index $page_metadata "title-page" -}}
-      </a></h2>
+  </span></a></h2>
       <div class="f5 f4-ns lh-copy nested-copy-line-height nested-links measure">
           {{ index $page_metadata "summary" }}
       </div>

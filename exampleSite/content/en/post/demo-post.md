@@ -1,5 +1,5 @@
 ---
-title: "Demo Post"
+title: "Demo Post: With a long enough subtitle to use two lines"
 date: 2021-11-23T00:11:54-05:00
 author: Daniel F. Dickinson
 summary: "A demo post for Dananke"

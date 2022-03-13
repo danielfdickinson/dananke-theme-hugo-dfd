@@ -5,7 +5,7 @@
 <nav class="pv3 ph3 ph4-ns {{ $curPage.Site.Params.background_color_class | default "bg-black" }}">
 <div class="flex flex-column flex-row-ns justify-start items-center-ns center">
     {{- with $curPage.Site.Params.site_logo -}}
-        {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "w-100 mw5-ns" "linkClass" "f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l" "link" $curPage.Site.Home.RelPermalink) }}
+        {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "w-auto h-auto mw-100 mw5-ns" "linkClass" "f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l" "link" $curPage.Site.Home.RelPermalink) }}
     {{- else -}}
       <a href="{{ $curPage.Site.Home.RelPermalink }}" class="f3 fw4 hover-white no-underline white-80 db flex-auto-ns pb3 pb0-l mw-100 mw8-ns mw9-l">
         {{- index $page_metadata "title-site" -}}

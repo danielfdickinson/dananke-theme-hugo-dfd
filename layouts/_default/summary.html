@@ -9,6 +9,7 @@
     </h2>
     <div class="nested-links f5 measure-narrow bg-white dark-gray f4-ns lh-copy nested-copy-line-height">
       {{ index $page_metadata "summary" }}
+      <p class="f5 f4-ns lh-copy mb0 i">By {{ .Page.Params.author | default .Page.Site.Params.author | default .Author }} on {{ .Page.PublishDate.Local.Format "January 2, 2006" }}</p> 
     </div>
   </div>
 </div>

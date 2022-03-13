@@ -10,6 +10,9 @@ other = "Recent {{.Title }}"
 [readMore]
 other = "read more"
 
+[read]
+other = "read"
+
 [whatsInThis]
 other = "What's in this article"
 

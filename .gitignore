@@ -36,3 +36,4 @@ node_modules
 check-links.log
 html-validate.log
 hugo-audit.log
+md-lint.log

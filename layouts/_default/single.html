@@ -3,10 +3,6 @@
   {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
   <article class="flex-l flex-wrap justify-between mw8 center ph3">
     <header class="mt4 w-100">
-      <aside class="instapaper_ignoref b helvetica tracked">
-        {{- /* CurrentSection allows us to use the section title instead of inferring from the folder. https://gohugo.io/variables/page/#section-variables-and-methods */ -}}
-        {{- with .CurrentSection.Title -}}{{- . | upper -}}{{- end -}}
-      </aside>
       {{- partial "social-share.html" . -}}
       {{- if .Params.omit_header_text }}
       <h1 class="f1 athelas mt3 mb1">

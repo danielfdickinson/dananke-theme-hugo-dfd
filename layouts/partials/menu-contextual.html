@@ -10,10 +10,6 @@
       {{ .TableOfContents }}
   </div>
 {{- end -}}
-{{- /*
-     * Use Hugo's native related content feature to pull in content that may have similar parameters, like tags. etc.
-     * https://gohugo.io/content-management/related/
-     */ -}}
 {{- $related := partial "helpers/return-pages-see-also" . -}}
 {{- with $related }}
   <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">

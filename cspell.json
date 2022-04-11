@@ -1,0 +1,23 @@
+{
+    "version": "0.2",
+    "ignorePaths": [],
+    "words": [
+        "Ananke",
+        "Avenir",
+        "blogue",
+        "commento",
+        "Dananke",
+        "disqus",
+        "gohugo",
+        "Nôtre",
+        "tiktok",
+        "unminified",
+        "webp"
+    ],
+    "ignoreWords": [
+        "asitemap",
+        "errorf",
+        "isset",
+        "nlist"
+    ]
+}

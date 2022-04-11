@@ -1,17 +1,6 @@
 {
-    "cSpell.words": [
-        "Ananke",
-        "Avenir",
-        "blogue",
-        "commento",
-        "Dananke",
-        "disqus",
-        "gohugo",
-        "Nôtre",
-        "tiktok",
-        "unminified"
-    ],
-    "cSpell.ignoreWords": [
-        "asitemap"
+    "css.styleSheets": [
+        "assets/ananke/css/*.css",
+        "assets/dananke/css/*.css"
     ]
 }

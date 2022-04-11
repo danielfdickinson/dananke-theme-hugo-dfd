@@ -1,0 +1,46 @@
+{{- /* Modified from Hugo internal template at https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/embedded/templates/_default/sitemap.xml */ -}}
+{{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  {{- range .Data.Pages -}}
+    {{- if and .Permalink (ne .Params.pageCanonical false) (or (eq (.Param "taxCanonical") true) (not (or (.Data.Singular) (.Data.Plural)))) -}}
+      {{- $pagePriority := .Sitemap.Priority -}}
+      {{- $pageChangeFreq := .Sitemap.ChangeFreq -}}
+      {{- $validChangeFreqs := (slice "always" "hourly" "daily" "weekly" "monthly" "yearly" "never" "") -}}
+      {{- if not (in $validChangeFreqs $pageChangeFreq) -}}
+        {{- if .File -}}
+            {{- errorf (printf "Invalid sitemap ChangeFreq for page %s. Only \"%s,\"\" are allowed" .File.Path (delimit $validChangeFreqs "\",\"" "\"")) -}}
+        {{- else -}}
+            {{- errorf (printf "Invalid sitemap ChangeFreq for page %s. Only \"%s,\"\" are allowed" .Page.Title (delimit $validChangeFreqs "\",\"" "\"")) -}}
+        {{- end -}}
+      {{- end }}
+  <url>
+    <loc>{{ .Permalink }}</loc>
+    {{- if not .Lastmod.IsZero }}
+    <lastmod>{{ safeHTML ( .Lastmod.Format "2006-01-02T15:04:05-07:00" ) }}</lastmod>
+    {{- end -}}
+    {{- with $pageChangeFreq }}
+    <changefreq>{{ . }}</changefreq>
+    {{- end -}}
+    {{- if ge $pagePriority 0.0 }}
+    <priority>{{ $pagePriority }}</priority>
+    {{- end -}}
+    {{- if .IsTranslated -}}
+      {{- range .Translations }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.Lang }}"
+                href="{{ .Permalink }}"
+                />
+      {{- end }}
+    <xhtml:link
+                rel="alternate"
+                hreflang="{{ .Language.Lang }}"
+                href="{{ .Permalink }}"
+                />
+    {{- end }}
+  </url>
+    {{- end -}}
+  {{- end }}
+</urlset>
+{{- /* Remove trailing newlines */ -}}

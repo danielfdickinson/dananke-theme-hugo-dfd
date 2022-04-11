@@ -11,8 +11,8 @@
 }
 .pagination li a {
   padding: .5rem .625rem;
-  background-color: white;
-  color: #333;
+  background-color: #ededed;
+  color: #222;
   border: 1px solid #ddd;
   border-radius: 3px;
   text-decoration: none;

@@ -1,10 +1,71 @@
-{{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-closing" }}
-{{- with partialCached "func/style/GetMainCSS" "style/GetMainCSS" }}
-    <link rel="stylesheet" href="{{ .RelPermalink }}"{{ if $self_close }} /{{ end }}>
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
+{{- $combinedCSS := (slice) -}}
+{{- $cssTemplates := resources.Match "/dananke/css-templates/*.css" -}}
+{{- range $cssTemplates -}}
+    {{- $templateStyle := . | resources.ExecuteAsTemplate (printf "/dananke/css/templates/%s.css" .Name ) $curPage -}}
+    {{- $combinedCSS = $combinedCSS | append $templateStyle -}}
+{{- end -}}
+{{- $anankeCSS := resources.Match "/ananke/css/*.css" -}}
+{{- if not $anankeCSS -}}
+    {{- errorf "/ananke/css/*.css is missing" -}}
+{{- end -}}
+{{- $combinedCSS = $combinedCSS | append $anankeCSS -}}
+{{- $mainCSS := resources.Match "/dananke/css/*.css" -}}
+{{- if not $mainCSS -}}
+    {{- errorf "/dananke/css/*.css is missing" -}}
+{{- end -}}
+{{- $combinedCSS = $combinedCSS | append $mainCSS -}}
+{{- $customCSS := resources.Match "/css/custom/*.css" -}}
+{{- if $customCSS -}}
+    {{- $combinedCSS = $combinedCSS | append $customCSS -}}
 {{- end -}}
 
-{{ range site.Params.custom_css -}}
-  {{- with partialCached "func/style/GetResource" . . }}{{- else }}
-    <link rel="stylesheet" href="{{ relURL (.) }}"{{ if $self_close }} /{{ end }}>
-  {{- end -}}
+{{- with partialCached "func/socials/Get" "socials/Get" -}}
+    {{- $socials_rules := slice -}}
+      {{- range $service := . -}}
+          {{- with .color -}}
+              {{- $rule := printf `
+                  .ananke-socials a.%s:hover {
+                    color: %s
+                  }` $service.name $service.color -}}
+              {{- $socials_rules = $socials_rules | append $rule -}}
+          {{- end -}}
+    {{- end -}}
+    {{- with $socials_rules -}}
+        {{- $socials_rules = delimit . "" -}}
+        {{- $socials_css := $socials_rules | resources.FromString "dananke/css/generated_socials.css" -}}
+        {{- $combinedCSS = $combinedCSS | append $socials_css -}}
+    {{- end -}}
+{{- end -}}
+
+{{- range site.Params.custom_css -}}
+    {{- with resources.Get . -}}
+        {{- $combinedCSS = $combinedCSS | append . -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* We at least concat the styles */ -}}
+{{- $style := $combinedCSS | resources.Concat "css/dananke/main.css" -}}
+
+{{- /* But will replace that with processing with SASS */ -}}
+{{- if gt (len $combinedCSS) 0 -}}
+    {{- /* We then use toCSS to add sourceMap and minify (in production) */ -}}
+    {{- $options := dict "enableSourceMap" true "precision" 6 -}}
+    {{- if hugo.IsProduction -}}
+        {{- $options = $options | merge (dict "outputStyle" "compressed") -}}
+    {{- else -}}
+        {{- $options = $options | merge (dict "outputStyle" "expanded") -}}
+    {{- end -}}
+    {{- /* Actually process the CSS */ -}}
+    {{- $style = $style | resources.ToCSS $options -}}
+    {{- /* We fingerprint in production for cache busting purposes */ -}}
+    {{- if hugo.IsProduction -}}
+        {{- $style = $style | fingerprint -}}
+    {{- end -}}
+{{- end -}}
+
+{{- with $style }}
+    <link rel="stylesheet" href="{{ .RelPermalink }}"{{ if $self_close }} /{{ end }}>
 {{- end -}}

@@ -1,0 +1,6 @@
+{{- partial "site-style.html" . -}}
+{{- partial "site-scripts.html" . -}}
+{{ block "favicon" . }}
+  {{- partialCached "site-favicon.html" . -}}
+{{ end }}
+{{- /* Remove trailing newlines */ -}}

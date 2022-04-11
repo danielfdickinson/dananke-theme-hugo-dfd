@@ -1,11 +1,11 @@
-pre, .pre  {
+pre, .pre {
   overflow-x: auto;
   overflow-y: hidden;
   overflow:   scroll;
 }
 
 
-pre  code {
+pre code {
   display: block;
   padding: 1.5em 1.5em;
   white-space: pre;

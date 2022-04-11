@@ -218,23 +218,13 @@ Ananke uses [Tachyon.io](http://tachyons.io/) utility class library.
 
 #### Custom CSS
 
-WARNING: Pending resolution of this [discussion](https://github.com/theNewDynamic/gohugo-theme-ananke/discussions/452#discussioncomment-1865301), Custom CSS only works with Hugo Extended
+Custom CSS only works with Hugo Extended
 
 In order to complement the default CSS with your own, you can add custom css files to the project.
 
-1. Just add a `assets/ananke/css` directory to your project and add the file(s) in it.
-2. Register the files using the `custom_css` key in your site's parameter. The path referenced in the parameter should be relative to the `assets/ananke/css` folder.
+* Just add a `assets/css/custom` directory to your project and add the file(s) in it.
 
-The css files will be added in their registered order to final `main.css` file.
-
-For example, if your css files are `assets/ananke/css/custom.css` and `assets/ananke/special.css` then add the following to the config file:
-
-```toml
-  [params]
-    custom_css = ["custom.css","special.css"]
-```
-
-__Note on retro-compatibility for custom css__: If the files registered through the `custom_css` setting are not found in `assets/ananke/css` the theme will expect them to live at the given path relative to the static directory and load them as \<link> requests.
+* The css files will be added in their lexical order to final `main.css` file.
 
 ### Show Reading Time and Word Count
 

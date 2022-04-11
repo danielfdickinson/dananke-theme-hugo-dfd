@@ -1,0 +1,5 @@
+:root {
+    {{- with .Params.colourBackgroundMainNav | default .Site.Params.colorBackgroundMainNav }}
+    --main-nav-bg-color: {{ . -}};
+    {{- end -}}
+}

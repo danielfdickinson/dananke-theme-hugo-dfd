@@ -1,12 +1,13 @@
 {{- $socials := partialCached "func/socials/Get" "socials/Get" }}
-<div class="ananke-socials">
+        <div class="ananke-socials">
   {{- range $socials }}
-    <a href="{{ .url | absLangURL }}" class="{{ .name }} ananke-social-link link-transition stackoverflow link dib z-999 pt3 pt0-ns pb2 pb0-l mr1" title="{{ .label }} link" rel="noopener" aria-label="follow on {{ .label }}">
+            <a href="{{ .url | absLangURL }}" class="{{ .name }} ananke-social-link link-transition title_link title_nav_item social_title_link" title="{{ .label }} link" rel="noopener" aria-label="follow on {{ .label }}">
       {{- with .icon -}}
-        <span class="icon">{{- . -}}</span>
+                <span class="icon">{{- . -}}</span>
       {{- else -}}
-        {{- .label -}}
+                {{- .label -}}
       {{- end -}}
-    </a>
+            </a>
   {{- end }}
-</div>
+        </div>
+{{- /* Remove trailing newlines */ -}}

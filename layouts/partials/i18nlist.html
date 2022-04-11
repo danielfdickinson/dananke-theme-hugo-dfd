@@ -1,10 +1,10 @@
 {{- if .IsTranslated }}
-<div class="dn">{{ i18n "translations" }}</div>
-<ul class="pl0 mr3 pb3 pb0-l ml4-ns">
+        <div class="hide">{{ i18n "translations" }}</div>
+        <ul class="lang_list">
     {{- range .Translations }}
-    <li class="list f5 f4-ns fw4 dib pr3">
-        <a class="hover-white no-underline white-90" href="{{ .RelPermalink }}">{{ .Lang }}</a>
-    </li>
+            <li class="lang_item title_nav_item">
+                <a class="title_link lang_link lang_title" href="{{ .RelPermalink }}">{{ .Lang }}</a>
+            </li>
     {{- end }}
-</ul>
+        </ul>
 {{- end -}}

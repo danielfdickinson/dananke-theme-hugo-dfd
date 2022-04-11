@@ -1,0 +1,151 @@
+.whole_body {
+    background-color: lightgray;
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 0;
+    font-family: 'avenir next','avenir',sans-serif;
+    font-size: 15pt;
+    line-height: 1.5;
+}
+
+.main_block {
+    display: block;
+    padding-bottom: 4rem;
+    order: 1;
+}
+
+.main_navigation {
+    background-color: var(--main-nav-bg-color, black);
+    display: flex;
+    flex: 1 1 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1rem;
+    width: 100%;
+}
+
+.site_title {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding-bottom: 1rem;
+}
+
+.lang_title {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.site_link {
+    display: block;
+    max-width: 100%;
+}
+
+.title_link {
+    text-decoration: none;
+}
+
+.title_link:hover {
+    color: white;
+}
+
+.site_image {
+    height: auto;
+    width: auto;
+    max-width: 100%;
+}
+
+.hide {
+    display: none;
+}
+
+.lang_list {
+    padding-bottom: 16rem;
+    padding-left: 0;
+}
+
+.lang_item {
+    font-size: 1rem;
+}
+
+.title_nav_item {
+    display: inline-block;
+    list-style: none;
+    font-weight: 400;
+    padding-right: 1rem;
+}
+
+.title_menu_list {
+    margin-right: 1rem;
+    padding-bottom: 0;
+    padding-left: 0;
+}
+
+.title_menu_item {
+    font-size: 1.25rem;
+}
+
+.title_menu_link {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.social_title_link {
+    margin-right: .25rem;
+    padding-bottom: .5rem;
+    padding-top: 1rem;
+    z-index: 999;
+}
+
+@media screen and (min-width: 30em) {
+    .main_block {
+        order: 2;
+    }
+
+    .main_navigation {
+        align-items: center;
+        flex-direction: row;
+        padding-left: 2rem;
+        padding-right: 2rem;
+    }
+
+    .site_link {
+        flex: 1 1 auto;
+        max-width: 64rem;
+    }
+
+    .site_image {
+        max-width: 16rem;
+    }
+
+    .lang_list {
+        margin-left: 2rem;
+    }
+
+    .lang_item {
+        font-size: 1.25rem;
+    }
+
+    .social_title_link {
+        padding-top: 0;
+    }
+}
+
+@media screen and (min-width: 60em) {
+    .site_link {
+        max-width: 96rem;
+        padding-bottom: 0;
+    }
+
+    .lang_list {
+        padding-bottom: 0;
+    }
+
+    .title_menu_item {
+        padding-bottom: 0;
+    }
+
+    .social_title_link {
+        padding-bottom: 0;
+    }
+}

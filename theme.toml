@@ -11,11 +11,11 @@ features = ["posts", "shortcodes", "related content", "comments"]
 min_version = "0.80.0"
 
 [author]
-  name = "Daniel F. Dickinson"
-  homepage = "https://www.wildtechgarden.ca/about/"
-  copyright = "© 2021-2022 Daniel F. Dickinson"
-  email = "dfdpublic@wildtechgarden.ca"
+name = "Daniel F. Dickinson"
+homepage = "https://www.wildtechgarden.ca/about/"
+copyright = "© 2021-2022 Daniel F. Dickinson"
+email = "dfdpublic@wildtechgarden.ca"
 
 [original]
-  name = "theNewDynamic"
-  homepage = "https://www.thenewdynamic.com/"
+name = "theNewDynamic"
+homepage = "https://www.thenewdynamic.com/"

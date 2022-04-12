@@ -10,100 +10,103 @@ enableRobotsTXT = true
 enableGitInfo = true
 disableAliases = false
 timeout = 30000
-disableKinds = ["sitemap","RSS"] # Make sure we never advertise this site as canonical
+disableKinds = [
+    "sitemap",
+    "RSS",
+] # Make sure we never advertise this site as canonical
 # Google considers sitemap entries as a canonical hint
 # See https://developers.google.com/search/docs/advanced/crawling/consolidate-duplicate-urls#sitemap-method
-#[sitemap]
+#[sitemap] # Setting sitemap entries globally is probably counter-productive
 #  changefreq = "monthly"
 #  priority = 0.5
 #  filename = "sitemap.xml"
 
 [taxonomies]
-  tag = "tags"
+tag = "tags"
 
 [languages]
-  [languages.fr]
-    title = "Nôtre-Dame de Paris"
-    weight = 2
-    contentDir = "content/fr"
+[languages.fr]
+title = "Nôtre-Dame de Paris"
+weight = 2
+contentDir = "content/fr"
 
-    [languages.fr.menu]
-      [[languages.fr.menu.footer_links]]
-        name = "Contact"
-        url = "/fr/contact"
-        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+[languages.fr.menu]
+[[languages.fr.menu.footer_links]]
+name = "Contact"
+url = "/fr/contact"
+# We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+# If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
 
-      [[languages.fr.menu.footer_links]]
-        name = "Sitemap"
-        url = "/fr/about/user-sitemap"
-        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+[[languages.fr.menu.footer_links]]
+name = "Sitemap"
+url = "/fr/about/user-sitemap"
+# We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+# If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
 
-      [[languages.fr.menu.footer_links]]
-        name = "Tags"
-        url = "/fr/tags"
+[[languages.fr.menu.footer_links]]
+name = "Tags"
+url = "/fr/tags"
 
-  [languages.en]
-    title = "The Hunchback of Notre-Dame"
-    weight = 1
-    contentDir = "content/en"
+[languages.en]
+title = "The Hunchback of Notre-Dame"
+weight = 1
+contentDir = "content/en"
 
-    [languages.en.menu]
-      [[languages.en.menu.footer_links]]
-        name = "Contact"
-        url = "/contact"
-        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+[languages.en.menu]
+[[languages.en.menu.footer_links]]
+name = "Contact"
+url = "/contact"
+# We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+# If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
 
-      [[languages.en.menu.footer_links]]
-        name = "Sitemap"
-        url = "/about/user-sitemap"
-        # We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
-        # If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
+[[languages.en.menu.footer_links]]
+name = "Sitemap"
+url = "/about/user-sitemap"
+# We use 'url' instead of pageref because we support (and test) Hugo '0.80.0'
+# If you are using Hugo '0.86.0' or later, using pageref for same-site pages is better
 
-      [[languages.en.menu.footer_links]]
-        name = "Tags"
-        url = "/tags"
+[[languages.en.menu.footer_links]]
+name = "Tags"
+url = "/tags"
 
 [params]
-  author = "Daniel F. Dickinson"
-  favicon = ""
-  site_logo = ""
-  description = "Definitely not the last theme you'll ever need."
-  show_reading_time = "true"
-  mainSections = [ "post" ]
-  colorBackgroundMainNav = "#00449E"
-  # choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
-  background_color_class = "bg-dark-blue"
-  image_padding_color_class = "bg-navy"
-  featured_image = "/ananke/images/gohugo-default-sample-hero-image.jpg"
-  recent_posts_number = 3
-  linkWrapperClassMarkdown = "dark-blue pv1 mv1"
-  linkClassMarkdown = "link underline"
-  imageConvertTo = "webp"
-  imageLinkFull = "true"
+author = "Daniel F. Dickinson"
+favicon = ""
+site_logo = ""
+description = "Definitely not the last theme you'll ever need."
+show_reading_time = "true"
+mainSections = ["post"]
+colorBackgroundMainNav = "#00449E"
+# choose a background color from any on this page: http://tachyons.io/docs/themes/skins/ and preface it with "bg-"
+background_color_class = "bg-dark-blue"
+image_padding_color_class = "bg-navy"
+featured_image = "/ananke/images/gohugo-default-sample-hero-image.jpg"
+recent_posts_number = 3
+linkWrapperClassMarkdown = "dark-blue pv1 mv1"
+linkClassMarkdown = "link underline"
+imageConvertTo = "webp"
+imageLinkFull = "true"
 
 [[params.danankeSocials]]
-  name = "github"
-  url = "https://github.com/danielfdickinson"
+name = "github"
+url = "https://github.com/danielfdickinson"
 
 [[params.danankeSocials]]
-  name = "linkedin"
-  url = "https://ca.linkedin.com/in/danielfdickinson"
+name = "linkedin"
+url = "https://ca.linkedin.com/in/danielfdickinson"
 
 [[params.danankeSocials]]
-  name = "rss"
-  url = "/index.xml"
+name = "rss"
+url = "/index.xml"
 
 [frontmatter]
-  lastmod = ["lastmod", ":git", ":fileModTime", "date", "publishDate"]
-  date = ["date", "publishDate", ":git", "lastmod", ":fileModTime"]
-  publishDate = ["publishDate", "date", ":git", "lastmod", ":fileModTime"]
+lastmod = ["lastmod", ":git", ":fileModTime", "date", "publishDate"]
+date = ["date", "publishDate", ":git", "lastmod", ":fileModTime"]
+publishDate = ["publishDate", "date", ":git", "lastmod", ":fileModTime"]
 
 [markup]
-  [markup.highlight]
-    noClasses = false
+[markup.highlight]
+noClasses = false
 
 [privacy.disqus]
 disable = true
@@ -124,76 +127,76 @@ disable = true
 disable = true
 
 [author]
-  uid = "dfd"
-  website = "https://www.wildtechgarden.ca/about/"
-  name = "Daniel F. Dickinson"
-  email = "dfdpublic@wildtechgarden.ca"
+uid = "dfd"
+website = "https://www.wildtechgarden.ca/about/"
+name = "Daniel F. Dickinson"
+email = "dfdpublic@wildtechgarden.ca"
 
-  [[author.authors]]
-    uid = "dfd"
-    website = "https://www.wildtechgarden.ca/about/"
-    name = "Daniel F. Dickinson"
-    email = "dfdpublic@wildtechgarden.ca"
+[[author.authors]]
+uid = "dfd"
+website = "https://www.wildtechgarden.ca/about/"
+name = "Daniel F. Dickinson"
+email = "dfdpublic@wildtechgarden.ca"
 
-  [[author.authors]]
-    name = "theNewDynamic"
-    homepage = "https://www.thenewdynamic.com/"
+[[author.authors]]
+name = "theNewDynamic"
+homepage = "https://www.thenewdynamic.com/"
 
 [module]
-  replacements = "github.com/danielfdickinson/dananke-theme-hugo-dfd -> ../.."
+replacements = "github.com/danielfdickinson/dananke-theme-hugo-dfd -> ../.."
 
-  [[module.imports]]
-    path = "github.com/danielfdickinson/dananke-theme-hugo-dfd"
+[[module.imports]]
+path = "github.com/danielfdickinson/dananke-theme-hugo-dfd"
 
-  [[module.imports.mounts]]
-    source = "layouts"
-    target = "layouts"
+[[module.imports.mounts]]
+source = "layouts"
+target = "layouts"
 
-  [[module.imports.mounts]]
-    source = "assets"
-    target = "assets"
+[[module.imports.mounts]]
+source = "assets"
+target = "assets"
 
-  [[module.imports.mounts]]
-    source = "data"
-    target = "data"
+[[module.imports.mounts]]
+source = "data"
+target = "data"
 
-  [[module.imports.mounts]]
-    source = "i18n"
-    target = "i18n"
+[[module.imports.mounts]]
+source = "i18n"
+target = "i18n"
 
-  [[module.imports.mounts]]
-    source = "archetypes"
-    target = "archetypes"
+[[module.imports.mounts]]
+source = "archetypes"
+target = "archetypes"
 
-  [[module.mounts]]
-    source = "static"
-    target = "static"
+[[module.mounts]]
+source = "static"
+target = "static"
 
-  [[module.mounts]]
-    source = "layouts"
-    target = "layouts"
+[[module.mounts]]
+source = "layouts"
+target = "layouts"
 
-  [[module.mounts]]
-    source = "assets"
-    target = "assets"
+[[module.mounts]]
+source = "assets"
+target = "assets"
 
-  [[module.mounts]]
-    source = "data"
-    target = "data"
+[[module.mounts]]
+source = "data"
+target = "data"
 
-  [[module.mounts]]
-    source = "i18n"
-    target = "i18n"
+[[module.mounts]]
+source = "i18n"
+target = "i18n"
 
-  [[module.mounts]]
-    source = "content/en"
-    target = "content"
-    lang = "en"
+[[module.mounts]]
+source = "content/en"
+target = "content"
+lang = "en"
 
-  [[module.mounts]]
-    source = "content/fr"
-    target = "content"
-    lang = "fr"
+[[module.mounts]]
+source = "content/fr"
+target = "content"
+lang = "fr"
 
-  [[module.imports]]
-    path = "github.com/danielfdickinson/link-handling-mod-hugo-dfd"
+[[module.imports]]
+path = "github.com/danielfdickinson/link-handling-mod-hugo-dfd"

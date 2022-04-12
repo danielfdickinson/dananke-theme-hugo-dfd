@@ -9,12 +9,17 @@
     }
 }
 
+@mixin center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .whole-body {
     background-color: lightgray;
     display: flex;
     flex-flow: column nowrap;
     margin: 0;
-    font-family: 'avenir next','avenir',sans-serif;
+    font-family: var(--default-font-family, san-serif);
     font-size: 15pt;
     line-height: 1.5;
 }
@@ -31,10 +36,10 @@
     flex: 1 1 100%;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
     padding: 1rem;
     width: 100%;
+
+    @include center-block;
 }
 
 .site-title {
@@ -109,13 +114,50 @@
 }
 
 .article-404 {
-    margin-left: auto;
-    margin-right: auto;
     padding-bottom: 4rem;
     padding-top: 4rem;
+
+    @include center-block;
 }
 
 @include clear-fix(article-404);
+
+.message-404-title {
+    background-color: #111;
+    border-radius: 9999px;
+    color: #ccc;
+    display: block;
+    font-family: var(--message-404-title-font-family);
+    font-size: 2.5rem;
+    max-width: 23em;
+    margin-bottom: 3rem;
+    margin-top: 0;
+    padding: 1rem;
+    text-align: center;
+
+    @include center-block;
+}
+
+.message-404-box {
+    background-color: #cdecff;
+    border-radius: 1rem;
+    color: navy;
+    font-size: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+
+    @include center-block;
+}
+
+.message-404-box .message-404-item {
+    list-style: none;
+    margin-left: 2rem;
+    padding: 1rem;
+}
+
+.message-404-box .message-404-item a {
+    color: #038;
+}
 
 @media screen and (min-width: 30em) {
     .main-block {
@@ -148,6 +190,10 @@
 
     .social-title-link {
         padding-top: 0;
+    }
+
+    .message-404-box {
+        width: 40%;
     }
 }
 

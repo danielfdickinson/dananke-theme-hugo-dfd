@@ -1,5 +1,23 @@
+/* Set base CSS vars */
+
+@mixin chooseFontFamily($left-side, $generic-family) {
+    @if $generic-family == "avenir" {
+        #{$left-side}: 'avenir next','avenir',sans-serif;
+    } @else if $generic-family == "trebuchet" {
+        #{$left-side}: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } @else {
+        #{$left-side}: $generic-family;
+    }
+}
+
 :root {
     {{- with .Params.colourBackgroundMainNav | default .Site.Params.colorBackgroundMainNav }}
     --main-nav-bg-color: {{ . -}};
+    {{- end -}}
+    {{- with .Params.defaultFontFamily | default .Site.Params.defaultFontFamily | default "avenir" }}
+    @include chooseFontFamily("--default-font-family", "{{ . }}");
+    {{- end }}
+    {{- with .Site.Params.message404FontFamily | default "avenir" }}
+    @include chooseFontFamily("--message-404-title-font-family", "{{ . }}");
     {{- end }}
 }

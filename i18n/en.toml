@@ -56,3 +56,18 @@ other = "Untitled Site"
 
 [untitledPage]
 other = "Untitled Page"
+
+[pageYouSeekNotHere]
+other = "The page which you seek is not here"
+
+[youMayWishToView]
+other = "You may wish to view"
+
+[theSiteMap]
+other = "the Site Map"
+
+[orGoto]
+other = "Or, go to"
+
+[theHomePage]
+other = "the Home Page"

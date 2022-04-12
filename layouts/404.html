@@ -1,11 +1,11 @@
 {{ define "main" }}
-    <article class="article-404 clear-fix">
-      <h2 class="f2 center measure avenir tc pa3 mb5 db moon-gray bg-near-black br-pill">This is not the page you were looking for</h2>
-      <ul class="f3 w-100 w-40-ns center navy bg-lightest-blue br4 pa4 ">
+    <article class="article-404">
+      <h2 class="message-404-title">{{ i18n "pageYouSeekNotHere" | default "The page which you seek is not here" }}</h2>
+      <ul class="message-404-box">
         {{- with .GetPage ( .Site.Params.sitemap404 | default "/about/user-sitemap") }}
-        <li class="ml4 pa3">You may wish to view the <a class="dark-blue" href="{{ .RelPermalink }}">Site Map</a></li>
+        <li class="message-404-item">{{ i18n "youMayWishToView" | default "You may wish to view" }} <a href="{{ .RelPermalink }}">{{ i18n "theSiteMap" | default "the Site Map" }}</a></li>
         {{- end }}
-        <li class="ml4 pa3">Or go to the <a class="dark-blue" href="/">Home Page</a></li>
+        <li class="message-404-item">{{ i18n "orGoto" | default "Or, go to" }} <a href="/">{{ i18n "theHomePage" | default "the Home Page" }}</a></li>
       </ul>
     </article>
 {{ end }}

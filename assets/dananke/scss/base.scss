@@ -1,3 +1,14 @@
+@mixin clear-fix($selector) {
+    .#{$selector}:after, .#{$selector}:before {
+        content: " ";
+        display: table;
+    }
+
+    .#{$selector}:after {
+        clear: both;
+    }
+}
+
 .whole_body {
     background-color: lightgray;
     display: flex;
@@ -96,6 +107,15 @@
     padding-top: 1rem;
     z-index: 999;
 }
+
+.article-404 {
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
+@include clear-fix(article-404);
 
 @media screen and (min-width: 30em) {
     .main_block {

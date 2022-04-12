@@ -18,6 +18,7 @@
         "asitemap",
         "errorf",
         "isset",
-        "nlist"
+        "nlist",
+        "tocss"
     ]
 }

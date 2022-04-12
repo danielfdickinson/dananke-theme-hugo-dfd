@@ -1,574 +1,176 @@
-/* Background */
-.chroma {
-  color: #e5e5e5;
-  background-color: #000000;
+:root {
+  --main-nav-bg-color: #00449E;
 }
 
-/* Other */
-/* Error */
-.chroma .err {
-  color: #ff0000;
+.dananke-socials a.github:hover {
+  color: #6cc644;
 }
 
-/* LineTableTD */
-.chroma .lntd {
-  vertical-align: top;
-  padding: 0;
+.dananke-socials a.linkedin:hover {
+  color: #0077b5;
+}
+
+.dananke-socials a.rss:hover {
+  color: #ff6f1a;
+}
+
+.whole_body {
+  background-color: lightgray;
+  display: flex;
+  flex-flow: column nowrap;
   margin: 0;
-  border: 0;
+  font-family: 'avenir next','avenir',sans-serif;
+  font-size: 15pt;
+  line-height: 1.5;
 }
 
-/* LineTable */
-.chroma .lntable {
-  border-spacing: 0;
-  padding: 0;
-  margin: 0;
-  border: 0;
-  width: auto;
-  overflow: auto;
+.main_block {
   display: block;
+  padding-bottom: 4rem;
+  order: 1;
 }
 
-/* LineHighlight */
-.chroma .hl {
-  display: block;
+.main_navigation {
+  background-color: var(--main-nav-bg-color, black);
+  display: flex;
+  flex: 1 1 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem;
   width: 100%;
-  background-color: #ffffcc;
 }
 
-/* LineNumbersTable */
-.chroma .lnt {
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
-  color: #727272;
+.site_title {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
 }
 
-/* LineNumbers */
-.chroma .ln {
-  margin-right: 0.4em;
-  padding: 0 0.4em 0 0.4em;
-  color: #727272;
+.lang_title {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-/* Keyword */
-.chroma .k {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordConstant */
-.chroma .kc {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordDeclaration */
-.chroma .kd {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordNamespace */
-.chroma .kn {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordPseudo */
-.chroma .kp {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordReserved */
-.chroma .kr {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* KeywordType */
-.chroma .kt {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* Name */
-/* NameAttribute */
-.chroma .na {
-  color: #007f7f;
-}
-
-/* NameBuiltin */
-.chroma .nb {
-  color: #ffffff;
-  font-weight: bold;
-}
-
-/* NameBuiltinPseudo */
-/* NameClass */
-/* NameConstant */
-/* NameDecorator */
-/* NameEntity */
-/* NameException */
-/* NameFunction */
-/* NameFunctionMagic */
-/* NameLabel */
-/* NameNamespace */
-/* NameOther */
-/* NameProperty */
-/* NameTag */
-.chroma .nt {
-  font-weight: bold;
-}
-
-/* NameVariable */
-/* NameVariableClass */
-/* NameVariableGlobal */
-/* NameVariableInstance */
-/* NameVariableMagic */
-/* Literal */
-/* LiteralDate */
-.chroma .ld {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralString */
-.chroma .s {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringAffix */
-.chroma .sa {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringBacktick */
-.chroma .sb {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringChar */
-.chroma .sc {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringDelimiter */
-.chroma .dl {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringDoc */
-.chroma .sd {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringDouble */
-.chroma .s2 {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringEscape */
-.chroma .se {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringHeredoc */
-.chroma .sh {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringInterpol */
-.chroma .si {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringOther */
-.chroma .sx {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringRegex */
-.chroma .sr {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringSingle */
-.chroma .s1 {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralStringSymbol */
-.chroma .ss {
-  color: #00ffff;
-  font-weight: bold;
-}
-
-/* LiteralNumber */
-.chroma .m {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberBin */
-.chroma .mb {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberFloat */
-.chroma .mf {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberHex */
-.chroma .mh {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberInteger */
-.chroma .mi {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberIntegerLong */
-.chroma .il {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* LiteralNumberOct */
-.chroma .mo {
-  color: #ffff00;
-  font-weight: bold;
-}
-
-/* Operator */
-/* OperatorWord */
-/* Punctuation */
-/* Comment */
-.chroma .c {
-  color: #007f7f;
-}
-
-/* CommentHashbang */
-.chroma .ch {
-  color: #007f7f;
-}
-
-/* CommentMultiline */
-.chroma .cm {
-  color: #007f7f;
-}
-
-/* CommentSingle */
-.chroma .c1 {
-  color: #007f7f;
-}
-
-/* CommentSpecial */
-.chroma .cs {
-  color: #007f7f;
-}
-
-/* CommentPreproc */
-.chroma .cp {
-  color: #00ff00;
-  font-weight: bold;
-}
-
-/* CommentPreprocFile */
-.chroma .cpf {
-  color: #00ff00;
-  font-weight: bold;
-}
-
-/* Generic */
-/* GenericDeleted */
-/* GenericEmph */
-/* GenericError */
-/* GenericHeading */
-.chroma .gh {
-  font-weight: bold;
-}
-
-/* GenericInserted */
-/* GenericOutput */
-/* GenericPrompt */
-/* GenericStrong */
-.chroma .gs {
-  font-weight: bold;
-}
-
-/* GenericSubheading */
-.chroma .gu {
-  font-weight: bold;
-}
-
-/* GenericTraceback */
-/* GenericUnderline */
-.chroma .gl {
-  text-decoration: underline;
-}
-
-/* TextWhitespace */
-pre, .pre {
-  overflow-x: auto;
-  overflow-y: hidden;
-  overflow: scroll;
-}
-
-pre code {
+.site_link {
   display: block;
-  padding: 1.5em 1.5em;
-  white-space: pre;
-  font-size: .875rem;
-  line-height: 2;
+  max-width: 100%;
 }
 
-pre {
-  background-color: #222;
-  color: #ddd;
-  white-space: pre;
-  hyphens: none;
-  position: relative;
-}
-
-/* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
-.pagination {
-  margin: 3rem 0;
-}
-
-.pagination li {
-  display: inline-block;
-  margin-right: .375rem;
-  font-size: .875rem;
-  margin-bottom: 2.5em;
-}
-
-.pagination li a {
-  padding: .5rem .625rem;
-  background-color: white;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 3px;
+.title_link {
   text-decoration: none;
 }
 
-.pagination li.disabled {
+.title_link:hover {
+  color: white;
+}
+
+.site_image {
+  height: auto;
+  width: auto;
+  max-width: 100%;
+}
+
+.hide {
   display: none;
 }
 
-.pagination li.active a:link,
-.pagination li.active a:active,
-.pagination li.active a:visited {
-  background-color: #ddd;
+.lang_list {
+  padding-bottom: 16rem;
+  padding-left: 0;
 }
 
-#TableOfContents ul li {
-  margin-bottom: 1em;
+.lang_item {
+  font-size: 1rem;
 }
 
-.ananke-socials a {
+.title_nav_item {
   display: inline-block;
-  vertical-align: middle;
-  color: #BABABA;
-  fill: currentColor;
+  list-style: none;
+  font-weight: 400;
+  padding-right: 1rem;
 }
 
-.ananke-socials a .icon svg {
-  width: 32px;
-  height: 32px;
+.title_menu_list {
+  margin-right: 1rem;
+  padding-bottom: 0;
+  padding-left: 0;
 }
 
-.ananke-socials a:hover {
-  color: #6b7280;
+.title_menu_item {
+  font-size: 1.25rem;
 }
 
-.new-window {
-  opacity: 0;
-  display: inline-block;
-  vertical-align: top;
+.title_menu_link {
+  color: rgba(255, 255, 255, 0.9);
 }
 
-.link-transition:hover .new-window {
-  opacity: 1;
+.social_title_link {
+  margin-right: .25rem;
+  padding-bottom: .5rem;
+  padding-top: 1rem;
+  z-index: 999;
 }
 
-/* Put your custom styles here and run `npm start` from the "src" directory on */
-#TableOfContents li ul {
-  margin-top: 1em;
-  padding-left: 1em;
+.article-404 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 4rem;
+  padding-top: 4rem;
 }
 
-.lh-copy blockquote {
-  display: block;
-  font-size: .875em;
-  margin-left: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  border-left: 4px solid #ccc;
-  padding-left: 1rem;
+.article-404:after, .article-404:before {
+  content: " ";
+  display: table;
 }
 
-.nested-links a {
-  color: #00449E;
-  overflow-wrap: break-word;
-}
-
-.nested-img img {
-  height: auto;
-}
-
-.me-100 {
-  max-height: 100%;
+.article-404:after {
+  clear: both;
 }
 
 @media screen and (min-width: 30em) {
-  img.ih1:not([src*=".svg"]) {
-    height: fit-content;
+  .main_block {
+    order: 2;
   }
-  img.ih1[src*=".svg"] {
-    height: auto;
+  .main_navigation {
+    align-items: center;
+    flex-direction: row;
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
-  .mxh9-ns {
-    max-height: 9em;
+  .site_link {
+    flex: 1 1 auto;
+    max-width: 64rem;
   }
-  .vh-70-ns {
-    height: 70vh;
+  .site_image {
+    max-width: 16rem;
   }
-}
-
-.h-max-content {
-  height: max-content;
-}
-
-.min-h-fit-content {
-  min-height: fit-content;
-}
-
-.mh-auto {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.mvh-70 {
-  min-height: 1vh;
-  max-height: 70vh;
-}
-
-.w-mc {
-  min-width: 1vw;
-  width: max-content;
-}
-
-img[src*=".svg"].w-mc {
-  width: auto;
-}
-
-.presentation-pdf div {
-  overflow: auto;
-  resize: both;
-}
-
-.presentation-pdf div object {
-  border: 2px solid;
-  display: block;
-  height: 760px;
-  margin-right: .8em;
-  resize: both;
-  width: 100%;
-}
-
-@media (max-height: 499px) {
-  .presentation-pdf div object {
-    height: 100vh;
+  .lang_list {
+    margin-left: 2rem;
+  }
+  .lang_item {
+    font-size: 1.25rem;
+  }
+  .social_title_link {
+    padding-top: 0;
   }
 }
 
-@media (max-height: 900px) {
-  .presentation-pdf div object {
-    height: 480px;
+@media screen and (min-width: 60em) {
+  .site_link {
+    max-width: 96rem;
+    padding-bottom: 0;
   }
-}
-
-.intro-card-pdf-gallery {
-  display: inline-block;
-  margin-left: .8em;
-  margin-right: .8em;
-  margin-top: .3em;
-  text-align: center;
-  vertical-align: baseline;
-}
-
-.intro-card-pdf-gallery div {
-  height: 665px;
-  overflow: auto;
-  text-align: center;
-  width: 700px;
-}
-
-.intro-card-pdf-gallery object {
-  border: 2px solid;
-  display: block;
-  height: 100%;
-  margin-right: .8em;
-  width: 100%;
-}
-
-main table {
-  border-collapse: collapse;
-  width: 100%;
-}
-
-main table tr th {
-  background-color: silver;
-  border-bottom: 4px ridge;
-  border-left: 4px ridge;
-  border-top: 4px ridge;
-  text-align: left;
-  width: max-content;
-}
-
-@supports (text-align: start) {
-  main table tr th {
-    text-align: start;
+  .lang_list {
+    padding-bottom: 0;
   }
-}
-
-main table tr th:last-of-type {
-  border-right: 4px ridge;
-}
-
-main table tr td {
-  border-bottom: 2px solid;
-  border-left: 2px solid;
-  width: max-content;
-}
-
-main table tr td:last-of-type {
-  border-right: 2px solid;
-  min-width: 50%;
-}
-
-main table tbody tr:nth-of-type(even) {
-  background-color: lightgray;
+  .title_menu_item {
+    padding-bottom: 0;
+  }
+  .social_title_link {
+    padding-bottom: 0;
+  }
 }
 
 /*! TACHYONS v4.12.0 | http://tachyons.io */
@@ -8175,12 +7777,577 @@ img {
   }
 }
 
-.whole_body {
-  background-color: lightgray;
+/* Background */
+.chroma {
+  color: #e5e5e5;
+  background-color: #000000;
+}
+
+/* Other */
+/* Error */
+.chroma .err {
+  color: #ff0000;
+}
+
+/* LineTableTD */
+.chroma .lntd {
+  vertical-align: top;
+  padding: 0;
   margin: 0;
-  font-family: 'avenir next','avenir',sans-serif;
-  font-size: 15pt;
-  line-height: 1.5;
+  border: 0;
+}
+
+/* LineTable */
+.chroma .lntable {
+  border-spacing: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: auto;
+  overflow: auto;
+  display: block;
+}
+
+/* LineHighlight */
+.chroma .hl {
+  display: block;
+  width: 100%;
+  background-color: #ffffcc;
+}
+
+/* LineNumbersTable */
+.chroma .lnt {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #727272;
+}
+
+/* LineNumbers */
+.chroma .ln {
+  margin-right: 0.4em;
+  padding: 0 0.4em 0 0.4em;
+  color: #727272;
+}
+
+/* Keyword */
+.chroma .k {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordConstant */
+.chroma .kc {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordDeclaration */
+.chroma .kd {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordNamespace */
+.chroma .kn {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordPseudo */
+.chroma .kp {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordReserved */
+.chroma .kr {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* KeywordType */
+.chroma .kt {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* Name */
+/* NameAttribute */
+.chroma .na {
+  color: #007f7f;
+}
+
+/* NameBuiltin */
+.chroma .nb {
+  color: #ffffff;
+  font-weight: bold;
+}
+
+/* NameBuiltinPseudo */
+/* NameClass */
+/* NameConstant */
+/* NameDecorator */
+/* NameEntity */
+/* NameException */
+/* NameFunction */
+/* NameFunctionMagic */
+/* NameLabel */
+/* NameNamespace */
+/* NameOther */
+/* NameProperty */
+/* NameTag */
+.chroma .nt {
+  font-weight: bold;
+}
+
+/* NameVariable */
+/* NameVariableClass */
+/* NameVariableGlobal */
+/* NameVariableInstance */
+/* NameVariableMagic */
+/* Literal */
+/* LiteralDate */
+.chroma .ld {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralString */
+.chroma .s {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringAffix */
+.chroma .sa {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringBacktick */
+.chroma .sb {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringChar */
+.chroma .sc {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringDelimiter */
+.chroma .dl {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringDoc */
+.chroma .sd {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringDouble */
+.chroma .s2 {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringEscape */
+.chroma .se {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringHeredoc */
+.chroma .sh {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringInterpol */
+.chroma .si {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringOther */
+.chroma .sx {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringRegex */
+.chroma .sr {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringSingle */
+.chroma .s1 {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralStringSymbol */
+.chroma .ss {
+  color: #00ffff;
+  font-weight: bold;
+}
+
+/* LiteralNumber */
+.chroma .m {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberBin */
+.chroma .mb {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberFloat */
+.chroma .mf {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberHex */
+.chroma .mh {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberInteger */
+.chroma .mi {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberIntegerLong */
+.chroma .il {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* LiteralNumberOct */
+.chroma .mo {
+  color: #ffff00;
+  font-weight: bold;
+}
+
+/* Operator */
+/* OperatorWord */
+/* Punctuation */
+/* Comment */
+.chroma .c {
+  color: #007f7f;
+}
+
+/* CommentHashbang */
+.chroma .ch {
+  color: #007f7f;
+}
+
+/* CommentMultiline */
+.chroma .cm {
+  color: #007f7f;
+}
+
+/* CommentSingle */
+.chroma .c1 {
+  color: #007f7f;
+}
+
+/* CommentSpecial */
+.chroma .cs {
+  color: #007f7f;
+}
+
+/* CommentPreproc */
+.chroma .cp {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* CommentPreprocFile */
+.chroma .cpf {
+  color: #00ff00;
+  font-weight: bold;
+}
+
+/* Generic */
+/* GenericDeleted */
+/* GenericEmph */
+/* GenericError */
+/* GenericHeading */
+.chroma .gh {
+  font-weight: bold;
+}
+
+/* GenericInserted */
+/* GenericOutput */
+/* GenericPrompt */
+/* GenericStrong */
+.chroma .gs {
+  font-weight: bold;
+}
+
+/* GenericSubheading */
+.chroma .gu {
+  font-weight: bold;
+}
+
+/* GenericTraceback */
+/* GenericUnderline */
+.chroma .gl {
+  text-decoration: underline;
+}
+
+/* TextWhitespace */
+pre, .pre {
+  overflow-x: auto;
+  overflow-y: hidden;
+  overflow: scroll;
+}
+
+pre code {
+  display: block;
+  padding: 1.5em 1.5em;
+  white-space: pre;
+  font-size: .875rem;
+  line-height: 2;
+}
+
+pre {
+  background-color: #222;
+  color: #ddd;
+  white-space: pre;
+  hyphens: none;
+  position: relative;
+}
+
+/* pagination.html: https://github.com/spf13/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
+.pagination {
+  margin: 3rem 0;
+}
+
+.pagination li {
+  display: inline-block;
+  margin-right: .375rem;
+  font-size: .875rem;
+  margin-bottom: 2.5em;
+}
+
+.pagination li a {
+  padding: .5rem .625rem;
+  background-color: #ededed;
+  color: #222;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+.pagination li.disabled {
+  display: none;
+}
+
+.pagination li.active a:link,
+.pagination li.active a:active,
+.pagination li.active a:visited {
+  background-color: #ddd;
+}
+
+#TableOfContents ul li {
+  margin-bottom: 1em;
+}
+
+.dananke-socials a {
+  display: inline-block;
+  vertical-align: middle;
+  color: #BABABA;
+  fill: currentColor;
+}
+
+.dananke-socials a .icon svg {
+  width: 32px;
+  height: 32px;
+}
+
+.dananke-socials a:hover {
+  color: #6b7280;
+}
+
+.new-window {
+  opacity: 0;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.link-transition:hover .new-window {
+  opacity: 1;
+}
+
+/* Put your custom styles here and run `npm start` from the "src" directory on */
+#TableOfContents li ul {
+  margin-top: 1em;
+  padding-left: 1em;
+}
+
+.lh-copy blockquote {
+  display: block;
+  font-size: .875em;
+  margin-left: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-left: 4px solid #ccc;
+  padding-left: 1rem;
+}
+
+.nested-links a {
+  color: #00449E;
+  overflow-wrap: break-word;
+}
+
+.nested-img img {
+  height: auto;
+}
+
+.me-100 {
+  max-height: 100%;
+}
+
+@media screen and (min-width: 30em) {
+  img.ih1:not([src*=".svg"]) {
+    height: fit-content;
+  }
+  img.ih1[src*=".svg"] {
+    height: auto;
+  }
+  .mxh9-ns {
+    max-height: 9em;
+  }
+  .vh-70-ns {
+    height: 70vh;
+  }
+}
+
+.h-max-content {
+  height: max-content;
+}
+
+.min-h-fit-content {
+  min-height: fit-content;
+}
+
+.mh-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mvh-70 {
+  min-height: 1vh;
+  max-height: 70vh;
+}
+
+.w-mc {
+  min-width: 1vw;
+  width: max-content;
+}
+
+img[src*=".svg"].w-mc {
+  width: auto;
+}
+
+.presentation-pdf div {
+  overflow: auto;
+  resize: both;
+}
+
+.presentation-pdf div object {
+  border: 2px solid;
+  display: block;
+  height: 760px;
+  margin-right: .8em;
+  resize: both;
+  width: 100%;
+}
+
+@media (max-height: 499px) {
+  .presentation-pdf div object {
+    height: 100vh;
+  }
+}
+
+@media (max-height: 900px) {
+  .presentation-pdf div object {
+    height: 480px;
+  }
+}
+
+.intro-card-pdf-gallery {
+  display: inline-block;
+  margin-left: .8em;
+  margin-right: .8em;
+  margin-top: .3em;
+  text-align: center;
+  vertical-align: baseline;
+}
+
+.intro-card-pdf-gallery div {
+  height: 665px;
+  overflow: auto;
+  text-align: center;
+  width: 700px;
+}
+
+.intro-card-pdf-gallery object {
+  border: 2px solid;
+  display: block;
+  height: 100%;
+  margin-right: .8em;
+  width: 100%;
+}
+
+main table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+main table tr th {
+  background-color: silver;
+  border-bottom: 4px ridge;
+  border-left: 4px ridge;
+  border-top: 4px ridge;
+  text-align: left;
+  width: max-content;
+}
+
+@supports (text-align: start) {
+  main table tr th {
+    text-align: start;
+  }
+}
+
+main table tr th:last-of-type {
+  border-right: 4px ridge;
+}
+
+main table tr td {
+  border-bottom: 2px solid;
+  border-left: 2px solid;
+  width: max-content;
+}
+
+main table tr td:last-of-type {
+  border-right: 2px solid;
+  min-width: 50%;
+}
+
+main table tbody tr:nth-of-type(even) {
+  background-color: lightgray;
 }
 
 /*# sourceMappingURL=main.css.map */

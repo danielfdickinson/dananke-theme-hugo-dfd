@@ -84,15 +84,15 @@ disableKinds = ["sitemap","RSS"] # Make sure we never advertise this site as can
   imageConvertTo = "webp"
   imageLinkFull = "true"
 
-[[params.ananke_socials]]
+[[params.danankeSocials]]
   name = "github"
   url = "https://github.com/danielfdickinson"
 
-[[params.ananke_socials]]
+[[params.danankeSocials]]
   name = "linkedin"
   url = "https://ca.linkedin.com/in/danielfdickinson"
 
-[[params.ananke_socials]]
+[[params.danankeSocials]]
   name = "rss"
   url = "/index.xml"
 
@@ -154,6 +154,10 @@ disable = true
     target = "assets"
 
   [[module.imports.mounts]]
+    source = "data"
+    target = "data"
+
+  [[module.imports.mounts]]
     source = "i18n"
     target = "i18n"
 
@@ -172,6 +176,10 @@ disable = true
   [[module.mounts]]
     source = "assets"
     target = "assets"
+
+  [[module.mounts]]
+    source = "data"
+    target = "data"
 
   [[module.mounts]]
     source = "i18n"

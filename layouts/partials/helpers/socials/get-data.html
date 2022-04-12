@@ -1,0 +1,16 @@
+{{- $ctx := . -}}
+{{- $inName := . -}}
+{{- $serviceData := (dict) -}}
+{{- $builtins := site.Data.dananke.socials.services -}}
+{{- $userData := site.Data.socials.services -}}
+{{- if $userData -}}
+    {{- $serviceData = index $userData $inName -}}
+{{- end -}}
+{{- if not $serviceData -}}
+    {{- $serviceData = index $builtins $inName -}}
+{{- end -}}
+{{- if $serviceData -}}
+    {{- $serviceData = merge $serviceData (dict "name" $inName) -}}
+{{- end -}}
+{{- return $serviceData -}}
+{{- /* Remove trailing newlines */ -}}

@@ -8136,19 +8136,19 @@ pre {
   margin-bottom: 1em;
 }
 
-.ananke-socials a {
+.dananke-socials a {
   display: inline-block;
   vertical-align: middle;
   color: #BABABA;
   fill: currentColor;
 }
 
-.ananke-socials a .icon svg {
+.dananke-socials a .icon svg {
   width: 32px;
   height: 32px;
 }
 
-.ananke-socials a:hover {
+.dananke-socials a:hover {
   color: #6b7280;
 }
 
@@ -8322,15 +8322,15 @@ main table tbody tr:nth-of-type(even) {
   background-color: lightgray;
 }
 
-.ananke-socials a.github:hover {
+.dananke-socials a.github:hover {
   color: #6cc644;
 }
 
-.ananke-socials a.linkedin:hover {
+.dananke-socials a.linkedin:hover {
   color: #0077b5;
 }
 
-.ananke-socials a.rss:hover {
+.dananke-socials a.rss:hover {
   color: #ff6f1a;
 }
 

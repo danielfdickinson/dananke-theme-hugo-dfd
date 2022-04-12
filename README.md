@@ -87,8 +87,6 @@ After installing the theme successfully it requires a just a few more steps to g
 
 Take a look inside the [`exampleSite`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/tree/master/exampleSite) folder of this theme. You'll find a file called [`config.toml`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/exampleSite/config.toml). To use it, copy the [`config.toml`](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/master/exampleSite/config.toml) in the root folder of your Hugo site. Feel free to change the strings in this theme.
 
-You may need to delete the line: `themesDir = "../.."`
-
 ### Add comments
 
 To enable comments, add following to your config file:
@@ -129,14 +127,14 @@ This theme includes a shortcode for a contact form that you can add to any page 
 
 The theme automatically adds "Follow" link icons to the header and footer and "Share" link icons to pages unless `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each built-in services sports a label, an icon and a color.
 
-In order to register a service to be used, user must add an `ananke_socials` parameter to its project configuration file and list them through it in the desired order. Each entry must bear a
+In order to register a service to be used, user must add an `dananke_socials` parameter to its project configuration file and list them through it in the desired order. Each entry must bear a
 
 - name*: It matches the built-in service reference (Ex: twitter, github)
 - url*: The url of the handle's profile on the service (Ex: <https://twitter.com/theNewDynamic>, <https://github.com/theNewDynamic>)
 
 ```yaml
 params:
-  ananke_socials:
+  dananke_socials:
   - name: twitter
     url: https://twitter.com/theNewDynamic
   - name: github
@@ -150,7 +148,7 @@ If user needs to overwrite default `color` and `label` of the service, they simp
 
 ```yaml
 params:
-  ananke_socials:
+  dananke_socials:
   - name: twitter
     url: https://twitter.com/theNewDynamic
     label: TND Twitter
@@ -162,8 +160,8 @@ params:
 
 #### Social Icons Customization
 
-On top of easily customizing the built-in services' label and color, user can overwrite their icon by adding an svg file at `/assets/ananke/socials` with a filename matching the service's name.
-For example, in order to use your own GitHub icon, simply add an svg file at `/assets/ananke/socials/github.svg`
+On top of easily customizing the built-in services' label and color, user can overwrite their icon by adding an svg file at `/assets/dananke/socials` with a filename matching the service's name.
+For example, in order to use your own GitHub icon, simply add an svg file at `/assets/dananke/socials/github.svg`
 
 #### Built-in Services
 
@@ -185,7 +183,7 @@ Here is the list of built-in services. Those marked with an `*` are also part of
 
 #### Complement
 
-In order to add an unknown service (absent from the list above), you simply need to add all three settings to `ananke_socials`: name, url, label, color, and optionally add an icon file matching the `name` to the `assets/ananke/socials` directory. In the absence of an icon, the theme will print the service's label.
+In order to add an unknown service (absent from the list above), you simply need to add all three settings to `dananke_socials`: name, url, label, color, and optionally add an icon file matching the `name` to the `assets/dananke/socials` directory. In the absence of an icon, the theme will print the service's label.
 
 ### Update font or body classes
 
@@ -214,7 +212,7 @@ _n.b. in future versions we will likely separate the typeface and other body cla
 
 Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibility. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
 
-Ananke uses [Tachyon.io](http://tachyons.io/) utility class library.
+Dananke uses [Tachyon.io](http://tachyons.io/) utility class library.
 
 #### Custom CSS
 
@@ -222,9 +220,8 @@ Custom CSS only works with Hugo Extended
 
 In order to complement the default CSS with your own, you can add custom css files to the project.
 
-* Just add a `assets/css/custom` directory to your project and add the file(s) in it.
-
-* The css files will be added in their lexical order to final `main.css` file.
+- Just add a `assets/css/custom` directory to your project and add the file(s) in it.
+- The css files will be added in their lexical order to final `main.css` file.
 
 ### Show Reading Time and Word Count
 

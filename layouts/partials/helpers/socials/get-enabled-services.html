@@ -1,0 +1,15 @@
+{{- $ctx := . -}}
+{{- $socials := (slice) -}}
+{{- range site.Params.danankeSocials -}}
+    {{- $serviceData := partialCached "helpers/socials/get-data.html" .name .name -}}
+    {{- if $serviceData -}}
+        {{- $serviceData = merge $serviceData . -}}
+        {{- $serviceIcon := partialCached "helpers/socials/get-social-icon.html" .name .name -}}
+        {{- if $serviceIcon -}}
+            {{- $serviceData = merge $serviceData (dict "icon" $serviceIcon) -}}
+        {{- end -}}
+        {{- $socials = $socials | append $serviceData -}}
+    {{- end -}}
+{{- end -}}
+{{- return $socials -}}
+{{- /* Remove trailing newlines */ -}}

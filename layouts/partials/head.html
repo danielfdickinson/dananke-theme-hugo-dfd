@@ -2,10 +2,10 @@
 <head>
     <meta charset="utf-8"{{ if $self_close }} /{{ end }}>
     <meta name="viewport" content="width=device-width,initial-scale=1"{{ if $self_close }} /{{ end }}>
-    {{ partial "helpers/head/head-basics.html" . -}}
-    {{- partial "helpers/head/engines-bots.html" . -}}
-    {{- partial "helpers/head/resources-pipes.html" . }}
-    {{- partial "helpers/head/metadata.html" . -}}
+    {{- partialCached "helpers/head/head-basics.html" . . -}}
+    {{- partialCached "helpers/head/engines-bots.html" . . -}}
+    {{- partialCached "helpers/head/resources-pipes.html" . . }}
+    {{- partialCached "helpers/head/metadata.html" . . -}}
     {{- if eq (.Param "useBaseURL") true -}}{{- if $.Site.BaseURL }}
     <base href="{{ $.Site.BaseURL }}"{{ if $self_close }} /{{ end }}>{{- end }}
     {{- end -}}

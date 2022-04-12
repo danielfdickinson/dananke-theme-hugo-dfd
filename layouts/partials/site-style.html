@@ -22,16 +22,16 @@
     {{- $combinedCSS = $combinedCSS | append $customCSS -}}
 {{- end -}}
 
-{{- with partialCached "func/socials/Get" "socials/Get" -}}
+{{- with (partialCached "helpers/socials/get-enabled-services.html" "dananke/socials/get") -}}
     {{- $socials_rules := slice -}}
-      {{- range $service := . -}}
-          {{- with .color -}}
-              {{- $rule := printf `
-                  .ananke-socials a.%s:hover {
+    {{- range $service := . -}}
+        {{- with .color -}}
+            {{- $rule := printf `
+                .dananke-socials a.%s:hover {
                     color: %s
-                  }` $service.name $service.color -}}
-              {{- $socials_rules = $socials_rules | append $rule -}}
-          {{- end -}}
+                }` $service.name $service.color -}}
+            {{- $socials_rules = $socials_rules | append $rule -}}
+        {{- end -}}
     {{- end -}}
     {{- with $socials_rules -}}
         {{- $socials_rules = delimit . "" -}}

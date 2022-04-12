@@ -2,11 +2,11 @@
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" }}
     {{- partial "head.html" . }}
-<body class="whole_body{{ with hugo.Environment }} {{ . }}{{ end }}">
+<body class="whole-body{{ with hugo.Environment }} {{ . }}{{ end }}">
   {{- block "header" . -}}
     {{- partial "site-header.html" . -}}
   {{- end }}
-      <main class="main_block">
+      <main class="main-block">
   {{- block "main" . }}
   {{- end }}
       </main>

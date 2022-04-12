@@ -1,9 +1,9 @@
 {{- if .IsTranslated }}
         <div class="hide">{{ i18n "translations" }}</div>
-        <ul class="lang_list">
+        <ul class="lang-list">
     {{- range .Translations }}
-            <li class="lang_item title_nav_item">
-                <a class="title_link lang_link lang_title" href="{{ .RelPermalink }}">{{ .Lang }}</a>
+            <li class="lang-item title-nav-item">
+                <a class="title-link lang-link lang-title" href="{{ .RelPermalink }}">{{ .Lang }}</a>
             </li>
     {{- end }}
         </ul>

@@ -2,19 +2,19 @@
 {{- $curPage := .Page -}}
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
-    <nav class="main_navigation">
+    <nav class="main-navigation">
 {{- with $curPage.Site.Params.site_logo }}
-    {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "site_image" "linkClass" "site_link site_title" "link" $curPage.Site.Home.RelPermalink) }}
+    {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title" "link" $curPage.Site.Home.RelPermalink) }}
 {{- else }}
-        <a href="{{ $curPage.Site.Home.RelPermalink }}" class="site_link site_title title_link">
+        <a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-link">
     {{- index $page_metadata "title-site" -}}
         </a>
 {{- end }}
 {{- partial "i18nlist.html" . -}}
 {{- if $curPage.Site.Menus.main }}
-        <ul class="title_menu_list">
+        <ul class="title-menu-list">
     {{- range $curPage.Site.Menus.main }}
-            <li class="title_nav_item title_menu_item"><a class="title_link title_menu_link" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
+            <li class="title-nav-item title-menu-item"><a class="title-link title-menu-link" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
                 {{- .Name -}}
             </a></li>
     {{- end }}

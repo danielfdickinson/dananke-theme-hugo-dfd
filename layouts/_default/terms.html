@@ -14,7 +14,7 @@
             {{- end }}
         </ul>
     </section>
-    {{ if gt (len .Site.Taxonomies) 1 }}
+    {{- if gt (len .Site.Taxonomies) 1 }}
     <aside class="terms-taxonomies-aside terms-block">
         <h2 class="terms-taxonomies-title">{{ i18n "seeMoreTaxonomies" | default "See more taxonomies" }}</h2>
         <ul class="terms-taxonomies-list">
@@ -23,6 +23,6 @@
             {{- end }}
         </ul>
     </aside>
-    {{ end }}
+    {{- end -}}
 {{- end -}}
 {{- /* Remove trailing newlines */ -}}

@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{- define "main" -}}
     {{- $curPage := .Page -}}
     {{- $section := .Site.GetPage "section" .Section -}}
     {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
@@ -43,7 +43,7 @@
         {{- end }}
         </header>
         <div class="main-article-content">
-            {{ partial "handle-content" .Content }}
+            {{- partial "handle-content" .Content }}
             {{- partial "tags.html" . }}
         </div>
         <aside class="main-article-context-menu">

@@ -1,8 +1,8 @@
 <form class="contact-form" accept-charset="UTF-8" action="{{ .Get "action" }}" method="post">
-    <label class="contact-label" for="name">{{ i18n "yourName" }}<span class="input-required"> *</span></label><input type="text" id="name" name="name" class="contact-input" required="required" placeholder="{{ i18n "nameRequiredNote" }}" aria-labelledby="name">
-    <label class="contact-label" for="email">{{ i18n "emailAddress" }}<span class="input-required"> *</span></label><input type="email" id="email" name="email" required="required" placeholder="{{ i18n "emailRequiredNote" }}" class="contact-input" aria-labelledby="email">
+    <label class="contact-label" for="name">{{ i18n "yourName" }}<span class="input-required"> *</span></label><input type="text" id="name" name="name" class="contact-input" required placeholder="{{ i18n "nameRequiredNote" }}" aria-labelledby="name">
+    <label class="contact-label" for="email">{{ i18n "emailAddress" }}<span class="input-required"> *</span></label><input type="email" id="email" name="email" required placeholder="{{ i18n "emailRequiredNote" }}" class="contact-input" aria-labelledby="email">
     <label class="contact-label" for="message">{{ i18n "message" }}<span class="input-required"> *</span></label>
-    <textarea id="message" name="message" class="contact-input contact-textarea" required="required" placeholder="{{ i18n "messageRequiredNote" }}" aria-labelledby="message" minlength="40"></textarea>
+    <textarea id="message" name="message" class="contact-input contact-textarea" required placeholder="{{ i18n "messageRequiredNote" }}" aria-labelledby="message" minlength="40"></textarea>
     <button class="contact-button" type="submit" value="{{ i18n "send" }}">{{ i18n "send" }}</button>
     <span class="required-note"><span class="input-required">*</span> {{ i18n "requiredEndNote" | default "indicates a required field" }}</span>
 </form>

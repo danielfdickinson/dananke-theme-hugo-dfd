@@ -8,7 +8,7 @@
   --message-404-title-font-family: 'avenir next','avenir',sans-serif;
   --title-over-image-colour: rgba(255, 255, 255, .8);
   --featured-image-padding-colour: #001b44;
-  --hamburger-icon: url("http://localhost:1313/dananke/images/hamburger.svg");
+  --hamburger-icon: url("https://example.com/dananke/images/hamburger.svg");
   --featured-image-opacity: .7;
   --default-background-colour: #000;
 }

@@ -35,10 +35,10 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        hugo: ["0.80.0", "0.88.1", "latest"]
+        hugo: ["0.80.0", "0.88.1", "0.96.0"]
     steps:
       - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2.1-beta.1
+        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
         with:
           hugo-version: ${{ matrix.hugo }}
           upload-site-as: unminified-site-${{ matrix.hugo }}
@@ -53,7 +53,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Validate site HTML"
-        uses: danielfdickinson/validate-html-action-hugo-dfd@v0.2.2-beta.4
+        uses: danielfdickinson/validate-html-action-hugo-dfd@v0.2
         with:
           download-site-as: unminified-site-${{ matrix.hugo }}
   check-links:
@@ -62,7 +62,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: "Check internal links"
-        uses: danielfdickinson/link-check-action-hugo-dfd@v0.2.5-beta.2
+        uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
         with:
           canonical-root: https://example.com/
           download-site-as: unminified-site-latest

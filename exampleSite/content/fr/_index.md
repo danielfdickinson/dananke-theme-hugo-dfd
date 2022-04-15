@@ -7,7 +7,6 @@ featured_image:
 description: "Vraiment, ce n'est pas le dernier thème dont vous aurez besoin."
 cascade:
     notCanonical: true
-    weight: 1000
 ---
 Bienvenu sur mon blog!
 

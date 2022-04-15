@@ -1,78 +1,15 @@
 {{- $curPage := .Page -}}
 {{- $featuredImage := partial "helpers/featured-image" $curPage -}}
-{{- partial "site-navigation.html" . }}
+{{- partial "site-navigation.html" . -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page" "description-no-fallback")) -}}
-{{- if $featuredImage -}}
-    <header class="relative z-0 vh-70-ns {{ .Page.Params.image_padding_color_class | default .Page.Site.Params.image_padding_color_class | default "bg-dark-gray" }}">
-    {{- /* }}
-    {{- if $featuredImage -}}
-    {{- partial "helpers/wrapped-image" (dict "page" $curPage "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "noVisibleCaption" true "imageWrapper" "div" "class" "absolute-ns db dn-ns pt4 pt0-ns absolute--fill z-0 flex flex-column flex-nowrap items-center content-center justify-center" "imageClass" "db dn-ns mvh-70 w-auto h-auto") -}}
-    {{- end -}}
-    {{- */ -}}
-
-        <div class="{{ if .IsHome }}pb2-m pb3-l{{ end }} relative-ns h-100 w-100 z-1">
-            <div class="tc-ns ph3 ph4-ns relative z-2 pt1">
-  {{- if .IsHome }}
-                <h1 class="f2 f-subheadline-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-      {{- index $page_metadata "title-page" -}}
-                </h1>
-      {{- with (index $page_metadata "description-no-fallback") }}
-                <h2 class="fw4 f4 f3-l measure-wide-l center mt3 pb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-              {{- . | safeHTML -}}
-                </h2>
-      {{- end }}
-  {{- else -}}
-    {{- if not .Params.omit_header_text }}
-                <h1 class="f2 f1-l fw4 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-      {{- if not .Data.Singular -}}
-                {{- index $page_metadata "title-page" -}}
-      {{- else if not .Data.Terms -}}
-                {{ .Data.Singular | humanize }}: {{ index $page_metadata "title-page" -}}
-      {{- else -}}
-                {{ index $page_metadata "title-page" -}}
-      {{- end -}}
-                </h1>
-      {{- with (index $page_metadata "description-no-fallback") }}
-                <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb4 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-                {{- . | safeHTML -}}
-                </h2>
-      {{- end -}}
-    {{- end -}}
-  {{- end }}
-            </div>
-      {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "imageWrapper" "div" "class" "dn absolute-ns absolute--fill z-0 flex-ns flex-column flex-nowrap items-center content-center justify-center" "linkClass" "dn db-ns w-100-ns h-100-ns  flex-ns flex-column flex-nowrap items-center content-center justify-center" "imageClass" (printf "img dn db-ns me-100 w-auto ih1 %s" ($curPage.Params.header_image_opacity | default $curPage.Site.Params.header_image_opacity | default "o-70"))) -}}
-        </div>
+{{- $siteHeaderFeaturedClass := "" -}}
+{{- if $featuredImage }}
+    {{- $siteHeaderFeaturedClass = "site-header-with-image" -}}
+{{- end }}
+    <header class="site-header{{ with $siteHeaderFeaturedClass }} {{ . }}{{ end }}">
+        {{- partial "site-header-titles" . }}
+{{- if $featuredImage }}
+        {{ partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "noImageWrapper" true "class" "featured-image" "linkClass" "featured-image-link") -}}
+{{- end }}
     </header>
-{{- else }}
-  <header class="relative-ns z-0 {{ .Page.Params.image_padding_color_class | default .Page.Site.Params.image_padding_color_class | default "bg-dark-gray" }}">
-    <div class="{{ if .IsHome }}pb3-m pb5-l{{ end }} relative-ns z-1">
-      <div class="tc-ns ph3 ph4-ns relative-ns z-3 pt1 pb2 pb5-ns">
-  {{- if .IsHome }}
-        <h1 class="f2 f-subheadline-l fw5 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-    {{- index $page_metadata "title-page" -}}
-        </h1>
-    {{- with (index $page_metadata "description-no-fallback") }}
-        <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-          {{- . -}}
-        </h2>
-    {{- end -}}
-  {{- else -}}
-    {{- if not .Params.omit_header_text }}
-      <h1 class="f2 f-subheadline-l fw5 mb0 lh-title {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-      {{- if not .Data.Singular -}}
-        {{- index $page_metadata "title-page" -}}
-      {{- else -}}
-        {{- .Data.Singular | humanize }}: {{ index $page_metadata "title-page" -}}
-      {{- end -}}
-    </h1>
-      {{- with (index $page_metadata "description-no-fallback") }}
-      <h2 class="fw4 f4 f3-l measure-wide-l center lh-copy mt3 mb2 {{ $curPage.Params.title_over_image_color_class | default $curPage.Site.Params.title_over_image_color_class | default "white-80" }}">
-        {{- . | safeHTML -}}
-      </h2>
-      {{- end -}}
-    {{- end -}}
-  {{- end }}
-      </div>
-    </div>
-  </header>
-{{ end -}}
+{{- /* Remove trailing newlines */ -}}

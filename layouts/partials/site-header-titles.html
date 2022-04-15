@@ -1,0 +1,25 @@
+{{- $curPage := .Page -}}
+{{- $pageMetadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page" "description-no-fallback")) -}}
+{{- $h1Class := "page-title-banner" -}}
+{{- $h2Class := "page-description-banner" -}}
+{{- if .IsHome }}
+    {{- $h1Class = "page-title-banner homepage-title-banner" -}}
+    {{- $h2Class = "page-description-banner homepage-description-banner" -}}
+{{- end -}}
+{{- if not (or .Params.omit_header_text .Params.headerTextOmit) }}
+        <h1 class="{{ $h1Class }}">
+    {{- if not .Data.Singular -}}
+        {{- index $pageMetadata "title-page" -}}
+    {{- else if not .Data.Terms -}}
+        {{ .Data.Singular | humanize }}: {{ index $pageMetadata "title-page" | humanize | title -}}
+    {{- else -}}
+        {{ i18n "taxonomyTitle" | default "Taxonomy" }}: {{ index $pageMetadata "title-page" -}}
+    {{- end -}}
+        </h1>
+    {{- with (index $pageMetadata "description-no-fallback") }}
+        <h2 class="{{ $h2Class }}">
+        {{- . | safeHTML -}}
+        </h2>
+    {{- end -}}
+{{- end }}
+{{- /* Remove trailing newlines */ -}}

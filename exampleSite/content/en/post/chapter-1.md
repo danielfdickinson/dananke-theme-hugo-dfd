@@ -6,6 +6,8 @@ imageFeatured: "/images/Pope-Edouard-de-Beaumont-1844.jpg"
 imageFeaturedAlt: "Pope Edouard de Beaumont: 1844"
 tags: ["scene"]
 title: "Chapter I: The Grand Hall"
+series:
+    - hunchback-of-notre-dame
 ---
 
 Three hundred and forty-eight years, six months, and nineteen days ago

@@ -23,6 +23,7 @@ disableKinds = [
 
 [taxonomies]
 tag = "tags"
+series = "series"
 
 [languages]
 [languages.fr]

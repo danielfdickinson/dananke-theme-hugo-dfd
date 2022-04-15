@@ -5,6 +5,8 @@ description: "Pierre Gringoire"
 imageFeatured: ""
 tags: []
 title: "Chapter II: Pierre Gringoire"
+series:
+    - hunchback-of-notre-dame
 ---
 
 Nevertheless, as be harangued them, the satisfaction and admiration

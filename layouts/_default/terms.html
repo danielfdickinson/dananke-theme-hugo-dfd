@@ -14,6 +14,15 @@
             {{- end }}
         </ul>
     </section>
-
+    {{ if gt (len .Site.Taxonomies) 1 }}
+    <aside class="terms-taxonomies-aside terms-block">
+        <h2 class="terms-taxonomies-title">{{ i18n "seeMoreTaxonomies" | default "See more taxonomies" }}</h2>
+        <ul class="terms-taxonomies-list">
+            {{- range $key, $value := .Site.Taxonomies }}
+                <li class="taxonomies-list-item"><a class="taxonomies-link" href="{{ (printf "/%s" ($key | urlize)) | relLangURL }}">{{ $key | pluralize }}</a></li>
+            {{- end }}
+        </ul>
+    </aside>
+    {{ end }}
 {{- end -}}
 {{- /* Remove trailing newlines */ -}}

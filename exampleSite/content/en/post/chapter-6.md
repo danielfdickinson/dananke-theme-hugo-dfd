@@ -7,6 +7,8 @@ imageFeaturedAlt: "A medieval era coloured woman dancing, watched by a crowd of 
 tags: []
 title: "Chapter VI: Esmeralda"
 disable_share: false
+series:
+    - hunchback-of-notre-dame
 ---
 We are delighted to be able to inform the reader, that during the whole of
 this scene, Gringoire and his piece had stood firm. His actors, spurred on

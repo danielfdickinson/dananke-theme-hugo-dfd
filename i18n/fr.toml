@@ -31,6 +31,9 @@ other = "Message"
 [emailRequiredNote]
 other = "Une adresse e-mail est requise."
 
+[nameRequiredNote]
+other = "Une nomme est resquise."
+
 [messageRequiredNote]
 other = "Une message est requise."
 

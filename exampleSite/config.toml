@@ -24,6 +24,28 @@ disableKinds = [
 tag = "tags"
 series = "series"
 
+[related]
+includeNewer = true
+threshold = 80
+toLower = false
+
+[[related.indices]]
+name = 'keywords'
+weight = 100
+
+[[related.indices]]
+name = 'series'
+weight = 90
+
+[[related.indices]]
+name = 'tags'
+weight = 80
+
+[[related.indices]]
+name = 'date'
+weight = 10
+
+
 [languages]
 [languages.fr]
 title = "Nôtre-Dame de Paris"

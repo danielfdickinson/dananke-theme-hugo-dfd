@@ -14,6 +14,20 @@
     margin-right: auto;
 }
 
+html {
+    font-size: var(--base-font-size, 12pt);
+}
+
+body, input, textarea {
+    font-size: var(--base-font-size, 12pt);
+}
+
+/*
+* {
+    font-size: var(--base-font-size, 12pt);
+}
+*/
+
 .whole-body {
     background-color: var(--whole-doc-bg-colour, #eee);
     display: flex;

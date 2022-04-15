@@ -177,8 +177,6 @@ In order to add an unknown service (absent from the list above), you simply need
 
 Ananke stylesheet is built with Hugo Pipes's [Asset Bundling](https://gohugo.io/hugo-pipes/bundling/#readout) alone to maximize compatibility. The theme simply bundles its several files into one minified and fingerprinted (in production) CSS file.
 
-Dananke uses [Tachyon.io](http://tachyons.io/) utility class library.
-
 #### Custom CSS
 
 Custom CSS only works with Hugo Extended

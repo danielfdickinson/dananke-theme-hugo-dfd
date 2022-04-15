@@ -5,12 +5,12 @@
 
 .pagination li {
   display: inline-block;
-  margin-right: .375rem;
-  font-size: .875rem;
+  margin-right: .8rem;
+  font-size: 1rem;
   margin-bottom: 2.5em;
 }
 .pagination li a {
-  padding: .5rem .625rem;
+  padding: .8rem 1rem;
   background-color: #ededed;
   color: #222;
   border: 1px solid #ddd;

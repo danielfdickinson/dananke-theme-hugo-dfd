@@ -1424,10 +1424,8 @@ pre {
 }
 
 .pagination li a {
+  display: block;
   padding: .8rem 1rem;
-  background-color: #ededed;
-  color: #222;
-  border: 1px solid #ddd;
   border-radius: 3px;
   text-decoration: none;
 }
@@ -1436,14 +1434,30 @@ pre {
   display: none;
 }
 
-.pagination li.active a:link,
-.pagination li.active a:active,
-.pagination li.active a:visited {
-  background-color: #ddd;
-}
-
 #TableOfContents ul li {
   margin-bottom: 1em;
+}
+
+.pagination .page-item .page-link {
+  background-color: #ededed;
+  color: #111;
+  border: 1px solid #ddd;
+}
+
+.pagination .page-item.active .page-link, .pagination .page-item.active .page-link {
+  background-color: #111;
+  color: #ccc;
+}
+
+.page-item .page-link:link, .page-item .page-link:visited {
+  background-color: #bbb;
+}
+
+.page-item .page-link:active, .page-item .page-link:focus, .page-item .page-link:hover,
+.page-item.active .page-link:active, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+  background-color: #444;
+  border-color: #111;
+  color: #fff;
 }
 
 .dananke-socials a {

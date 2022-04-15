@@ -31,6 +31,15 @@ other = "Message"
 [emailRequiredNote]
 other = "An email address is required."
 
+[nameRequiredNote]
+other = "A name is required."
+
+[messageRequiredNote]
+other = "A message is required."
+
+[requiredEndNote]
+other = "indicates a required field"
+
 [send]
 other = "Send"
 

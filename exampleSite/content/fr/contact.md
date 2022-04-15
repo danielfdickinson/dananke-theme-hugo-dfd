@@ -8,7 +8,9 @@ omit_header_text: true
 description: Laissez-nous un message!
 type: page
 menu: main
-
+menu:
+    main:
+        weight: 1000
 ---
 
 

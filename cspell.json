@@ -3,6 +3,7 @@
     "ignorePaths": [],
     "words": [
         "Ananke",
+        "athelas",
         "Avenir",
         "blogue",
         "commento",
@@ -16,7 +17,9 @@
     ],
     "ignoreWords": [
         "asitemap",
+        "emojify",
         "errorf",
+        "hrefs",
         "isset",
         "nlist",
         "tocss"

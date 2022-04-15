@@ -31,11 +31,17 @@ other = "Message"
 [emailRequiredNote]
 other = "Une adresse e-mail est requise."
 
+[messageRequiredNote]
+other = "Une message est requise."
+
+[requiredEndNote]
+other = "Indique un champ obligatoire"
+
 [send]
 other = "Envoyer"
 
 [taxonomyPageList]
-other = "Below you will find pages that utilize the taxonomy term “{{ .Title }}”"
+other = "Vous trouverez ci-dessous des pages qui utilisent le terme de taxonomie “{{ .Title }}”"
 
 [readingTime]
 one = "Une minute de lecture"
@@ -50,3 +56,33 @@ other = "{{ .Name }} page"
 
 [translations]
 other = "Traductions"
+
+[untitledSite]
+other = "Site sans titre"
+
+[untitledPage]
+other = "Page sans titre"
+
+[pageYouSeekNotHere]
+other = "La page que vous recherchez n'est pas ici"
+
+[youMayWishToView]
+other = "Vous voudrez peut-être voir"
+
+[theSiteMap]
+other = "le Plan du Site"
+
+[orGoto]
+other = "Ou, allez à"
+
+[theHomePage]
+other = "la Page d'Accueil"
+
+[taxonomyTitle]
+other = "Taxonomie"
+
+[listOfTitle]
+other = "Liste des"
+
+[seeMoreTaxonomies]
+other = "Voir plus de taxonomies"

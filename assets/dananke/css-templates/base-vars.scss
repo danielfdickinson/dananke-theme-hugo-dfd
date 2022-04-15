@@ -28,7 +28,7 @@
     {{- with .Params.header_image_opacity | default .Site.Params.header_image_opacity }}
     @include translateTachyonsOpacity("--featured-image-opacity",{{ . -}});
     {{- else -}}
-        {{- with .Params.imageFeaturedOpacity | default .Site.Params.imageFeaturedOpacity | default ".7" -}}
+        {{- with .Params.imageFeaturedOpacity | default .Site.Params.imageFeaturedOpacity | default ".7" }}
     --featured-image-opacity: {{ . -}};
         {{- end -}}
     {{- end }}

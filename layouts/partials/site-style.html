@@ -2,7 +2,7 @@
 {{- $curPage := .Page -}}
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
 
-{{- $socials_rules := slice -}}
+{{- $socials_rules := (slice) -}}
 {{- with (partialCached "helpers/socials/get-enabled-services.html" "dananke/socials/get") -}}
     {{- range $service := . -}}
         {{- with .color -}}
@@ -13,10 +13,9 @@
             {{- $socials_rules = $socials_rules | append $rule -}}
         {{- end -}}
     {{- end -}}
-    {{- with $socials_rules -}}
-        {{- $socials_rules = delimit . "" -}}
-    {{- end -}}
 {{- end -}}
+
+{{- $socials_rules = delimit $socials_rules "" -}}
 
 {{- $cssTemplate := resources.Get "/dananke/css-templates/base-vars.scss" -}}
 {{- $combinedTemplate := printf "%s\n%s" $cssTemplate.Content $socials_rules -}}
@@ -41,7 +40,7 @@
     {{- $customImport := printf `
         @import '%s';
     ` .Name -}}
-    {{- $customImports := $customImports | append $customImport -}}
+    {{- $customImports = $customImports | append $customImport -}}
 {{- end -}}
 
 {{- with $customImports -}}

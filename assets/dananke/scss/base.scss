@@ -108,6 +108,7 @@
 
 .title-link:hover {
     color: white;
+    text-decoration: underline;
 }
 
 .site-image {
@@ -638,6 +639,7 @@
 
 .footer-copyright:focus, .footer-copyright:hover {
     color: #fff;
+    text-decoration: underline;
 }
 
 .footer-link {
@@ -653,6 +655,7 @@
 
 .footer-link:focus, .footer-link:hover {
     color: #fff;
+    text-decoration: underline;
 }
 
 .walk-page-list {
@@ -669,6 +672,7 @@
 
 .walk-page-link:focus, .walk-page-link:hover {
     background-color: #00449e;
+    text-decoration: underline;
     color: #fff;
 }
 
@@ -717,6 +721,7 @@
     & .taxonomies-link:hover {
         background-color: #00449e;
         color: #fff;
+        text-decoration: underline;
     }
 }
 

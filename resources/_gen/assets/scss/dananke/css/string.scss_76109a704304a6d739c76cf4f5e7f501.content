@@ -118,6 +118,7 @@
 
 .title-link:hover {
   color: white;
+  text-decoration: underline;
 }
 
 .site-image {
@@ -666,6 +667,7 @@
 
 .footer-copyright:focus, .footer-copyright:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
 .footer-link {
@@ -681,6 +683,7 @@
 
 .footer-link:focus, .footer-link:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
 .walk-page-list {
@@ -697,6 +700,7 @@
 
 .walk-page-link:focus, .walk-page-link:hover {
   background-color: #00449e;
+  text-decoration: underline;
   color: #fff;
 }
 
@@ -741,6 +745,7 @@
 .terms-block .terms-link:focus, .terms-block .terms-link:hover, .terms-block .taxonomies-link:focus, .terms-block .taxonomies-link:hover {
   background-color: #00449e;
   color: #fff;
+  text-decoration: underline;
 }
 
 @media screen and (min-width: 30em) {
@@ -8912,13 +8917,25 @@ pre {
   fill: currentColor;
 }
 
+.dananke-socials a .icon {
+  display: block;
+  line-height: 1;
+  padding: .1em;
+}
+
 .dananke-socials a .icon svg {
   width: 32px;
   height: 32px;
 }
 
-.dananke-socials a:hover {
+.dananke-socials a {
+  padding: 1px;
+}
+
+.dananke-socials a:focus, .dananke-socials a:hover {
+  border: 1px solid;
   color: #6b7280;
+  padding: 0;
 }
 
 .new-window {

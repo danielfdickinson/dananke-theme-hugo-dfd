@@ -1,22 +1,17 @@
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) }}
-<article class="bb b--black-30 db pv4 ph3 ph0-l no-underline dark-gray">
-  <div class="flex flex-column flex-row-ns">
+            <article class="article-summary">
     {{- $featured_image := partial "helpers/featured-image" .Page -}}
     {{- if $featured_image }}
-        {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "thumbnails" true "fullSize" false "alt" (printf "image from %s" (index $page_metadata "title-page")) "imageWrapper" "div" "class" "pr3-ns mb4 mb0-ns w-100 w-30-ns self-center db" "link" .Page.RelPermalink "linkClass" "db grow" "imageClass" "img db w-100 w-auto-ns h-auto mxh9-ns") -}}
+                {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "thumbnails" true "fullSize" false "alt" (printf "image from %s" (index $page_metadata "title-page")) "noImageWrapper" true "link" .Page.RelPermalink "linkClass" "summary-link" "class" "summary-image") -}}
     {{- else -}}
-    <div class="pr3-ns mr3-ns mb4 mb0-ns dn db-ns w-30-ns">
-        &nbsp;
-    </div>
+                <div class="summary-link"><div class="summary-image">&nbsp;</div></div>
     {{- end }}
-    <div class="db{{ if $featured_image }} w-70-ns pl3-ns{{ end }}">
-      <h2 class="f3 fw1 athelas mt0 lh-title measure-narrow"><a href="{{.RelPermalink}}" class="color-inherit dim link"><span class="dib ba b--gray bg-moon-gray br2 ph2">
-    {{- index $page_metadata "title-page" -}}
-  </span></a></h2>
-      <div class="f5 f4-ns lh-copy nested-copy-line-height nested-links measure">
-          {{ index $page_metadata "summary" }}
-      </div>
-      <p class="f5 f4-ns lh-copy mb0 i">By {{ .Page.Params.author | default .Page.Site.Params.author | default .Author }} on {{ .Page.PublishDate.Local.Format "January 2, 2006" }}</p>
-    </div>
-  </div>
-</article>
+                <section class="summary-contents">
+                    <h2 class="summary-title"><a href="{{ .RelPermalink }}" class="summary-title-link">{{- index $page_metadata "title-page" -}}</a></h2>
+                    <div class="summary-from-metadata">
+                        {{ index $page_metadata "summary" }}
+                    </div>
+                    <p class="summary-byline">By {{ .Page.Params.author | default .Page.Site.Params.author | default .Author }} on {{ .Page.PublishDate.Local.Format "January 2, 2006" }}</p>
+                </section>
+            </article>
+{{- /* Remove trailing newlines */ -}}

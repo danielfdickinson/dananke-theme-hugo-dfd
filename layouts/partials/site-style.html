@@ -20,8 +20,6 @@
 
 {{- $cssTemplate := resources.Get "/dananke/css-templates/base-vars.scss" -}}
 {{- $combinedTemplate := printf "%s\n%s" $cssTemplate.Content $socials_rules -}}
-{{- $cssTemplate := resources.Get "/dananke/css-templates/import.scss" -}}
-{{- $combinedTemplate := printf "%s\n%s" $combinedTemplate $cssTemplate.Content -}}
 
 {{- $customImports := (slice) -}}
 {{- range site.Params.custom_css -}}
@@ -51,15 +49,32 @@
     {{- $combinedTemplate = printf "%s\n%s" $combinedTemplate $customImports -}}
 {{- end -}}
 
-{{- $style := dict -}}
+{{- $baseStyle := dict -}}
 {{- with $combinedTemplate -}}
-    {{- $style = . | resources.FromString "/dananke/css/string.scss" -}}
-    {{- with $style -}}
-        {{- $style = . | resources.ExecuteAsTemplate "/dananke/css/main.scss" $curPage -}}
+    {{- $baseStyle = . | resources.FromString "/dananke/css/string.scss" -}}
+    {{- with $baseStyle -}}
+        {{- $baseStyle = . | resources.ExecuteAsTemplate (printf "/dananke/css/base-template-%s.scss" ($ctx.RelPermalink | humanize | urlize | default "home")) $curPage -}}
     {{- end -}}
 {{- end -}}
 
-{{- with $style -}}
+{{- with $baseStyle -}}
+    {{- /* We then use toCSS to add sourceMap and minify (in production) */ -}}
+    {{- $options := dict "targetPath" (printf "css/dananke/base-%s.css" ($ctx.RelPermalink | humanize | urlize | default "home")) "enableSourceMap" false "precision" 6 -}}
+    {{- if hugo.IsProduction -}}
+        {{- $options = $options | merge (dict "outputStyle" "compressed") -}}
+    {{- else -}}
+        {{- $options = $options | merge (dict "outputStyle" "expanded") -}}
+    {{- end -}}
+    {{- /* Actually process the CSS */ -}}
+    {{- $baseStyle = . | resources.ToCSS $options -}}
+    {{- /* We fingerprint in production for cache busting purposes */ -}}
+    {{- if hugo.IsProduction -}}
+        {{- $baseStyle = $baseStyle | fingerprint -}}
+    {{- end -}}
+{{- end -}}
+
+{{- $mainStyle := resources.Get "dananke/scss/import.scss" -}}
+{{- with $mainStyle -}}
     {{- /* We then use toCSS to add sourceMap and minify (in production) */ -}}
     {{- $options := dict "targetPath" "css/dananke/main.css" "enableSourceMap" true "precision" 6 -}}
     {{- if hugo.IsProduction -}}
@@ -68,13 +83,19 @@
         {{- $options = $options | merge (dict "outputStyle" "expanded") -}}
     {{- end -}}
     {{- /* Actually process the CSS */ -}}
-    {{- $style = . | resources.ToCSS $options -}}
+    {{- $mainStyle = . | resources.ToCSS $options -}}
     {{- /* We fingerprint in production for cache busting purposes */ -}}
     {{- if hugo.IsProduction -}}
-        {{- $style = $style | fingerprint -}}
+        {{- $mainStyle = $mainStyle | fingerprint -}}
     {{- end -}}
 {{- end -}}
 
-{{- with $style }}
+{{- with $baseStyle -}}
+    <style>
+        {{ .Content | safeCSS }}
+    </style>
+{{- end -}}
+
+{{- with $mainStyle }}
     <link rel="stylesheet" href="{{ .RelPermalink }}"{{ if $self_close }} /{{ end }}>
 {{- end -}}

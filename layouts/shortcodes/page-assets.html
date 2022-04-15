@@ -2,9 +2,5 @@
 {{- $page_asset_name := .Get 0 -}}
 {{- $page_asset := resources.Get $page_asset_name -}}
 {{- with $page_asset -}}
-    {{- if $curPage.File -}}
-        {{- $page_asset.Content | $curPage.RenderString | safeHTML -}}
-    {{- else -}}
-        {{- $page_asset.Content | markdownify | safeHTML -}}
-    {{- end -}}
+    {{- $page_asset.Content | $curPage.RenderString | safeHTML -}}
 {{- end -}}

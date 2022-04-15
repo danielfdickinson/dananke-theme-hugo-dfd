@@ -1,18 +1,19 @@
 {{- define "main" -}}
-  {{- $data := .Data }}
-  <article class="cf pa3 pa4-m pa4-l">
-    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links nested-img {{ $.Param "text_color" | default "dark-gray" }}">
-      {{- partial "handle-content" .Content -}}
-    </div>
-  </article>
-  <div class="mw8 center">
-    <section class="ph4 f3">
-      <ul>
-      {{- range $key, $value := .Data.Terms }}
-        <li><a href="{{ "/" | relLangURL }}{{ $.Data.Plural | urlize }}/{{ $key | urlize }}" class="link blue hover-black">
-        {{ $key }} ({{ .Count }})</a></li>
-      {{- end }}
-      </ul>
+    {{- $data := .Data }}
+    <article class="list-article">
+        <div class="main-article-content">
+        {{- partial "handle-content" .Content -}}
+        </div>
+    </article>
+    <section class="main-article terms-block">
+        <h2 class="terms-title">{{ i18n "listOfTitle" | default "List of" }} {{ $data.Plural | humanize | lower }}</h2>
+        <ul class="terms-list">
+            {{- range $key, $value := .Data.Terms }}
+                <li class="terms-item"><a class="terms-link" href="{{ (printf "/%s/%s" ($.Data.Plural | urlize) ($key | urlize)) | relLangURL }}">
+                {{ $key }} ({{ .Count }})</a></li>
+            {{- end }}
+        </ul>
     </section>
-  </div>
+
 {{- end -}}
+{{- /* Remove trailing newlines */ -}}

@@ -1,15 +1,12 @@
-<footer class="{{ .Site.Params.background_color_class | default "bg-black" }} bottom-0 w-100 pa3 order-4">
-  <div class="flex flex-column flex-row-ns flex-wrap justify-between">
-    <a class="f4 fw4 hover-white no-underline white-90 dib pv2 ph3 nowrap" href="{{ .Site.BaseURL }}">
-      {{- with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end -}}
-    </a>
+    <footer class="site-footer">
+        <a class="footer-copyright" href="{{ .Site.BaseURL }}">
+        {{- with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end -}}
+        </a>
     {{- with site.Menus.footer_links -}}
-      {{- range . }}
-    <a class="f4 fw4 hover-white no-underline white-90 dib pv2 ph3" href="{{ .URL }}">{{ .Name }}</a>
-      {{- end -}}
+        {{- range . }}
+        <a class="footer-link" href="{{ .URL }}">{{ .Name }}</a>
+        {{- end -}}
     {{- end }}
-    <div class="f4 fw4 hover-white no-underline white-70 pv2 ph3">
-      {{- partial "social-follow.html" . }}
-    </div>
-  </div>
-</footer>
+        {{- partial "social-follow.html" . }}
+    </footer>
+{{- /* Remove trailing newlines */ -}}

@@ -71,3 +71,12 @@ other = "Or, go to"
 
 [theHomePage]
 other = "the Home Page"
+
+[taxonomyTitle]
+other = "Taxonomy"
+
+[listOfTitle]
+other = "List of"
+
+[seeMoreTaxonomies]
+other = "See more taxonomies"

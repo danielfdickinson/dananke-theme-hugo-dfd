@@ -1,7 +1,7 @@
 {{ define "main" }}
-  <article class="mw7 center ph3">
-    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray">
-      {{- if .Params.omit_header_text }}
+  <article class="main-article list-article">
+    <section class="main-article-content">
+      {{- if .Params.headerTextOmit | default .Params.omit_header_text | default false }}
       <h1 class="f1 athelas mt3 mb1">
         {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
         {{- index $page_title_metadata "title-page" }}
@@ -14,7 +14,7 @@
       {{- end -}}
       {{- partial "handle-content" .Content -}}
     </section>
-    <section class="f4 mt5 mw-100">
+    <section class="sitemap-list-block">
     {{- partial "walk.html" $.Site.Home.Data -}}
     </section>
   </article>

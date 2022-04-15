@@ -5,22 +5,23 @@
      * https://gohugo.io/content-management/toc/
      */ -}}
 {{- if .Params.toc }}
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">{{ i18n "whatsInThis" . }}</p>
-      {{ .TableOfContents }}
-  </div>
+            <div class="context-menu-item">
+                <h2 class="context-title">{{ i18n "whatsInThis" . }}</h2>
+                {{ .TableOfContents }}
+            </div>
 {{- end -}}
 {{- $related := partial "helpers/return-pages-see-also" . -}}
 {{- with $related }}
-  <div class="bg-light-gray pa3 nested-list-reset nested-copy-line-height nested-links">
-    <p class="f5 b mb3">{{ i18n "related" }}</p>
-    <ul class="pa0 list">
-	    {{- range . -}}
-          {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
-     <li  class="mb2"><a href="{{ .RelPermalink }}">
-          {{- index $page_metadata "title-page" -}}
-      </a></li>
-	    {{- end }}
-    </ul>
-</div>
-{{- end }}
+            <div class="context-menu-item">
+                <h2 class="context-title">{{ i18n "related" }}</h2>
+                <ul class="context-list">
+    {{- range . -}}
+        {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+                    <li class="context-list-item"><a href="{{ .RelPermalink }}">
+                    {{- index $pageMetadata "title-page" -}}
+                    </a></li>
+    {{- end }}
+                </ul>
+            </div>
+{{-  end -}}
+{{- /* Remove trailing newlines */ -}}

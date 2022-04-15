@@ -1,28 +1,24 @@
-{{ define "main" }}
-  {{- $ctx := . }}
-  <article class="pa3 pa4-ns nested-copy-line-height">
-    {{- if .Params.omit_header_text }}
-    <header>
-      <h1 class="f1">
-        {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) -}}
-        {{- index $page_title_metadata "title-page" }}
-      </h1>
-    </header>
+{{- define "main" -}}
+    {{- $ctx := . }}
+    <article class="list-article">
+    {{- if .Params.headerTextOmit | default .Params.omit_header_text }}
+        <header>
+            <h1 class="main-title">
+            {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) -}}
+            {{- index $page_title_metadata "title-page" }}
+            </h1>
+        </header>
     {{- end }}
-    <section class="cf ph3 ph5-l pv3 pv4-l f3 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "dark-gray" }}">
-      {{- partial "handle-content" .Content }}
-    </section>
-    <section class="flex-ns flex-wrap justify-around mt5 w-100 w-70-ns mh-auto bt b--black-30">
-      {{- $pages := (((union .Pages .Sections).ByWeight).ByPublishDate).Reverse -}}
-      {{- range (.Paginate $pages).Pages }}
-        <div class="relative w-100 mb2">
-          {{- .Render "summary-with-image" }}
-        </div>
-      {{- end }}
-    </section>
+        {{- partial "handle-content" .Content }}
+    </article>
+    <div class="articles-summaries">
+        {{- $pages := (((union .Pages .Sections).ByWeight).ByPublishDate).Reverse -}}
+        {{- range (.Paginate $pages).Pages }}
+            {{- .Render "summary-with-image" }}
+        {{- end }}
+    </div>
     {{- template "_internal/pagination.html" . }}
-  </article>
-  {{- with .Params.page_footnote }}
-  <div>{{- . | $ctx.RenderString -}}</div>
-  {{- end -}}
+    {{- with .Params.page_footnote }}
+    <div>{{- . | $ctx.RenderString -}}</div>
+    {{- end -}}
 {{- end -}}

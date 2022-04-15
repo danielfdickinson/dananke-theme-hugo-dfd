@@ -5,19 +5,73 @@
         #{$left-side}: 'avenir next','avenir',sans-serif;
     } @else if $generic-family == "trebuchet" {
         #{$left-side}: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    } @else if $generic-family == "athelas" {
+        #{$left-side}: 'athelas', 'georgia', serif 
     } @else {
         #{$left-side}: $generic-family;
     }
 }
 
+@mixin translateTachyonsOpacity($left-side, $tachyonsOpacity) {
+    $result: .7;
+
+    @if $tachyonsOpacity == "o-0" or $tachyonsOpacity == "o0" {
+        $result: 0;
+    } @else if $tachyonsOpacity == "o-10" or $tachyonsOpacity == "o1" {
+        $result: .1;
+    } @else if $tachyonsOpacity == "o-20" or $tachyonsOpacity == "o2" {
+        $result: .2;
+    } @else if $tachyonsOpacity == "o-30" or $tachyonsOpacity == "o3" {
+        $result: .3;
+    } @else if $tachyonsOpacity == "o-40" or $tachyonsOpacity == "o4" {
+        $result: .4;
+    } @else if $tachyonsOpacity == "o-50" or $tachyonsOpacity == "o5" {
+        $result: .5;
+    } @else if $tachyonsOpacity == "o-60" or $tachyonsOpacity == "o6" {
+        $result: .6;
+    } @else if $tachyonsOpacity == "o-70" or $tachyonsOpacity == "o7" {
+        $result: .7;
+    } @else if $tachyonsOpacity == "o-80" or $tachyonsOpacity == "o8" {
+        $result: .8;
+    } @else if $tachyonsOpacity == "o-90" or $tachyonsOpacity == "o9" {
+        $result: .9;
+    } @else if $tachyonsOpacity == "o-100" or $tachyonsOpacity == "o10" {
+        $result: 1;
+    }
+    #{$left-side}: $result;
+}
+
 :root {
-    {{- with .Params.colourBackgroundMainNav | default .Site.Params.colorBackgroundMainNav }}
-    --main-nav-bg-color: {{ . -}};
+    {{- with .Params.colourBackgroundDocument | default .Site.Params.colorBackgroundDocument | default "#eee" }}
+    --whole-doc-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundMainNav | default .Site.Params.colourBackgroundMainNav | default .Site.Params.background_color_class | default "#00449e" }}
+    --main-nav-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourMainText | default .Params.text_color | default .Site.Params.colourMainText | default .Site.Params.text_color | default "#333" }}
+    --main-text-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.defaultFontFamily | default .Site.Params.defaultFontFamily | default "avenir" }}
     @include chooseFontFamily("--default-font-family", "{{ . }}");
-    {{- end }}
+    {{- end -}}
     {{- with .Site.Params.message404FontFamily | default "avenir" }}
     @include chooseFontFamily("--message-404-title-font-family", "{{ . }}");
+    {{- end -}}
+    {{- with .Params.titleOverImageColour | default .Params.title_over_image_color_class | default .Site.Params.titleOverImageColour | default .Site.Params.title_over_image_color_class | default "rgba(255, 255, 255, .8)" }}
+    --title-over-image-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.imageFeaturedPaddingColour | default .Params.image_padding_color_class | default .Site.Params.imageFeaturedPaddingColour | default .Site.Params.image_padding_color_class | default "#333" }}
+    --featured-image-padding-colour: {{. -}};
+    {{- end }}
+    --hamburger-icon: url("{{ (resources.Get "/dananke/images/hamburger.svg").Permalink }}");
+    {{- with .Params.header_image_opacity | default .Site.Params.header_image_opacity }}
+    @include translateTachyonsOpacity("--featured-image-opacity", "{{ . -}}");
+    {{- else -}}
+        {{- with .Params.imageFeaturedOpacity | default .Site.Params.imageFeaturedOpacity | default ".7" -}}
+    --featured-image-opacity: {{ . -}};
+        {{- end -}}
+    {{- end }}
+    {{- with .Params.backgroundDefaultColour | default .Params.background_color_class | default .Site.Params.backgroundDefaultColour | default .Site.Params.background_color_class | default "#000" }}
+    --default-background-colour: {{ . -}};
     {{- end }}
 }

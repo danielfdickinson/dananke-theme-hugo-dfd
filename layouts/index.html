@@ -1,23 +1,18 @@
 {{ define "main" }}
-  <article class="cf ph3 ph5-l pv0 f3 tc-l center measure-wide lh-copy {{ $.Param "text_color" | default "dark-gray" }}">
-    {{- partial "handle-content" .Content -}}
-  </article>
-  {{/* Define a section to pull recent posts from. For Hugo 0.20 this will default to the section with the most number of pages. */ -}}
-  {{- $mainSections := site.Params.mainSections | default (slice "post") -}}
-  {{- /* Create a variable with that section to use in multiple places. */ -}}
-  {{- $sectionPages := where (where (where .Site.Pages "Section" "in" $mainSections) "Parent.Kind" "ne" "home") "Parent.Parent.Kind" "ne" "section" -}}
-  {{- /* Check to see if the section is defined for ranging through it */ -}}
-  {{- $n_posts := $.Param "recent_posts_number" | default 3 -}}
-  <div class="pa3 pa4-ns pv0 w-100 center">
-    <section class="w-100 w-70-ns mh-auto">
-      <h2 class="f1 tc mv0 pb4">Recent Articles</h2>
-      <div class="flex-ns flex-wrap justify-around mt3 bt pt1 b--black-30">
-  {{- range first $n_posts $sectionPages.ByPublishDate.Reverse }}
-        <div class="relative w-100 mb2">
-    {{- .Render "summary-with-image" }}
-        </div>
-  {{- end }}
-      </div>
-    </section>
-  </div>
+        <article class="list-article">
+            {{ partial "handle-content" .Content }}
+        </article>
+    {{- /* Define a section to pull recent posts from. This will default to the section with the most number of pages, unless configured */ -}}
+    {{- $mainSections := site.Params.mainSections | default (slice "post") -}}
+    {{- /* Create a variable with that section to use in multiple places. */ -}}
+    {{- $sectionPages := where (where (where .Site.Pages "Section" "in" $mainSections) "Parent.Kind" "ne" "home") "Parent.Parent.Kind" "ne" "section" -}}
+    {{- /* Check to see if the section is defined for ranging through it */ -}}
+    {{- $n_posts := $.Param "recent_posts_number" | default 3 }}
+        <section class="articles-summaries">
+            <h2 class="featured-title">Recent Articles</h2>
+    {{- range first $n_posts ($sectionPages.ByPublishDate).Reverse }}
+            {{- .Render "summary-with-image" -}}
+    {{- end }}
+        </section>
 {{- end -}}
+{{- /* Remove trailing newlines */ -}}

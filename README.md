@@ -239,14 +239,16 @@ By default the 404 page will include text and a link to ``/about/user-sitemap``,
 
 ```toml
 [params]
-  sitemap404 = "asitemap"
+sitemap404 = "asitemap"
 ```
 
 ### Nearly finished
 
 In order to see your site in action, run Hugo's built-in local server.
 
-`$ hugo server`
+```sh
+hugo server
+```
 
 Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your browser.
 

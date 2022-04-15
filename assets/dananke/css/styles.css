@@ -1,93 +1,93 @@
 #TableOfContents li ul {
-  margin-top: 1em;
-  padding-left: 1em;
+    margin-top: 1em;
+    padding-left: 1em;
 }
 
 .presentation-pdf div {
-  overflow: auto;
-  resize: both;
+    overflow: auto;
+    resize: both;
 }
 
 .presentation-pdf div object {
-  border: 2px solid;
-  display: block;
-  height: 760px;
-  margin-right: .8em;
-  resize: both;
-  width: 100%;
+    border: 2px solid;
+    display: block;
+    height: 760px;
+    margin-right: .8em;
+    resize: both;
+    width: 100%;
 }
 
 @media (max-height: 499px) {
-  .presentation-pdf div object {
-      height: 100vh;
-  }
+    .presentation-pdf div object {
+        height: 100vh;
+    }
 }
 
 @media (max-height: 900px) {
-  .presentation-pdf div object {
-      height: 480px;
-  }
+    .presentation-pdf div object {
+        height: 480px;
+    }
 }
 
 .intro-card-pdf-gallery {
-  display: inline-block;
-  margin-left: .8em;
-  margin-right: .8em;
-  margin-top: .3em;
-  text-align: center;
-  vertical-align: baseline;
+    display: inline-block;
+    margin-left: .8em;
+    margin-right: .8em;
+    margin-top: .3em;
+    text-align: center;
+    vertical-align: baseline;
 }
 
 .intro-card-pdf-gallery div {
-  height: 665px;
-  overflow: auto;
-  text-align: center;
-  width: 700px;
+    height: 665px;
+    overflow: auto;
+    text-align: center;
+    width: 700px;
 }
 
 .intro-card-pdf-gallery object {
-  border: 2px solid;
-  display: block;
-  height: 100%;
-  margin-right: .8em;
-  width: 100%;
+    border: 2px solid;
+    display: block;
+    height: 100%;
+    margin-right: .8em;
+    width: 100%;
 }
 
 main table {
-  border-collapse: collapse;
-  width: 100%;
+    border-collapse: collapse;
+    width: 100%;
 }
 
 main table tr th {
-  background-color: silver;
-  border-bottom: 4px ridge;
-  border-left: 4px ridge;
-  border-top: 4px ridge;
-  text-align: left;
-  width: max-content;
+    background-color: silver;
+    border-bottom: 4px ridge;
+    border-left: 4px ridge;
+    border-top: 4px ridge;
+    text-align: left;
+    width: max-content;
 }
 
 @supports (text-align: start) {
-  main table tr th {
-      text-align: start;
-  }
+    main table tr th {
+        text-align: start;
+    }
 }
 
 main table tr th:last-of-type {
-  border-right: 4px ridge;
+    border-right: 4px ridge;
 }
 
 main table tr td {
-  border-bottom: 2px solid;
-  border-left: 2px solid;
-  width: max-content;
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    width: max-content;
 }
 
 main table tr td:last-of-type {
-  border-right: 2px solid;
-  min-width: 50%;
+    border-right: 2px solid;
+    min-width: 50%;
 }
 
 main table tbody tr:nth-of-type(even) {
-  background-color: lightgray;
+    background-color: lightgray;
 }

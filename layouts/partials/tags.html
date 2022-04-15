@@ -1,9 +1,10 @@
-<ul class="pa0">
-  {{- range .Params.tags }}
-   <li class="list dib">
-     <a href="{{ (printf "/tags/%s" (. | urlize)) | relLangURL }}" class="link f5 grow no-underline br-pill ba ph3 pv2 ma2 dib black sans-serif">
-       {{- . -}}
-     </a>
-   </li>
-  {{- end }}
-</ul>
+            <ul class="article-tags">
+{{- range .Params.tags }}
+                <li class="article-tag">
+                    <a href="{{ (printf "/tags/%s" (. | urlize)) | relLangURL }}" class="tag-link">
+            {{- . -}}
+                    </a>
+                </li>
+{{- end }}
+            </ul>
+{{- /* Remove trailing newlines */ -}}

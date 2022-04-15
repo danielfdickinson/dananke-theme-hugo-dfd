@@ -4,13 +4,28 @@
     color: #BABABA;
     fill: currentColor;
 }
+
+.dananke-socials a .icon {
+    display: block;
+    line-height: 1;
+    padding: .1em;
+}
+
 .dananke-socials a .icon svg {
     width: 32px;
     height: 32px;
 }
-.dananke-socials a:hover {
-    color: rgb(107, 114, 128);
+
+.dananke-socials a {
+    padding: 1px;
 }
+
+.dananke-socials a:focus, .dananke-socials a:hover {
+    border: 1px solid;
+    color: rgb(107, 114, 128);
+    padding: 0;
+}
+
 .new-window {
     opacity: 0;
     display: inline-block;

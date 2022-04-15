@@ -2,7 +2,7 @@
 title: Contact
 author: "Ananke authors"
 imageFeatured: "images/notebook.jpg"
-imageFeaturedAlt: "A notebook beside a pen and plant"
+imageFeaturedAlt: "A notebook beside a pen and a plant"
 omit_header_text: true
 description: We'd love to hear from you
 type: page
@@ -10,6 +10,8 @@ menu:
     main:
         weight: 1000
 notCanonical: true
+readingTimeShow: false
+articleClassExtra: contact-form-article
 ---
 
 

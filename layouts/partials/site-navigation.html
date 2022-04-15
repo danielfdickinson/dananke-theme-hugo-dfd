@@ -6,7 +6,7 @@
         {{- partial "site-navigation-nav-contents.html" . }}
         </nav>
     </details>
-    <nav class="main-navigation">
+    <nav class="main-navigation{{ if (.Params.headerTextOmit | default .Params.omit_header_text) }} show-on-mobile{{ end }}">
         {{- partial "site-navigation-nav-contents.html" . }}
     </nav>
 {{- /* Remove trailing newlines */ -}}

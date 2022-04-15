@@ -2,10 +2,10 @@
     {{- $curPage := .Page -}}
     {{- $section := .Site.GetPage "section" .Section -}}
     {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
-    <article class="main-article">
+    <article class="main-article{{ with .Params.articleClassExtra }} {{ . }}{{ end }}">
         <header class="main-header">
         {{- partial "social-share.html" . -}}
-        {{- if .Params.omit_header_text }}
+        {{- if .Params.omitHeaderText | default .Params.omit_header_text }}
             <h1 class="main-title">
             {{- index $page_metadata "title-page" -}}
             </h1>

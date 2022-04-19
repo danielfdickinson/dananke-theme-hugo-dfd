@@ -23,9 +23,7 @@
 {{- $customImports := (slice) -}}
 {{- range site.Params.custom_css -}}
     {{- with resources.Get . -}}
-        {{- $customImport := printf `
-            @import '%s';
-        ` .Name -}}
+        {{- $customImport := .Content -}}
         {{- $customImports = $customImports | append $customImport -}}
     {{- end -}}
 {{- end -}}
@@ -37,9 +35,7 @@
 {{- $customImports = (slice) -}}
 {{- $customCSS := resources.Match "/css/custom/*.css" -}}
 {{- range $customCSS -}}
-    {{- $customImport := printf `
-        @import '%s';
-    ` .Name -}}
+    {{- $customImport := .Content -}}
     {{- $customImports = $customImports | append $customImport -}}
 {{- end -}}
 

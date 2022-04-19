@@ -21,42 +21,42 @@
         <ul class="list-dananke bar-dananke linkbar-dananke">
             <li class="list-item-dananke{{- if not .Next }} none-dananke{{- end }} section-other-newer">
         {{- if $newer -}}
-                <a class="link-dananke" href="{{ $newer.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>
+                <a class="link-dananke" href="{{ $newer.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>
             {{- partial "helpers/page-title.html" $newer -}}</span></a>
         {{- else -}}
-                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>&squarf;</span></span>
+                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="list-item-dananke{{- if not $newerInSection }} none-dananke{{- end }} section-newer">
         {{- if $newerInSection -}}
-                <a class="link-dananke" href="{{ $newerInSection.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>
+                <a class="link-dananke" href="{{ $newerInSection.RelPermalink }}"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>
             {{- partial "helpers/page-title.html" $newerInSection -}}</span></a>
         {{- else -}}
-                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>&squarf;</span></span>
+                <span class="link-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="list-item-dananke{{- if not $upLevel }} none-dananke{{- end }} up-level">
         {{- if .Parent -}}
-                <a class="link-dananke" href="{{ $upLevel.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "upLevel" }}</span>
+                <a class="link-dananke" href="{{ $upLevel.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "upLevel" }}</span>
             {{- partial "helpers/page-title.html" $upLevel -}}</span></a>
         {{- else -}}
-            <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "atTop" }}</span>&equiv;</span></span>
+            <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "atTop" }}</span>&equiv;</span>
         {{- end -}}
             </li>
             <li class="list-item-dananke{{- if not $olderInSection }} none-dananke{{- end }} section-older">
         {{- if $olderInSection -}}
-                <a class="link-dananke" href="{{ $olderInSection.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>
+                <a class="link-dananke" href="{{ $olderInSection.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>
             {{- partial "helpers/page-title.html" $olderInSection -}}</span></a>
         {{- else -}}
-                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>&squarf;</span></span>
+                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="list-item-dananke{{- if not $older }} none-dananke{{- end }} section-other-older">
         {{- if $older -}}
-                <a class="link-dananke" href="{{ $older.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>
+                <a class="link-dananke" href="{{ $older.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>
             {{- partial "helpers/page-title.html" $older -}}</span></a>
         {{- else -}}
-                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>&squarf;</span></span>
+                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
         </ul>

@@ -74,16 +74,20 @@ body, input, textarea, button {
     @include center-block;
 }
 
+.main-article .list-dananke {
+    flex: 1 1 100%;
+}
+
+
+
 .list-dananke {
     display: flex;
-    flex: 1 1 100%;
-    flex-direction: column;
+    flex-flow: row wrap;
     justify-content: space-between;
     list-style: none;
     margin-left: 0;
     margin-right: 0;
     padding: 0;
-    width: 100%;
 
     @include center-block;
 }
@@ -977,29 +981,29 @@ body, input, textarea, button {
 
 .nav-page-dananke .list-dananke .list-item-dananke {
     align-items: center;
-    align-content: center;
     background-color: var(--main-nav-bg-colour, #00449e);
     border: 1px solid var(--main-nav-bg-colour, #00449e);
     border-radius: 9999px;
     color: rgba(255, 255, 255, .8);
-    display: block;
+    display: flex;
     flex: 1 1 auto;
-    list-style: none;
+    flex-flow: row nowrap;
     justify-content: center;
+    list-style: none;
     margin-bottom: .2em;
     margin-left: .2em;
     margin-right: .2em;
     margin-top: .2em;
-    max-width: 30%;
     min-height: 48px;
     min-width: 48px;
+    max-width: 30%;
     overflow: visible;
 }
 
 .nav-page-dananke .list-dananke .list-item-dananke .link-dananke {
     color: rgba(255, 255, 255, .8);
     display: inline-block;
-    height: 100%;
+    max-height: 100%;
     overflow: hidden;
     padding: 1rem;
     text-align: center;
@@ -1083,9 +1087,16 @@ body, input, textarea, button {
 
     .main-navigation, .list-dananke {
         align-items: center;
-        flex-flow: row wrap;
         padding-left: 2rem;
         padding-right: 2rem;
+    }
+
+    .list-dananke {
+        width: 100%;
+    }
+
+    .main-navigation {
+        flex-flow: row wrap;
     }
 
     .main-nav-details ~ .site-header .page-title-banner {

@@ -89,3 +89,41 @@ other = "Liste des"
 
 [seeMoreTaxonomies]
 other = "Voir plus de taxonomies"
+[older]
+other = "Plus ancien"
+
+[olderThisSection]
+other = "Plus ancien (cette part)"
+
+[newer]
+other = "Plus récent"
+
+[newerThisSection]
+other = "Plus récent (cette section)"
+
+[upLevel]
+other = "Monter d'un niveau"
+
+[atTop]
+other = "En haut"
+
+[site]
+other = "Site"
+
+[taxonomies]
+other = "Taxonomies"
+
+[sitePageNavigation]
+other = "Navigation entre pages"
+
+[publishedOn]
+other = "publié le"
+
+[lastUpdatedOn]
+other = "dernière mise à jour le"
+
+[main_site_menu]
+other = "Menu principal du site"
+
+[by]
+other = "Aux"

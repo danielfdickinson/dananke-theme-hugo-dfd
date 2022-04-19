@@ -30,7 +30,7 @@
             <li class="list-item-dananke{{- if not $newerInSection }} none-dananke{{- end }} section-newer">
         {{- if $newerInSection -}}
                 <a class="link-dananke" href="{{ $newerInSection.RelPermalink }}"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>
-            {{- partial "helpers/page-title.html" $newerInSection -}}</span></a>
+            {{- partial "helpers/page-title.html" $newerInSection -}}</a>
         {{- else -}}
                 <span class="link-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>&squarf;</span>
         {{- end -}}

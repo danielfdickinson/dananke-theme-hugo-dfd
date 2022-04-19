@@ -1,0 +1,12 @@
+            <aside class="main-article-tags">
+                <ul class="article-tags">
+{{- range .Params.tags }}
+                    <li class="article-tag">
+                        <a href="{{ (printf "/tags/%s" (. | urlize)) | relLangURL }}" class="tag-link">
+                        {{- . -}}
+                        </a>
+                    </li>
+{{- end }}
+                </ul>
+            </aside>
+{{- /* Remove trailing newlines */ -}}

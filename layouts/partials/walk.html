@@ -1,16 +1,15 @@
     <ul class="walk-page-list">
-{{- range (.Pages.ByWeight).GroupBy "Weight" -}}
-    {{- range ((.Pages.ByWeight).ByPublishDate).Reverse -}}
-        {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+{{- $pages := partial "helpers/find-ordered-pages.html" . -}}
+{{- range $pages -}}
+    {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
         <li class="walk-page-list-item">
             <a class="walk-page-link" href="{{ .RelPermalink }}">{{- index $pageMetadata "title-page" -}}</a>
-        {{- if .Pages }}
-            {{ partial "walk.html" . }}
+    {{- if .Pages }}
+        {{ partial "walk.html" . }}
         </li>
-        {{- else }}
+    {{- else }}
         </li>
-        {{- end -}}
     {{- end -}}
-{{- end }}
+{{- end -}}
     </ul>
 {{- /* Remove trailing newlines */ -}}

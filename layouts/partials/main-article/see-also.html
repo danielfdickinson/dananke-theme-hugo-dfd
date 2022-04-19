@@ -1,0 +1,19 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- $related := partial "helpers/return-pages-see-also" . }}
+           <aside class="main-article-see-also">
+{{- with $related }}
+                <details class="context-menu-item">
+                    <summary class="context-title">{{ i18n "related" }}</summary>
+                    <ul class="see-also-list">
+    {{- range . -}}
+        {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+                        <li class="see-also-list-item"><a href="{{ .RelPermalink }}">
+                        {{- index $pageMetadata "title-page" -}}
+                        </a></li>
+    {{- end }}
+                    </ul>
+                </details>
+{{-  end }}
+            </aside>
+{{- /* Remove trailing newlines */ -}}

@@ -1,0 +1,11 @@
+{{- $siblings := (slice) -}}
+{{- with .Pages -}}
+    {{- $siblingsTop := (.ByWeight).GroupBy "Weight" -}}
+    {{- range $siblingsTop -}}
+        {{- range (.Pages.ByPublishDate).Reverse -}}
+            {{- $siblings = $siblings | append . -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return $siblings -}}
+{{- /* Remove trailing newlines */ -}}

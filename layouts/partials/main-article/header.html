@@ -1,0 +1,10 @@
+{{- $curPage := .Page -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+            <header class="main-header">
+    {{- if .Params.headerTextOmit | default .Params.omit_header_text | default false }}
+                <h1 class="main-title">
+                {{- index $page_metadata "title-page" -}}
+                </h1>
+    {{- end }}
+            </header>
+{{- /* Remove trailing newlines */ -}}

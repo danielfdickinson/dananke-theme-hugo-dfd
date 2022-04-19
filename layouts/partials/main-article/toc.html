@@ -1,0 +1,15 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- /*
+     * Use Hugo's native Table of contents feature. You must set `toc: true` in your parameters for this to show.
+     * https://gohugo.io/content-management/toc/
+     */}}
+            <aside class="main-article-toc">
+{{- if .Params.toc }}
+                <details class="context-menu-item">
+                    <summary class="context-title">{{ i18n "whatsInThis" . }}</summary>
+                    {{ .TableOfContents }}
+                </details>
+{{- end }}
+            </aside>
+{{- /* Remove trailing newlines */ -}}

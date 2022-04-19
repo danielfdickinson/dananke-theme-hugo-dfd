@@ -1,0 +1,12 @@
+{{- /* Add newline before article */}}
+        <article class="main-article{{ with .Params.articleClassExtra }} {{ . }}{{ end }}{{ if not (.Params.headerTextOmit | default .Params.omit_header_text | default false) }} no-article-header{{ end }}">
+        {{- partial "main-article/header.html" . -}}
+        {{- partial "main-article/timeinfo" . -}}
+        {{- partial "main-article/toc.html" . -}}
+        {{- partial "main-article/content" . -}}
+        {{- partial "main-article/author.html" . -}}
+        {{- partial "social-share.html" . -}}
+        {{- partial "main-article/tags.html" . -}}
+        {{- partial "main-article/see-also.html" . }}
+        </article>
+{{- /* Remove trailing newlines */ -}}

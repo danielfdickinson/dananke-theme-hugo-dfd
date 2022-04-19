@@ -1,0 +1,21 @@
+{{- /* Hugo uses Go's date formatting is set by example. */ -}}
+{{- $section := .Site.GetPage "section" .Section }}
+            <aside class="main-article-timeinfo">
+{{- if not .PublishDate.IsZero }}
+                <span class="article-datetime"><time class="article-timeinfo" {{ printf `datetime="%s"` (.PublishDate.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                {{- i18n "publishedOn" | default "published on" | humanize }} {{ .PublishDate.Format (default "January 2, 2006" .Site.Params.date_format) -}}
+                </time>—<time class="article-timeinfo" {{ printf `datetime="%s"` (.PublishDate.Format "2006-01-02T15:04:05Z07:00") | safeHTMLAttr }}>
+                {{- i18n "lastUpdatedOn" | default "last updated on" | humanize | lower }} {{ .Lastmod.Format (default "January 2, 2006" .Site.Params.date_format) -}}
+                </time></span>
+{{- end -}}
+            {{- /*
+                Show "reading time" and "word count" but only if one of the following are true:
+                1) A global config `params` value is set `show_reading_time = true`
+                2) A section front matter value is set `show_reading_time = true`
+                3) A page front matter value is set `show_reading_time = true`
+            */ -}}
+{{- if (or (eq (.Param "readingTimeShow" | default (.Param "show_reading_time")) true) (eq ($section.Params.readingTimeShow | default $section.Params.show_reading_time) true) ) -}}
+                <span class="article-reading"><span class="article-timeinfo">{{ i18n "readingTime" .ReadingTime | humanize | lower }}</span><span class="article-timeinfo">—</span><span class="article-timeinfo">{{ i18n "wordCount" .WordCount | humanize | lower }}</span></span>
+{{- end }}
+            </aside>
+{{- /* Remove trailing newlines */ -}}

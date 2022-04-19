@@ -1,0 +1,14 @@
+{{- $ctx := . -}}
+{{- $curPage := .Page -}}
+{{- with .Params.author | default .Site.Params.author }}
+            <aside class="article-author">
+                {{ i18n "by" | default "By" }} <strong>
+{{- if reflect.IsSlice . -}}
+                {{- delimit . ", " | $curPage.RenderString -}}
+{{- else }}
+                {{- . | $curPage.RenderString -}}
+{{- end -}}
+                </strong>
+            </aside>
+{{- end -}}
+{{- /* Remove trailing newlines */ -}}

@@ -1,0 +1,5 @@
+{{- /* Add newline before div */}}
+            <div class="main-article-content{{ with .Params.articleContentClassExtra }} {{ . }}{{ end }}">
+            {{- partial "handle-content" .Content }}
+            </div>
+{{- /* Remove trailing newlines */ -}}

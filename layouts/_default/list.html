@@ -1,8 +1,8 @@
 {{- define "main" -}}
     {{- $ctx := . }}
-    <article class="list-article">
+    <article class="list-article{{ with .Params.articleClassExtra }} {{ . }}{{ end }}{{ if not (.Params.headerTextOmit | default .Params.omit_header_text | default false) }} no-article-header{{ end }}">
     {{- if .Params.headerTextOmit | default .Params.omit_header_text }}
-        <header>
+        <header class="main-header">
             <h1 class="main-title">
             {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page" "summary")) -}}
             {{- index $page_title_metadata "title-page" }}

@@ -1,55 +1,92 @@
-#TableOfContents li ul {
-    margin-top: 1em;
-    padding-left: 1em;
+.about-photo {
+    display: inline-block;
+    vertical-align: middle;
 }
 
-.presentation-pdf div {
-    overflow: auto;
-    resize: both;
+.side-by-figure {
+    display: inline-block;
+    width: 31%;
 }
 
-.presentation-pdf div object {
-    border: 2px solid;
+.side-by-figure a {
     display: block;
-    height: 760px;
-    margin-right: .8em;
-    resize: both;
+    height: 100%;
     width: 100%;
 }
 
-@media (max-height: 499px) {
-    .presentation-pdf div object {
-        height: 100vh;
-    }
+.side-by-figure img {
+    height: auto;
+    width: 100%;
 }
 
-@media (max-height: 900px) {
-    .presentation-pdf div object {
-        height: 480px;
-    }
+.presentation-pdf {
+    display: block;
+    height: 100vh;
+    width: 100%;
 }
 
-.intro-card-pdf-gallery {
+.resume-pdf {
+    display: block;
+    height: 100vh;
+    width: 100%;
+}
+
+.main-article .main-article-content.about-page {
+    width: 100%;
+}
+
+.main-article .armshorian-article-content .highlight {
+    min-width: unset;
+    overflow-x: scroll;
+    max-width: 100%;
+}
+
+.markdown-image-link {
+    display: block;
+    margin-bottom: 1em;
+    max-width: 100%;
+}
+
+.markdown-image {
+    display: block;
+    height: auto;
+    max-height: 50vh;
+    max-width: 100%;
+    width: auto;
+}
+
+#status {
+    margin-bottom: .5rem;
+    margin-top: 0;
+}
+
+#status + p {
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+#status + p a {
+    align-items: center;
+    display: inline-flex;
+    flex-flow: row nowrap;
+    margin-right: 1em;
+    min-height: 48px;
+    min-width: 48px;
+    vertical-align: middle;
+}
+
+.introduction-card {
     display: inline-block;
-    margin-left: .8em;
-    margin-right: .8em;
-    margin-top: .3em;
-    text-align: center;
-    vertical-align: baseline;
+    height: 250px;
+    width: 22rem;
+    vertical-align: middle;
 }
 
-.intro-card-pdf-gallery div {
-    height: 665px;
-    overflow: auto;
-    text-align: center;
-    width: 700px;
-}
-
-.intro-card-pdf-gallery object {
-    border: 2px solid;
+.introduction-card-object {
     display: block;
     height: 100%;
-    margin-right: .8em;
     width: 100%;
 }
 
@@ -120,4 +157,26 @@ main table tbody tr:nth-of-type(even) {
     min-width: max-content;
     overflow: visible;
     padding: 0;
+}
+
+.resume-pdf-object {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+.presentation-pdf-object {
+    display: block;
+    height: 100%;
+    width: 100%;
+}
+
+@media screen and (min-width: 44em) {
+    .resume-pdf {
+        height: 75vh;
+    }
+
+    .presentation-pdf {
+        height: 75vh;
+    }
 }

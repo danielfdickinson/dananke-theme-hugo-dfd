@@ -2,15 +2,10 @@
   <article class="main-article list-article">
     <section class="main-article-content">
       {{- if .Params.headerTextOmit | default .Params.omit_header_text | default false }}
-      <h1 class="f1 athelas mt3 mb1">
-        {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
-        {{- index $page_title_metadata "title-page" }}
+      <h1 class="main-title">
+        {{- $pageTitleMeatadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
+        {{- index $pageTitleMeatadata "title-page" }}
       </h1>
-      {{- else }}
-      <h2 class="f2 athelas mt3 mb1">
-        {{- $page_title_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) -}}
-        {{- index $page_title_metadata "title-page" }}
-      </h2>
       {{- end -}}
       {{- partial "handle-content" .Content -}}
     </section>

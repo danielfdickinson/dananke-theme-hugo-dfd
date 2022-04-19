@@ -1,12 +1,18 @@
 {{- $ctx := . -}}
+{{- $curPage := .Page -}}
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" }}
+{{- $mainNavFeaturedClass := "" -}}
+{{- $featuredImage := partial "helpers/featured-image" $curPage -}}
+{{- if $featuredImage }}
+    {{- $mainNavFeaturedClass = "main-navigation-with-image" -}}
+{{- end }}
     <details class="main-nav-details">
         <summary></summary>
         <nav class="main-navigation-mobile">
         {{- partial "site-navigation-nav-contents.html" . }}
         </nav>
     </details>
-    <nav class="main-navigation{{ if (.Params.headerTextOmit | default .Params.omit_header_text) }} show-on-mobile{{ end }}">
+    <nav class="main-navigation{{ if (.Params.headerTextOmit | default .Params.omit_header_text) }} show-on-mobile{{ end }}{{ with $mainNavFeaturedClass }} {{ . }}{{ end }}">
         {{- partial "site-navigation-nav-contents.html" . }}
     </nav>
 {{- /* Remove trailing newlines */ -}}

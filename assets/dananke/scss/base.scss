@@ -688,6 +688,11 @@ body, input, textarea, button {
     z-index: 3;
 }
 
+.main-nav-details[open] + .main-navigation.main-navigation-with-image ~ .site-header {
+    height: 33vh;
+    min-height: 33vh;
+}
+
 .featured-image-link {
     bottom: 0;
     align-items: center;
@@ -729,10 +734,10 @@ body, input, textarea, button {
     height: auto;
 }
 
-.main-nav-details[open] + .main-navigation.show-on-mobile ~ .site-header .featured-image {
+.main-nav-details[open] + .main-navigation ~ .site-header .featured-image {
     display: block;
     flex: 1 0 auto;
-    max-height: 50vh;
+    max-height: 33vh;
 }
 
 .summary-from-metadata {

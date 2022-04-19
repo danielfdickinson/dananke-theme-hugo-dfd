@@ -2,7 +2,7 @@
             <article class="article-summary">
     {{- $featured_image := partial "helpers/featured-image" .Page -}}
     {{- if $featured_image }}
-                {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "thumbnails" true "fullSize" false "alt" (printf "image from %s" (index $page_metadata "title-page")) "noImageWrapper" true "link" .Page.RelPermalink "linkClass" "summary-link" "class" "summary-image") -}}
+                {{- partial "helpers/wrapped-image" (dict "page" .Page "image" $featured_image "thumbnails" true "fullSize" true "alt" (printf "image from %s" (index $page_metadata "title-page")) "noImageWrapper" true "link" .Page.RelPermalink "linkClass" "summary-link" "class" "summary-image") -}}
     {{- else -}}
                 <div class="summary-link"><div class="summary-image">&nbsp;</div></div>
     {{- end }}

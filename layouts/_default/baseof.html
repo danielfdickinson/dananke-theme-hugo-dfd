@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode | default "en" }}">
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" }}
-    {{- partial "head.html" . }}
+{{- partial "head.html" . }}
 <body class="whole-body{{ with hugo.Environment }} {{ . }}{{ end }}">
-  {{- block "header" . -}}
+{{- block "header" . -}}
     {{- partial "site-header.html" . -}}
-  {{- end }}
+{{- end }}
     <main class="main-block">
-  {{- block "main" . }}
-  {{- end }}
+{{- block "main" . }}
+{{- end }}
     </main>
-  {{- block "footer" . }}
-{{ partialCached "site-footer.html" . -}}
-  {{- end }}
+{{- block "page-navigation-block" . }}
+    {{- partial "page-navigation.html" . -}}
+{{- end }}
+{{- block "footer" . }}
+    {{- partialCached "site-footer.html" . -}}
+{{- end }}
 </body>
 </html>

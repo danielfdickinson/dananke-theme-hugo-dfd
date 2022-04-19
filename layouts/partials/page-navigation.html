@@ -1,0 +1,65 @@
+{{- if ne (.Param "hideSitePageNavigation") true -}}
+{{- /* Show page navigation bar: newer | newer (this section) | Up a Level (or At Top) | older (this section) | older */ -}}
+{{- /* Navigation labels may be hidden via CSS so that only the CSS and symbols appear (to save screen real estate) */}}
+    {{- $upLevel := .Parent -}}
+    {{- $newScratch := newScratch -}}
+    {{- $newerInSection := $newScratch.Get "nonexistant-returns-nil" -}}
+    {{- $olderInSection := $newScratch.Get "nonexistant-returns-nil" -}}
+    {{- $newer := $newScratch.Get "nonexistant-returns-nil" -}}
+    {{- $older := $newScratch.Get "nonexistant-returns-nil" -}}
+    {{- if .Parent -}}
+        {{- $siblings := partial "helpers/find-prev-next" .Page -}}
+        {{- $newerInSection = $siblings.newerInSection -}}
+        {{- $olderInSection = $siblings.olderInSection -}}
+        {{- if .Parent.Parent -}}
+            {{- $parentSiblings := partial "helpers/find-prev-next" .Parent.Page -}}
+            {{- $newer = $parentSiblings.newerInSection -}}
+            {{- $older = $parentSiblings.olderInSection -}}
+        {{- end -}}
+    {{- end }}
+    <nav aria-label="{{ i18n "sitePageNavigation" | default "Inter-page navigation"}}" class="nav-page-dananke">
+        <ul class="list-dananke bar-dananke linkbar-dananke">
+            <li class="list-item-dananke{{- if not .Next }} none-dananke{{- end }} section-other-newer">
+        {{- if $newer -}}
+                <a class="link-dananke" href="{{ $newer.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>
+            {{- partial "helpers/page-title.html" $newer -}}</span></a>
+        {{- else -}}
+                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>&squarf;</span></span>
+        {{- end -}}
+            </li>
+            <li class="list-item-dananke{{- if not $newerInSection }} none-dananke{{- end }} section-newer">
+        {{- if $newerInSection -}}
+                <a class="link-dananke" href="{{ $newerInSection.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>
+            {{- partial "helpers/page-title.html" $newerInSection -}}</span></a>
+        {{- else -}}
+                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>&squarf;</span></span>
+        {{- end -}}
+            </li>
+            <li class="list-item-dananke{{- if not $upLevel }} none-dananke{{- end }} up-level">
+        {{- if .Parent -}}
+                <a class="link-dananke" href="{{ $upLevel.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "upLevel" }}</span>
+            {{- partial "helpers/page-title.html" $upLevel -}}</span></a>
+        {{- else -}}
+            <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "atTop" }}</span>&equiv;</span></span>
+        {{- end -}}
+            </li>
+            <li class="list-item-dananke{{- if not $olderInSection }} none-dananke{{- end }} section-older">
+        {{- if $olderInSection -}}
+                <a class="link-dananke" href="{{ $olderInSection.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>
+            {{- partial "helpers/page-title.html" $olderInSection -}}</span></a>
+        {{- else -}}
+                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>&squarf;</span></span>
+        {{- end -}}
+            </li>
+            <li class="list-item-dananke{{- if not $older }} none-dananke{{- end }} section-other-older">
+        {{- if $older -}}
+                <a class="link-dananke" href="{{ $older.RelPermalink }}"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>
+            {{- partial "helpers/page-title.html" $older -}}</span></a>
+        {{- else -}}
+                <span class="link-dananke"><span class="link-wrapper-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>&squarf;</span></span>
+        {{- end -}}
+            </li>
+        </ul>
+    </nav>
+{{- end -}}
+{{- /* Remove trailing newlines */ -}}

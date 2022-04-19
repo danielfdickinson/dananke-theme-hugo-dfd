@@ -1,0 +1,23 @@
+{{- $newScratch := newScratch -}}
+{{- $olderInSection := $newScratch.Get "nonexistant-returns-nil" -}}
+{{- $newerInSection := $newScratch.Get "nonexistant-returns-nil" -}}
+{{- $upLevel := .Parent -}}
+{{- if .Parent -}}
+    {{- $siblings := partial "helpers/find-ordered-pages.html" .Parent -}}
+    {{- $self := .Page -}}
+    {{- $foundSelf := false -}}
+    {{- $foundNext := false -}}
+    {{- range $siblings -}}
+        {{- if eq .Page $self -}}
+            {{- $foundSelf = true -}}
+        {{- else if and ($foundSelf) (not $foundNext) -}}
+            {{- $olderInSection = .Page -}}
+            {{- $foundNext = true -}}
+        {{- end -}}
+        {{- if not $foundSelf -}}
+            {{- $newerInSection = .Page -}}
+        {{- end -}}
+    {{- end -}}
+{{- end -}}
+{{- return (dict "olderInSection" $olderInSection "upLevel" $upLevel "newerInSection" $newerInSection ) -}}
+{{- /* Remove trailing newlines */ -}}

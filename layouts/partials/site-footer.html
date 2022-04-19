@@ -1,3 +1,4 @@
+{{- /* Add newline before footer */}}
     <footer class="site-footer">
         <a class="footer-copyright" href="{{ .Site.BaseURL }}">
         {{- with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end -}}

@@ -1,13 +1,15 @@
 {{- $socials := partialCached "helpers/socials/get-enabled-services.html" "/dananke/socials/get" }}
-        <div class="dananke-socials">
+            <div class="dananke-socials">
     {{- range $socials }}
-            <a href="{{ .url | absLangURL }}" class="{{ .name }} dananke-social-link link-transition title-link title-nav-item social-title-link" title="{{ .label }} link" rel="noopener" aria-label="follow on {{ .label }}">
-        {{- with .icon -}}
-                <span class="icon">{{ . }}</span>
-        {{- else -}}
-                {{- .label -}}
-        {{- end -}}
-            </a>
+                <a href="{{ .url | absLangURL }}" class="{{ .name }} dananke-social-link link-transition title-link title-nav-item social-title-link" title="{{ .label }} link" rel="noopener" aria-label="follow on {{ .label }}">
+        {{- with .icon }}
+                    <span class="icon">
+                        {{ . }}
+                    </span>
+        {{- else }}
+                    {{ .label }}
+        {{- end }}
+                </a>
     {{- end }}
-        </div>
+            </div>
 {{- /* Remove trailing newlines */ -}}

@@ -1,4 +1,5 @@
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
-{{- if .Site.Params.favicon }}
-<link rel="shortcut icon" href="{{ relURL ($.Site.Params.favicon) }}" type="image/x-icon"{{ if $self_close }} /{{ end }}>
+{{- if site.Params.favicon }}
+    <link rel="shortcut icon" href="{{ relURL (site.Params.favicon) }}" type="image/x-icon"{{ if $self_close }} /{{ end }}>
 {{- end -}}
+{{- /* Remove trailing newlines */ -}}

@@ -3,11 +3,11 @@
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
 {{- with $curPage.Site.Params.site_logo }}
-    {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" $curPage "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" $curPage "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title" "link" $curPage.Site.Home.RelPermalink) }}
+            {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" site.Home.Page "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" site.Home.Page "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title" "link" $curPage.Site.Home.RelPermalink) }}
 {{- else }}
-        <a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-link">
-        {{- index $page_metadata "title-site" -}}
-        </a>
+            <a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-link">
+            {{- index $page_metadata "title-site" -}}
+            </a>
 {{- end }}
 {{- partial "i18nlist.html" . -}}
 {{- if $curPage.Site.Menus.main }}

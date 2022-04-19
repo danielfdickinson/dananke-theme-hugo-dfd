@@ -12,7 +12,7 @@
         {{- partial "handle-content" .Content }}
     </article>
     <div class="articles-summaries">
-        {{- $pages := (((union .Pages .Sections).ByWeight).ByPublishDate).Reverse -}}
+        {{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union .Pages .Sections)) -}}
         {{- range (.Paginate $pages).Pages }}
             {{- .Render "summary-with-image" }}
         {{- end }}

@@ -2,7 +2,7 @@
 .pagination {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: 0;
@@ -44,10 +44,14 @@
   margin-bottom: 1em;
 }
 
+.pagination .page-item {
+    margin-bottom: 1rem;
+}
+
 .pagination .page-item .page-link {
     background-color: var(--main-nav-bg-colour, #00449e);
-    color: rgba(255, 255, 255, .8);
     border: 1px solid var(--main-nav-bg-colour, #00449e);
+    color: rgba(255, 255, 255, .8);
 }
 
 .pagination .page-item.disabled .page-link {

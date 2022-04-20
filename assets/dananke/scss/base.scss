@@ -17,11 +17,11 @@
 }
 
 html {
-    font-size: var(--base-font-size, 12pt);
+    font-size: var(--base-font-size, 14pt);
 }
 
 body, input, textarea, button {
-    font-size: var(--base-font-size, 12pt);
+    font-size: var(--base-font-size, 14pt);
 }
 
 .whole-body {
@@ -29,7 +29,7 @@ body, input, textarea, button {
     display: flex;
     flex-flow: column nowrap;
     font-family: var(--default-font-family, san-serif);
-    font-size: 15pt;
+    font-size: 16pt;
     left: 0;
     line-height: 1.2;
     margin: 0;
@@ -440,7 +440,7 @@ body, input, textarea, button {
 }
 
 .article-timeinfo {
-    font-size: 12pt;
+    font-size: 14pt;
     letter-spacing: .1rem;
     line-height: 1;
 }
@@ -666,7 +666,7 @@ body, input, textarea, button {
 }
 
 .site-header .page-description-banner {
-    font-size: 12pt;
+    font-size: 14pt;
     position: relative;
     z-index: 2;
 }
@@ -764,7 +764,7 @@ body, input, textarea, button {
 }
 
 .summary-byline {
-    font-size: 12pt;
+    font-size: 14pt;
     margin-bottom: 0;
     font-style: italic;
 }

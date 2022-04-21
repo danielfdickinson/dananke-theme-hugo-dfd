@@ -7,22 +7,22 @@ on:
       - opened
       - synchronize
       - reopened
+    branches:
+      - main
+      - 'v[0-9]*'
   push:
     branches:
-      - 'feature**'
       - main
-      - 'staging**'
-    paths-ignore:
-      - 'README.md'
-      - 'LICENSE'
-      - '.gitignore'
-      - '.vscode'
-      - 'scripts'
+      - 'v[0-9]*'
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 jobs:
   check-source-code-validity:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: "Verify content formatting validity (Markdown lint)"
         uses: DavidAnson/markdownlint-cli2-action@v5
         with:
@@ -35,7 +35,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        hugo: ["0.80.0", "0.88.1", "latest"]
+        hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
       - name: "Build Site with Hugo and Audit"
         uses: danielfdickinson/build-audit-action-hugo-dfd@main
@@ -49,7 +49,7 @@ jobs:
     runs-on: ubuntu-20.04
     strategy:
       matrix:
-        hugo: ["0.80.0", "0.88.1", "latest"]
+        hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
       - uses: actions/checkout@v2
       - name: "Validate site HTML"
@@ -59,13 +59,16 @@ jobs:
   check-links:
     needs: build-unminified-site
     runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: "Check internal links"
         uses: danielfdickinson/link-check-action-hugo-dfd@v0.2
         with:
           canonical-root: https://example.com/
-          download-site-as: unminified-site-latest
+          download-site-as: unminified-site-${{ matrix.hugo }}
           entry-point: index.html
           upload-logs-as: check-links-failure
           upload-logs-retention: 3

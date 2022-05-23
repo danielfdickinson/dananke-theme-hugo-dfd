@@ -109,6 +109,18 @@ recent_posts_number = 3
 imageConvertTo = "webp"
 imageLinkFull = true
 
+[[author.authors]]
+uid = "dfd"
+website = "https://www.wildtechgarden.ca/about/"
+name = "Daniel F. Dickinson"
+email = "dfdpublic@wildtechgarden.ca"
+
+[[author.authors]]
+name = "theNewDynamic"
+homepage = "https://www.thenewdynamic.com/"
+
+
+
 [[params.danankeSocials]]
 name = "github"
 url = "https://github.com/danielfdickinson"
@@ -148,22 +160,6 @@ disable = true
 
 [privacy.youtube]
 disable = true
-
-[author]
-uid = "dfd"
-website = "https://www.wildtechgarden.ca/about/"
-name = "Daniel F. Dickinson"
-email = "dfdpublic@wildtechgarden.ca"
-
-[[author.authors]]
-uid = "dfd"
-website = "https://www.wildtechgarden.ca/about/"
-name = "Daniel F. Dickinson"
-email = "dfdpublic@wildtechgarden.ca"
-
-[[author.authors]]
-name = "theNewDynamic"
-homepage = "https://www.thenewdynamic.com/"
 
 [module]
 replacements = "github.com/danielfdickinson/dananke-theme-hugo-dfd -> ../.."

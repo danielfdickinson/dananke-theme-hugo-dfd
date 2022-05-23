@@ -11,7 +11,7 @@
                     <div class="summary-from-metadata">
                         {{ index $page_metadata "summary" }}
                     </div>
-                    <p class="summary-byline">By {{ .Page.Params.author | default .Page.Site.Params.author | default .Author }} on {{ .Page.PublishDate.Local.Format "January 2, 2006" }}</p>
+                    <p class="summary-byline">By {{ .Page.Params.author | default .Page.Site.Params.author }} on {{ .Page.PublishDate.Local.Format "January 2, 2006" }}</p>
                 </section>
             </article>
 {{- /* Remove trailing newlines */ -}}

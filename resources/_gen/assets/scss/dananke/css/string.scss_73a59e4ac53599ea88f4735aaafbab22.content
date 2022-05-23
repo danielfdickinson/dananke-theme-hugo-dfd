@@ -1,6 +1,6 @@
 /* Set base CSS vars */
 :root {
-  --base-font-size: 12pt;
+  --base-font-size: 14pt;
   --whole-doc-bg-colour: #eee;
   --main-nav-bg-colour: #00449e;
   --main-text-colour: #333;
@@ -8,7 +8,7 @@
   --message-404-title-font-family: 'avenir next','avenir',sans-serif;
   --title-over-image-colour: rgba(255, 255, 255, .8);
   --featured-image-padding-colour: #001b44;
-  --hamburger-icon: url("https://example.com/dananke/images/hamburger.svg");
+  --hamburger-icon: url("http://localhost:1313/dananke/images/hamburger.svg");
   --featured-image-opacity: .7;
   --default-background-colour: #000;
 }

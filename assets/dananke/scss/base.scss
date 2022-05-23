@@ -405,6 +405,8 @@ body, input, textarea, button {
 
 .main-article-timeinfo {
     margin-top: 2rem;
+    white-space: normal;
+    word-break: normal;
 }
 
 .main-article-timeinfo ~ .main-article-content h2 {
@@ -1231,7 +1233,7 @@ body, input, textarea, button {
 
 @media screen and (min-width: 64em) {
     .main-article {
-        width: 42em;
+        max-width: 42em;
     }
 
     .main-article .main-article-content {

@@ -6,9 +6,9 @@
 /* LineTableTD */ .chroma .lntd { vertical-align: top; padding: 0; margin: 0; border: 0; }
 /* LineTable */ .chroma .lntable { border-spacing: 0; padding: 0; margin: 0; border: 0; }
 /* LineHighlight */ .chroma .hl { background-color: #ffc }
-/* LineNumbersTable */ .chroma .lnt { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
+/* LineNumbersTable */ .chroma .lnt { white-space: pre-wrap; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
 /* LineNumbers */ .chroma .ln { white-space: pre; user-select: none; margin-right: 0.4em; padding: 0 0.4em 0 0.4em;color: #7c7c79 }
-/* Line */ .chroma .line { display: flex; }
+/* Line */ .chroma .line { display: flex; border: 1px dashed #9c9c99; }
 /* Keyword */ .chroma .k { color: #f66 }
 /* KeywordConstant */ .chroma .kc { color: #f66 }
 /* KeywordDeclaration */ .chroma .kd { color: #f66 }

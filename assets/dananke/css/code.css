@@ -1,14 +1,15 @@
 pre, .pre {
-  overflow-x: auto;
-  overflow-y: hidden;
-  overflow:   scroll;
+//  overflow-x: auto;
+//  overflow-y: hidden;
+//  overflow: none;
+    white-space: pre-wrap;
 }
 
 
 pre code {
   display: block;
   padding: 1.5em 1.5em;
-  white-space: pre;
+  white-space: pre-wrap;
   font-size: .875rem;
   line-height: 2;
 
@@ -17,7 +18,7 @@ pre code {
 pre {
   background-color: #222;
   color: #ddd;
-  white-space: pre;
+  white-space: pre-wrap;
 
   hyphens: none;
   position: relative;

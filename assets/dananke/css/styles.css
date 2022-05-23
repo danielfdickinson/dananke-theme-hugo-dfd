@@ -130,32 +130,34 @@ main table tbody tr:nth-of-type(even) {
 }
 
 .main-block .highlight {
-    min-width: max-content;
-    overflow: visible;
+    min-width: min-content;
+    // overflow: visible;
 }
 
 .main-block pre {
     background-color: #191919;
     color: #dfdfdf;
-    min-width: max-content;
-    overflow: visible;
+    min-width: min-content;
+//    overflow: visible;
     padding: .4em;
+    white-space: pre-wrap;
 }
 
 .main-block .highlight>pre {
-    min-width: max-content;
-    overflow: visible;
+    min-width: min-content;
+//    overflow: visible;
+    white-space: pre-wrap;
 }
 
 .main-block pre>code {
-    min-width: max-content;
-    overflow: visible;
+    min-width: min-content;
+//    overflow: visible;
 }
 
 .main-block .highlight>pre>code {
     margin: 0;
-    min-width: max-content;
-    overflow: visible;
+    min-width: min-content;
+//    overflow: visible;
     padding: 0;
 }
 

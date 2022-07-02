@@ -6,9 +6,13 @@ The intent of this theme is to provide a fairly complete theme for Daniel F. Dic
 
 It is derived from [Ananke Hugo Theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
 
+It has removed the use of Tachyons.
+
 ## Status
 
 [![build-and-verify](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
+
+Documentation is incomplete and not in sync with current state of theme.
 
 ## Features
 
@@ -42,8 +46,6 @@ Also includes examples of Hugo Features or Functions:
 - Conditionals
 - `ge` (greater than or equal to)
 - `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/spf13/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
-
-This theme uses the "Tachyons" CSS library. This will allow you to manipulate the design of the theme by changing class names in HTML without touching the original CSS files. For more information see the [Tachyons website](http://tachyons.io/).
 
 ## Installation
 
@@ -99,9 +101,7 @@ If user is using [Page Resources](https://gohugo.io/content-management/page-reso
 
 If you would like to hide the header text on the featured image on a page, set `omit_header_text` to `true`. See `exampleSite/content/contact.md` for an example.
 
-You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file. Choose a background color from any on the [Tachyons](http://tachyons.io/docs/themes/skins/) library site, and preface it with "bg-"
-
-example: `background_color_class = "bg-blue"` or `background_color_class = "bg-gray"`
+You don't need an image though. The default background color is black, but you can change the color, by changing the default color class in the config.toml file.
 
 ### Activate the contact form
 

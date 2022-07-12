@@ -11,10 +11,8 @@ menu: main
 menu:
     main:
         weight: 1000
-notCanonical: true
 ---
 
-
-This is the French contact page. This is an example of a custom shortcode that you can put right into your content. You will need to add a form action to the the shortcode to make it work. Check out [Formspree](https://formspree.io/) for a simple, free form service.
+Il s'agit de la page de contact Français. Ceci est un exemple de shortcode personnalisé que vous pouvez mettre directement dans votre contenu. Vous devrez ajouter une action de formulaire au shortcode pour le faire fonctionner. Consultez Formspree](https://formspree.io/) pour un service de formulaire simple et gratuit.
 
 {{< form-contact action="https://example.com"  >}}

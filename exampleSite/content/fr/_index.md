@@ -6,7 +6,7 @@ featured_image:
     alt: "Paris moderne avec une gargouille au premier plan"
 description: "Vraiment, ce n'est pas le dernier thème dont vous aurez besoin."
 cascade:
-    notCanonical: true
+    pageCanonical: false
 ---
 Bienvenu sur mon blog!
 

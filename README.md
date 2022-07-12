@@ -1,10 +1,10 @@
-# Dananke, A theme for [Hugo](http://gohugo.io/)
+# Dananke, a theme for [Hugo](http://gohugo.io/)
 
 ## A framework for building websites
 
 The intent of this theme is to provide a fairly complete theme for Daniel F. Dickinson's Hugo sites with important features, and include best practices for performance, and accessibility.
 
-It is derived from [Ananke Hugo Theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
+It is derived from [Ananke Hugo theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
 
 It has removed the use of Tachyons.
 
@@ -23,33 +23,9 @@ Documentation is incomplete and not in sync with current state of theme.
 - RSS Discovery
 - Table of Contents (must declare `toc: true` in post parameter)
 
-Also includes examples of Hugo Features or Functions:
-
-- Pagination (internal template)
-- Taxonomies
-- Archetypes
-- Custom shortcode
-- Related content
-- Hugo built-in menu
-- i18n
-- `with`
-- `HUGO_ENV`
-- `first`
-- `after`
-- `sort`
-- Site LanguageCode
-- `where`
-- Content Views
-- Partials
-- Tags
-- `len`
-- Conditionals
-- `ge` (greater than or equal to)
-- `.Site.Params.mainSections` to avoid hard-coding "blog," etc. [[release note](https://github.com/spf13/hugo/blob/66ec6305f6cb450ddf9c489854146bac02f7dca1/docs/content/meta/release-notes.md#enhancements)]
-
 ## Installation
 
-### As a Hugo Module (recommended)
+### As a Hugo module (recommended)
 
 > If you installed a [Hugo binary](https://gohugo.io/getting-started/installing/#binary-cross-platform), you may not have Go installed on your machine. To check if Go is installed:
 
@@ -71,7 +47,7 @@ go version
    theme = ["github.com/danielfdickinson/dananke-theme-hugo-dfd"]
    ```
 
-### As Git Submodule
+### As git submodule
 
 Inside the folder of your Hugo site run:
 
@@ -93,7 +69,7 @@ Take a look inside the [`exampleSite`](https://github.com/danielfdickinson/danan
 
 For any page or post you can add a featured image by including the local path in front matter (see content in the `exampleSite/content/_readme.md` file for examples): `featured_image: '/images/gohugo-default-sample-hero-image.jpg'`
 
-#### Featured image as Page Resources
+#### Featured image as page resources
 
 If user is using [Page Resources](https://gohugo.io/content-management/page-resources/), the theme will try and match the `featured_image` from with a page resource of type `image` and use its relative permalink. If no `featured_image` is set, the theme will look for a Page Resource of type `image` whose filepath incudes either `cover` or `feature`
 
@@ -108,10 +84,10 @@ You don't need an image though. The default background color is black, but you c
 This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
 
 ```html
-{{< form-contact action="https://formspree.io/your@email.com" >}}
+{{< form-contact action="https://formspree.io/x/dfdasdfa" >}}
 ```
 
-### Social Follow + Share
+### Social follow + share
 
 The theme automatically adds "Follow" link icons to the header and footer and "Share" link icons to pages unless `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each built-in services sports a label, an icon and a color.
 
@@ -146,12 +122,12 @@ params:
     color: '#ff6800'
 ```
 
-#### Social Icons Customization
+#### Social icons customization
 
 On top of easily customizing the built-in services' label and color, user can overwrite their icon by adding an svg file at `/assets/dananke/socials` with a filename matching the service's name.
 For example, in order to use your own GitHub icon, simply add an svg file at `/assets/dananke/socials/github.svg`
 
-#### Built-in Services
+#### Built-in services
 
 Here is the list of built-in services. Those marked with an `*` are also part of the "Share" module.
 
@@ -186,11 +162,11 @@ In order to complement the default CSS with your own, you can add custom css fil
 - Just add a `assets/css/custom` directory to your project and add the file(s) in it.
 - The css files will be added in their lexical order to final `main.css` file.
 
-### Show Reading Time and Word Count
+### Show reading time and word count
 
 If you add a key of `show_reading_time` true to either the Config Params, a page or section's front matter, articles will show the reading time and word count.
 
-### Adding Scripts to the Page Head
+### Adding ccripts to the page head
 
 Some scripts need to be added within the page head. To add your own scripts to the page head, simply insert them into the `head-additions.html` partial located in the `layouts/partials` folder.
 
@@ -203,7 +179,7 @@ You can replace the title of your site in the top left corner of each page with 
   site_logo = "img/logo.svg"
 ```
 
-### Set Content Font Color
+### Set content font color
 
 You can set the font color of the main content both globally and on individual pages:
 
@@ -218,7 +194,7 @@ Set the `text_color` param in the `config.toml` file.
 Individual Page (prioritized over global):
 Set the `text_color` param in a page's markdown file front matter.
 
-note: The value of `text_color` must be a valid tachyons color class. A list can be found [here](http://tachyons.io/docs/themes/skins/).
+note: The value of `text_color` must be a valid CSS color class.
 
 ### Localize date format
 
@@ -231,7 +207,7 @@ Dates of blog posts and single pages are rendered with the default date format c
 
 See hugo's documentation of the [`dateFormat` function](https://gohugo.io/functions/dateformat/) for more details.
 
-### Point to a Custom Sitemap on the 404 Page
+### Point to a custom sitemap on the 404 page
 
 By default the 404 page will include text and a link to ``/about/user-sitemap``, if present. You can specify a different page using the ``sitemap404`` param (site-level only; not per-page).
 
@@ -252,13 +228,13 @@ Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your 
 
 ## Production
 
-To run in production (e.g. to have Google Analytics show up), run `HUGO_ENV=production` before your build command. For example:
+To run in production (e.g. to have Google Analytics show up, if used), run `HUGO_ENV=production` before your build command. For example:
 
 ```sh
 HUGO_ENV=production hugo
 ```
 
-Note: The above command will not work on Windows. If you are running a Windows OS, use the below command:
+Note: The above command will not work on Windows. If you are running a Windows OS, use the command below:
 
 ```cmd
 set HUGO_ENV=production

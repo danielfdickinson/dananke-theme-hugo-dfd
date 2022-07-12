@@ -130,6 +130,16 @@ name = "linkedin"
 url = "https://ca.linkedin.com/in/danielfdickinson"
 
 [[params.danankeSocials]]
+name = "facebook"
+label = "Facebook"
+follow = false
+
+[[params.danankeSocials]]
+name = "twitter"
+label = "Twitter"
+follow = false
+
+[[params.danankeSocials]]
 name = "rss"
 url = "/index.xml"
 

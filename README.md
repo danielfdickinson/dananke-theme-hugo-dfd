@@ -121,6 +121,20 @@ params:
     label: TND GitHub Account
     color: '#ff6800'
 ```
+#### Limit Follow or Share
+
+If a user needs to control Share and Follow of a service, for example enabling "Share on Facebook" without having a Facebook Page to "follow", they can set `follow: false` one the registered service.
+
+```yaml
+params:
+  ananke_socials:
+  - name: facebook
+    label: Facebook
+    follow: false
+  - name: twitter
+    url: https://twitter.com/theNewDynamic
+    label: TND Twitter
+```
 
 #### Social icons customization
 

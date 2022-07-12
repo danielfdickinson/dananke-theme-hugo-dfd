@@ -1,18 +1,22 @@
 # Dananke, a theme for [Hugo](http://gohugo.io/)
 
-## A framework for building websites
-
-The intent of this theme is to provide a fairly complete theme for Daniel F. Dickinson's Hugo sites with important features, and include best practices for performance, and accessibility.
-
-It is derived from [Ananke Hugo theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
-
-It has removed the use of Tachyons.
-
 ## Status
 
 [![build-and-verify](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
 
 Documentation is incomplete and not in sync with current state of theme.
+
+## Overview
+
+The intent of this theme is to provide a fairly complete framework for Daniel F. Dickinson's Hugo sites with important features, and including best practices for performance and accessibility.
+
+It is derived from [Ananke Hugo theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
+
+It has removed the use of Tachyons.
+
+## Demo site
+
+<https://dananke-theme.wildtechgarden.ca>
 
 ## Features
 
@@ -22,6 +26,16 @@ Documentation is incomplete and not in sync with current state of theme.
 - Custom Robots.txt (changes values based on environment)
 - RSS Discovery
 - Table of Contents (must declare `toc: true` in post parameter)
+
+### Derived from modules
+
+Many additional features are available through modules imported into the theme.
+
+Currently imported modules include:
+
+* [Image handling module by DFD](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
+* [Metadata/page microformats module by DFD ](https://github.com/danielfdickinson/metadata-mod-hugo-dfd)
+* [Link handling module by DFD](https://github.com/danielfdickinson/link-handling-mod-hugo-dfd)
 
 ## Installation
 
@@ -84,7 +98,7 @@ You don't need an image though. The default background color is black, but you c
 This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
 
 ```html
-{{< form-contact action="https://formspree.io/x/dfdasdfa" >}}
+{{</* form-contact action="https://formspree.io/x/dfdasdfa" */>}}
 ```
 
 ### Social follow + share
@@ -93,8 +107,8 @@ The theme automatically adds "Follow" link icons to the header and footer and "S
 
 In order to register a service to be used, user must add an `dananke_socials` parameter to its project configuration file and list them through it in the desired order. Each entry must bear a
 
-- name*: It matches the built-in service reference (Ex: twitter, github)
-- url*: The url of the handle's profile on the service (Ex: <https://twitter.com/theNewDynamic>, <https://github.com/theNewDynamic>)
+- `name`: It matches the built-in service reference (Ex: twitter, github)
+- `url`: The url of the handle's profile on the service (Ex: <https://twitter.com/theNewDynamic>, <https://github.com/theNewDynamic>)
 
 ```yaml
 params:
@@ -121,7 +135,7 @@ params:
     label: TND GitHub Account
     color: '#ff6800'
 ```
-#### Limit Follow or Share
+#### Limit follow or share
 
 If a user needs to control Share and Follow of a service, for example enabling "Share on Facebook" without having a Facebook Page to "follow", they can set `follow: false` one the registered service.
 
@@ -180,7 +194,7 @@ In order to complement the default CSS with your own, you can add custom css fil
 
 If you add a key of `show_reading_time` true to either the Config Params, a page or section's front matter, articles will show the reading time and word count.
 
-### Adding ccripts to the page head
+### Adding scripts to the page head
 
 Some scripts need to be added within the page head. To add your own scripts to the page head, simply insert them into the `head-additions.html` partial located in the `layouts/partials` folder.
 

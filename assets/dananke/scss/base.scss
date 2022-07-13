@@ -580,6 +580,18 @@ body, input, textarea, button {
     width: 100%;
 }
 
+.featured-image-link + span {
+    display: none
+}
+
+.featured-image + span {
+    display: none
+}
+
+.article-summary a + span {
+    display: none
+}
+
 .summary-image {
     border-style: none;
     display: block;

@@ -588,7 +588,11 @@ body, input, textarea, button {
     display: none
 }
 
-.article-summary a + span {
+.article-summary .summary-link + span {
+    display: none
+}
+
+.article-summary .summary-image + span {
     display: none
 }
 

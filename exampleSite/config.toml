@@ -107,7 +107,6 @@ imageFeaturedPaddingColour = "#001b44"
 recent_posts_number = 3
 imageConvertTo = "webp"
 imageLinkFull = true
-imageSizesAttr = "95vw"
 imageAltAsCaption = true
 
 [[author.authors]]

@@ -9,7 +9,7 @@
     <header class="site-header{{ with $siteHeaderFeaturedClass }} {{ . }}{{ end }}">
         {{- partial "site-header-titles" . }}
 {{- if $featuredImage }}
-        {{ partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "noImageWrapper" true "class" "featured-image" "linkClass" "featured-image-link" "loading" "lazy") -}}
+        {{ partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "noImageWrapper" true "class" "featured-image" "linkClass" "featured-image-link" "loading" "lazy" "sizesAttr" "100vw") -}}
 {{- end }}
     </header>
 {{- /* Remove trailing newlines */ -}}

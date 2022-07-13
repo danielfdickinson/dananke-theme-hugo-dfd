@@ -108,6 +108,7 @@ imageFeaturedPaddingColour = "#001b44"
 recent_posts_number = 3
 imageConvertTo = "webp"
 imageLinkFull = true
+imageSizesAttr = "95vw"
 
 [[author.authors]]
 uid = "dfd"
@@ -118,8 +119,6 @@ email = "dfdpublic@wildtechgarden.ca"
 [[author.authors]]
 name = "theNewDynamic"
 homepage = "https://www.thenewdynamic.com/"
-
-
 
 [[params.danankeSocials]]
 name = "github"

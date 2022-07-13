@@ -10,7 +10,7 @@ layout: list-content
 menu:
     main:
         weight: 10
-disableShare: true
+shareDisable: true
 ---
 {{< figure src="/images/Victor_Hugo-Hunchback.jpg" title="Illustration a Victor Hugo et son temps (1881)" alt="Illustration from Victor Hugo et son temps (1881)">}}
 

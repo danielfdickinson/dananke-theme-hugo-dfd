@@ -1,15 +1,17 @@
 {{- $socials := where (partialCached "helpers/socials/get-enabled-services.html" "/dananke/socials/get") "follow" "!=" false }}
             <div class="dananke-socials">
-    {{- range $socials }}
+    {{- if ne (.Page.Params.shareDisable | default .Page.Site.Params.shareDisable ) true -}}
+        {{- range $socials }}
                 <a href="{{ .url | absLangURL }}" class="{{ .name }} dananke-social-link link-transition title-link title-nav-item social-title-link" title="{{ .label }} link" rel="noopener" aria-label="follow on {{ .label }}">
-        {{- with .icon }}
+            {{- with .icon }}
                     <span class="icon">
                         {{ . }}
                     </span>
-        {{- else }}
+            {{- else }}
                     {{ .label }}
-        {{- end }}
+            {{- end }}
                 </a>
+        {{- end -}}
     {{- end }}
             </div>
 {{- /* Remove trailing newlines */ -}}

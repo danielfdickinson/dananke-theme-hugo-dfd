@@ -10,6 +10,7 @@ layout: list-content
 menu:
     main:
         weight: 10
+disableShare: true
 ---
 
 >Or see [documentation of the Dananke theme](README.md)

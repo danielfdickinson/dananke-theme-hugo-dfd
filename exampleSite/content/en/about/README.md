@@ -6,6 +6,7 @@ categories:
 tags:
     - HOWTO
 toCanonical: https://github.com/danielfdickinson/dananke-theme-hugo-dfd/blob/main/README.md
+shareDisable: false
 ---
 
 {{< page-assets "README-dananke.md" >}}

@@ -6,7 +6,6 @@ imageFeatured: "/images/esmeralda.jpg"
 imageFeaturedAlt: "A medieval era coloured woman dancing, watched by a crowd of Parisian onlookers"
 tags: []
 title: "Chapter VI: Esmeralda"
-disable_share: false
 series:
     - hunchback-of-notre-dame
 ---

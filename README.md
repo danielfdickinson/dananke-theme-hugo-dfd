@@ -103,9 +103,9 @@ This theme includes a shortcode for a contact form that you can add to any page 
 
 ### Social follow + share
 
-The theme automatically adds "Follow" link icons to the header and footer and "Share" link icons to pages unless `disable_share` parameter is set to true either on the site level (site params) or page level (front matter). Each built-in services sports a label, an icon and a color.
+The theme automatically adds "Follow" link icons to the header and footer and "Share" link icons to pages unless `shareDisable` parameter is set to true either on the site level (site params) or page level (front matter). Each built-in service sports a label, an icon and a color.
 
-In order to register a service to be used, user must add an `dananke_socials` parameter to its project configuration file and list them through it in the desired order. Each entry must bear a
+In order to register a service to be used, user must add an `danankeSocials` parameter to its project configuration file and list them through it in the desired order. Each entry must bear a
 
 - `name`: It matches the built-in service reference (Ex: twitter, github)
 - `url`: The url of the handle's profile on the service (Ex: <https://twitter.com/theNewDynamic>, <https://github.com/theNewDynamic>)

@@ -8,7 +8,7 @@
 {{- $linkedin_href := printf "https://www.linkedin.com/shareArticle?mini=true&url=%s&title=%s" $url $title }}
 {{- $hrefs := dict "facebook" $facebook_href "twitter" $twitter_href "linkedin" $linkedin_href -}}
 {{- $services := where (partialCached "helpers/socials/get-enabled-services" "dananke/socials/get") "share" true -}}
-{{- if not ($.Param "disable_share") }}
+{{- if ne (.Page.Params.shareDisable | default .Page.Site.Params.shareDisable ) true }}
             <aside id="sharing" class="socials-share dananke-socials">
     {{- range $service := $services -}}
         {{- $href := index $hrefs .name }}

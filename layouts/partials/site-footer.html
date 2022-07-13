@@ -8,6 +8,6 @@
         <a class="footer-link" href="{{ .URL }}">{{ .Name }}</a>
         {{- end -}}
     {{- end }}
-        {{- partial "social-follow.html" . }}
+    {{- partialCached "social-follow.html" . . }}
     </footer>
 {{- /* Remove trailing newlines */ -}}

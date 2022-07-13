@@ -1,6 +1,6 @@
 module github.com/danielfdickinson/dananke-theme-hugo-dfd/exampleSite
 
-go 1.17
+go 1.15
 
 require (
 	github.com/danielfdickinson/image-handling-mod-hugo-dfd v0.4.2 // indirect

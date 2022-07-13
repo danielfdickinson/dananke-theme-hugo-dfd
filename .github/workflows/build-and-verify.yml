@@ -38,7 +38,7 @@ jobs:
         hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
       - name: "Build Site with Hugo and Audit"
-        uses: danielfdickinson/build-audit-action-hugo-dfd@main
+        uses: danielfdickinson/build-audit-action-hugo-dfd@v0.2
         with:
           hugo-version: ${{ matrix.hugo }}
           upload-site-as: unminified-site-${{ matrix.hugo }}
@@ -51,7 +51,7 @@ jobs:
       matrix:
         hugo: ["0.80.0", "0.88.1", "0.96.0", "latest"]
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: "Validate site HTML"
         uses: danielfdickinson/validate-html-action-hugo-dfd@v0.2
         with:

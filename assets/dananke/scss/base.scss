@@ -439,7 +439,7 @@ pre, pre code {
 }
 
 .contact-form-article .main-article-content {
-    width: fit-content;
+    width: 100%;
 }
 
 .article-author {
@@ -507,7 +507,7 @@ pre, pre code {
     padding-left: 2rem;
     padding-right: 2rem;
     padding-top: .1rem;
-    width: fit-content;
+    width: auto;
 }
 
 .terms-taxonomies-list {
@@ -951,7 +951,7 @@ pre, pre code {
     border-radius: 3rem;
     color: #1f1f1f;
     display: block;
-    height: fit-content;
+    height: auto;
     padding: 1.5rem;
     max-width: 100%;
 
@@ -960,7 +960,7 @@ pre, pre code {
 }
 
 .contact-label {
-    width: fit-content;
+    width: auto;
 }
 
 .contact-input[type="text"], .contact-input[type="email"] {
@@ -1282,7 +1282,7 @@ pre, pre code {
     }
 
     .contact-form-article .main-article-content {
-        width: fit-content;
+        width: 100%;
         margin-right: unset;
         max-width: 34em;
     }

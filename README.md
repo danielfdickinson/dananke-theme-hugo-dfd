@@ -33,9 +33,9 @@ Many additional features are available through modules imported into the theme.
 
 Currently imported modules include:
 
-* [Image handling module by DFD](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
-* [Metadata/page microformats module by DFD ](https://github.com/danielfdickinson/metadata-mod-hugo-dfd)
-* [Link handling module by DFD](https://github.com/danielfdickinson/link-handling-mod-hugo-dfd)
+- [Image handling module by DFD](https://github.com/danielfdickinson/image-handling-mod-hugo-dfd)
+- [Metadata/page microformats module by DFD](https://github.com/danielfdickinson/metadata-mod-hugo-dfd)
+- [Link handling module by DFD](https://github.com/danielfdickinson/link-handling-mod-hugo-dfd)
 
 ## Installation
 
@@ -135,6 +135,7 @@ params:
     label: TND GitHub Account
     color: '#ff6800'
 ```
+
 #### Limit follow or share
 
 If a user needs to control Share and Follow of a service, for example enabling "Share on Facebook" without having a Facebook Page to "follow", they can set `follow: false` one the registered service.

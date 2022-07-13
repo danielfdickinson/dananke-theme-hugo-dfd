@@ -2,7 +2,7 @@
 
 ## Status
 
-![[build-and-verify](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
+[![build-and-verify](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml/badge.svg)](https://github.com/danielfdickinson/dananke-theme-hugo-dfd/actions/workflows/build-and-verify.yml)
 
 Documentation is incomplete and not in sync with current state of theme.
 

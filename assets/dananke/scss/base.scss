@@ -46,6 +46,24 @@ body, input, textarea, button {
     box-sizing: content-box;
 }
 
+a, code {
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+pre, pre code {
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+
+.main-block li pre {
+    min-width: auto;
+}
+
+.tag-link {
+    text-overflow: ellipsis;
+}
+
 .main-block {
     display: block;
     padding-bottom: 0;
@@ -77,8 +95,6 @@ body, input, textarea, button {
 .main-article .list-dananke {
     flex: 1 1 100%;
 }
-
-
 
 .list-dananke {
     display: flex;
@@ -190,6 +206,11 @@ body, input, textarea, button {
 
 .title-menu-item {
     font-size: 1.25rem;
+    line-height: 2;
+}
+
+.main-navigation .dananke-socials .dananke-social-link {
+    line-height: 2;
 }
 
 .title-menu-link {
@@ -596,6 +617,10 @@ body, input, textarea, button {
     display: none
 }
 
+.main-navigation .site-link.site-title + span {
+    display: none
+}
+
 .summary-image {
     border-style: none;
     display: block;
@@ -871,20 +896,20 @@ body, input, textarea, button {
 }
 
 .tag-link {
-    align-items: center;
     border: solid 1px;
     border-radius: 9999px;
-    display: flex;
-    flex-flow: row nowrap;
+    display: inline-block;
     font-family: sans-serif;
     font-size: 1.4rem;
-    justify-content: center;
+    max-width: 90vw;
     min-height: 48px;
     min-width: 5rem;
+    overflow: hidden;
     padding: .5em;
     text-decoration: none;
+    text-overflow: ellipsis;
     white-space: nowrap;
-    width: fit-content;
+    width: auto;
 }
 
 .terms-block .terms-link, .terms-block .taxonomies-link {

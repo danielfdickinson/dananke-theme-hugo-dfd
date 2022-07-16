@@ -1,5 +1,5 @@
 ---
-title: "Dananke: a Hugo Theme"
+title: "Dananke: a Hugo theme"
 author: "Ananke authors"
 description: "Definitely not the last theme you'll ever need."
 imageFeatured: "/dananke/images/gohugo-default-sample-hero-image.jpg"

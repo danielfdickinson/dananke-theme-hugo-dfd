@@ -46,4 +46,4 @@
         {{- $dataResourceLink = . -}}
     {{- end -}}
 {{- end -}}
-<div{{ with .Get "class"}} class="{{ . }}"{{ end }}><object{{ with .Get "object-class" }} class="{{ . }}"{{ end }}{{ with $dataResourceLink }} data="{{ . }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }} type="application/pdf"{{ with (.Get "alt") }} alt="{{ . }}"{{ end }}></object></div>
+<div{{ with .Get "class"}} class="{{ . }}"{{ end }}><object{{ with .Get "object-class" }} class="{{ . }}"{{ end }}{{ with $dataResourceLink }} data="{{ . }}"{{ end }}{{ if .Get "width" }} width="{{ .Get "width" }}"{{ end }}{{ if .Get "height" }} height="{{ .Get "height" }}"{{ end }} type="application/pdf"{{ with (.Get "title") }} title="{{ . }}"{{ end }}{{ with (.Get "aria-label") }} aria-label="{{ . }}"{{ end }}></object></div>

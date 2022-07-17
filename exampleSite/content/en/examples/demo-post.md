@@ -2,7 +2,7 @@
 title: "Demo Post: With a long enough subtitle to use two lines"
 date: 2021-11-23T00:11:54-05:00
 author: false
-summary: "A demo post for Dananke"
+summary: "A demo post for [Dananke](/)"
 ---
 
 Just to make sure the site works and audit check doesn't fail when there is content with the audit check.

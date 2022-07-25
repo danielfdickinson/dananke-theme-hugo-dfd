@@ -284,7 +284,21 @@ pre, pre code {
     @include center-block;
 }
 
+.list-article ul {
+    text-align: left;
+}
+
 @include clear-fix("list-article");
+
+.main-block .page-footnote {
+    border-top: 2px solid #444;
+    font-size: 1.3rem;
+
+    padding-bottom: .4em;
+    padding-top: .4em;
+}
+
+@include clear-fix("page-footnote");
 
 .main-article {
     display: flex;
@@ -622,7 +636,6 @@ pre, pre code {
     border: solid 1px gray;
     border-radius: .25rem;
     display: block;
-    color: inherit;
     font-size: 1.5rem;
     font-weight: 100;
     line-height: 1.25;
@@ -636,8 +649,13 @@ pre, pre code {
     @include chooseFontFamily("font-family", "athelas");
 }
 
+.summary-title.text-only {
+    max-width: inherit;
+}
+
 .summary-title:focus, .summary-title:hover {
-    opacity: .7;
+    background-color: #ddd;
+    color: #111;
 }
 
 .summary-title-link {
@@ -1109,7 +1127,13 @@ pre, pre code {
         font-size: 1.25rem;
     }
 
-    .main-navigation, .list-dananke {
+    .main-navigation {
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .list-dananke {
         align-items: center;
         padding-left: 2rem;
         padding-right: 2rem;
@@ -1242,10 +1266,19 @@ pre, pre code {
     .main-article {
         width: 32em;
     }
+
+    .main-block .articles-summaries.text-only {
+        max-width: 32em;
+    }
+
 }
 
 @media screen and (min-width: 64em) {
     .main-article {
+        max-width: 42em;
+    }
+
+    .main-block .articles-summaries.text-only {
         max-width: 42em;
     }
 
@@ -1285,7 +1318,8 @@ pre, pre code {
         padding-bottom: 0;
     }
 
-    .list-article {
+    .list-article,
+    .main-block .page-footnote {
         padding-left: 4rem;
         padding-right: 4rem;
         text-align: center;

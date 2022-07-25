@@ -1,8 +1,6 @@
 {{- define "main" }}
     <section class="articles-summaries" aria-label="{{ i18n "taxonomyPageList" . }}">
-    {{- range .Pages }}
-        {{- .Render "summary-with-image" -}}
-    {{- end }}
+    {{ partial "summary-list.html" (dict "page" .Page "pages" .Pages "sectionName" "Articles") }}
     </section>
 {{- end -}}
 {{- define "page-navigation-block" -}}

@@ -11,14 +11,9 @@
     {{- end }}
         {{- partial "handle-content" .Content }}
     </article>
-    <div class="articles-summaries">
-        {{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union .Pages .Sections)) -}}
-        {{- range (.Paginate $pages).Pages }}
-            {{- .Render "summary-with-image" }}
-        {{- end }}
-    </div>
+    {{ partial "summary-list.html" (dict "page" .Page  "pages" .Pages "section" .Sections "sectionName" "Articles") }}
     {{- template "_internal/pagination.html" . }}
-    {{- with .Params.page_footnote }}
-    <div>{{- . | $ctx.RenderString -}}</div>
+    {{- with .Params.page_footnote | default .Params.footnotePage }}
+    <div class="page-footnote">{{- . | $ctx.RenderString -}}</div>
     {{- end -}}
 {{- end -}}

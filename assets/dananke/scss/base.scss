@@ -137,7 +137,7 @@ pre, pre code {
 }
 
 .main-nav-details ~ .site-header .page-title-banner {
-    margin-top: 1.5em;
+    margin-top: 1rem;
 }
 
 .site-title {
@@ -270,7 +270,8 @@ pre, pre code {
     color: var(--message404box-link-colour, #fff);
 }
 
-.list-article {
+.list-article,
+.main-block .page-footnote {
     color: var(--main-text-colour);
     line-height: 1.5;
     font-size: 1.5rem;
@@ -554,7 +555,7 @@ pre, pre code {
 .main-block .articles-summaries .featured-title {
     font-size: 3rem;
     margin-bottom: 0;
-    margin-top: 0;
+    margin-top: 1rem;
     padding-bottom: 1rem;
     text-align: center;
 }
@@ -649,18 +650,13 @@ pre, pre code {
     color: var(--title-over-image-colour, rgba(255, 255, 255, .8));
     font-size: 2.25rem;
     font-weight: 400;
-    line-height: 1.25;
     margin-bottom: 0;
-    padding-bottom: .5em;
     width: 100%;
 }
 
 .page-description-banner {
     color: var(--title-over-image-colour, rgba(255, 255, 255, .8));
     font-size: 1.25rem;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding-bottom: 2rem;
     width: 100%;
 
     @include center-block;
@@ -668,15 +664,12 @@ pre, pre code {
 
 .homepage-description-banner {
     font-size: 1.5rem;
-    margin-bottom: 1rem;
-    padding-bottom: .5rem;
 }
 
 .site-header {
     background-color: var(--featured-image-padding-colour);
     display: block;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    padding: 1rem;
     position: relative;
     text-align: center;
     z-index: 0;
@@ -761,6 +754,10 @@ pre, pre code {
     display: block;
     flex: 1 0 auto;
     max-height: 33vh;
+}
+
+.site-link img {
+    vertical-align: middle;
 }
 
 .summary-from-metadata {
@@ -1126,10 +1123,6 @@ pre, pre code {
         flex-flow: row wrap;
     }
 
-    .main-nav-details ~ .site-header .page-title-banner {
-        margin-top: .5em;
-    }
-    
     .site-link {
         flex: 1 1 100%;
         max-width: 64rem;
@@ -1268,11 +1261,6 @@ pre, pre code {
 
     .main-article-context-menu {
         max-width: 34em;
-    }
-
-    .main-navigation {
-        padding-bottom: 1.4em;
-        padding-top: 1.4em;
     }
 
     .list-dananke {

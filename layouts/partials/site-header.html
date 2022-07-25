@@ -1,14 +1,14 @@
 {{- $curPage := .Page -}}
 {{- $featuredImage := partial "helpers/featured-image" $curPage -}}
 {{- partial "site-navigation.html" . -}}
-{{- $page_metadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page" "description-no-fallback")) -}}
+{{- $imageFeaturedCardOnly := $curPage.Params.imageFeaturedCardOnly | default $curPage.Site.Params.imageFeaturedCardOnly | default false -}}
 {{- $siteHeaderFeaturedClass := "" -}}
-{{- if $featuredImage }}
+{{- if and $featuredImage (not $imageFeaturedCardOnly) }}
     {{- $siteHeaderFeaturedClass = "site-header-with-image" -}}
 {{- end }}
     <header class="site-header{{ with $siteHeaderFeaturedClass }} {{ . }}{{ end }}">
         {{- partial "site-header-titles" . }}
-{{- if $featuredImage }}
+{{- if and $featuredImage (not $imageFeaturedCardOnly) }}
         {{ partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "noImageWrapper" true "class" "featured-image" "linkClass" "featured-image-link" "loading" "lazy" "sizesAttr" "100vw") -}}
 {{- end }}
     </header>

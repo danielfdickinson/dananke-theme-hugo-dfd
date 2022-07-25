@@ -3,7 +3,8 @@
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" }}
 {{- $mainNavFeaturedClass := "" -}}
 {{- $featuredImage := partial "helpers/featured-image" $curPage -}}
-{{- if $featuredImage }}
+{{- $imageFeaturedCardOnly := $curPage.Params.imageFeaturedCardOnly | default $curPage.Site.Params.imageFeaturedCardOnly | default false -}}
+{{- if and $featuredImage (not $imageFeaturedCardOnly) }}
     {{- $mainNavFeaturedClass = "main-navigation-with-image" -}}
 {{- end }}
     <details class="main-nav-details">

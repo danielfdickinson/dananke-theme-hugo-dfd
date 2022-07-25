@@ -1,0 +1,22 @@
+{{- $ctx := . -}}
+{{- $summaryPage := .page -}}
+{{- $textOnly := .textOnly | default false -}}
+{{- $page_metadata := partial "helpers/return-metadata" (dict "page" $summaryPage "requestedData" (slice "title-page" "summary")) }}
+            <article class="article-summary">
+    {{- $featured_image := partial "helpers/featured-image" $summaryPage -}}
+    {{- if and $featured_image (not $textOnly) }}
+                {{- partial "helpers/wrapped-image" (dict "page" $summaryPage "image" $featured_image "thumbnails" true "fullSize" true "alt" (printf "image from %s" (index $page_metadata "title-page")) "noImageWrapper" true "link" $summaryPage.RelPermalink "linkClass" "summary-link" "class" "summary-image" "noVisibleCaption" true) -}}
+    {{- else if (not $textOnly) -}}
+                <div class="summary-link"><div class="summary-image">&nbsp;</div></div>
+    {{- end }}
+                <section class="summary-contents{{ if $textOnly }} text-only{{ end }}">
+                    <h2 class="summary-title{{ if $textOnly }} text-only{{ end }}"><a href="{{ $summaryPage.RelPermalink }}" class="summary-title-link">{{- index $page_metadata "title-page" -}}</a></h2>
+                    <div class="summary-from-metadata">
+                        {{ index $page_metadata "summary" }}
+                    </div>
+{{- if $summaryPage.Params.author | default $summaryPage.Site.Params.author }}
+                    <p class="summary-byline">By {{ $summaryPage.Params.author | default $summaryPage.Site.Params.author }} on {{ $summaryPage.PublishDate.Local.Format "January 2, 2006" }}</p>
+{{- end }}
+                </section>
+            </article>
+{{- /* Remove trailing newlines */ -}}

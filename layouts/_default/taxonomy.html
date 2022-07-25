@@ -3,9 +3,7 @@
         <p class="main-article-content taxonomy-note">{{ i18n "taxonomyPageList" . }}</p>
     </article>
     <section class="articles-summaries">
-    {{- range .Pages }}
-        {{- .Render "summary-with-image" -}}
-    {{- end }}
+    {{ partial "summary-list.html" (dict "page" .Page "pages" .Pages "sectionName" "Articles") }}
     </section>
 {{- end -}}
 {{- define "page-navigation-block" -}}

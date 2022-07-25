@@ -1,0 +1,21 @@
+{{- $ctx := . -}}
+{{- $curPage := .page -}}
+{{- $inPages := .pages -}}
+{{- $inSections := .sections -}}
+{{- $numPosts := .numPosts -}}
+{{- $sectionName := .sectionName -}}
+{{- $nameAsHeading := .nameAsHeading -}}
+{{- $textOnly := $curPage.Params.summaryTextOnly | default $curPage.Site.Params.summaryTextOnly | default false -}}
+{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections)) -}}
+{{- if $numPosts -}}
+    {{- $pages = first $numPosts $pages -}}
+{{- end -}}
+        <section class="articles-summaries{{ if $textOnly }} text-only{{ end }}"{{ if not $nameAsHeading }}{{ with $sectionName }}aria-label="{{ $sectionName }}"{{ end }}{{ end }}>
+        {{- if $nameAsHeading }}
+            <h2 class="featured-title">{{ $sectionName }}</h2>
+        {{- end -}}
+{{- range ($curPage.Paginate $pages).Pages }}
+    {{- partial "summary-with-image" (dict "page" . "textOnly" $textOnly) -}}
+{{- end -}}
+        </section>
+{{- /* Trim trailing newlines */ -}}

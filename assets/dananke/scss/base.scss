@@ -294,8 +294,8 @@ pre, pre code {
     border-top: 2px solid #444;
     font-size: 1.3rem;
 
-    padding-bottom: .4em;
-    padding-top: .4em;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
 }
 
 @include clear-fix("page-footnote");
@@ -571,6 +571,38 @@ pre, pre code {
     line-height: 1.2;
     text-align: left;
 }
+
+.sitemap-list-block > .walk-page-list > .walk-page-list-item > a {
+    background-color: #ccc;
+    border: solid 1px gray;
+    border-radius: 1rem;
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 100;
+    line-height: 1.25;
+    margin-top: 0;
+    max-width: inherit;
+    opacity: 1;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: left;
+
+    @include chooseFontFamily("font-family", "athelas");
+
+    &:visited,
+    &:active,
+    &:link {
+       color: inherit;
+    }
+
+    &:focus,
+    &:hover {
+        background-color: #222;
+        color: #ddd;
+        text-decoration: none;
+    }
+}
+
 
 .terms-item a {
     text-decoration: none;
@@ -858,8 +890,17 @@ pre, pre code {
     text-decoration: underline;
 }
 
+.sitemap-list-block > .walk-page-list {
+    padding-left: 0;
+    
+    & > .walk-page-list-item > .walk-page-list {
+        padding-left: 0;
+    }
+}
+
 .walk-page-list {
     list-style: none;
+    list-style-position: inside;
 }
 
 .walk-page-link {
@@ -1078,6 +1119,14 @@ pre, pre code {
             text-decoration: underline;
         }
     }
+}
+
+.walk-page-list-item + .walk-page-list-item {
+    margin-top: .8rem;
+}
+
+.walk-page-list-item > .walk-page-list {
+    margin-top: .8rem;
 }
 
 .nav-page-dananke .list-dananke .list-item-dananke .list-item-label-dananke {

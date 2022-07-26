@@ -1,12 +1,23 @@
+{{- $ctx := . -}}
+{{- $maxDepth := .maxDepth -}}
+{{- $curDepth := .curDepth -}}
+{{- $curPage := .page -}}
+{{- $showNumBelow := .showNumBelow -}}
     <ul class="walk-page-list">
-{{- $pages := partial "helpers/find-ordered-pages.html" . -}}
+{{- $pages := partial "helpers/find-ordered-pages.html" $curPage -}}
 {{- range $pages -}}
     {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
         <li class="walk-page-list-item">
-            <a class="walk-page-link" href="{{ .RelPermalink }}">{{- index $pageMetadata "title-page" -}}</a>
-    {{- if .Pages }}
-        {{ partial "walk.html" . }}
+            <a class="walk-page-link" href="{{ .RelPermalink }}">{{- index $pageMetadata "title-page" -}}
+            {{- if or .Pages .Sections -}}
+            {{- $numBelow := len (union .Pages .Sections) -}}
+            {{- if and $showNumBelow (gt $numBelow 1) (gt $curDepth 1) }} ({{ $numBelow }}){{ end }}{{ end -}}</a>
+    {{- if .Pages -}}
+        {{- $newDepth := add $curDepth 1 -}}
+        {{- if le $newDepth $maxDepth }}
+            {{ partial "walk.html" (dict "page" . "maxDepth" $maxDepth "curDepth" $newDepth "showNumBelow" $showNumBelow) }}
         </li>
+        {{- end -}}
     {{- else }}
         </li>
     {{- end -}}

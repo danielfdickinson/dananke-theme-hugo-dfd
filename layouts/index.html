@@ -6,10 +6,17 @@
     {{- /* Define a section to pull recent posts from. This will default to the section with the most number of pages, unless configured */ -}}
     {{- $mainSections := site.Params.mainSections | default (slice "post") -}}
     {{- /* Create a variable with that section to use in multiple places. */ -}}
-    {{- $sectionPages := where (where (where .Site.Pages "Section" "in" $mainSections) "Parent.Kind" "ne" "home") "Parent.Parent.Kind" "ne" "section" -}}
+    {{- $sectionPages := (slice) -}}
+    {{- range where site.Home.Sections "Section" "in" $mainSections -}}
+        {{- $sectionPages = $sectionPages | append .RegularPages -}}
+        {{- $sectionPages = $sectionPages | append (where .Sections "Params.layout" "eq" "list-content") -}}
+        {{- range .Sections -}}
+            {{- $sectionPages = $sectionPages | append (partial "helpers/section-recurse.html" .) -}}
+        {{- end -}}
+    {{- end -}}
     {{- /* Check to see if the section is defined for ranging through it */ -}}
     {{- $n_posts := $.Param "recent_posts_number" | default 3 }}
-    {{ partial "summary-list.html" (dict "page" .Page  "pages" $sectionPages "numPosts" $n_posts "sectionName" (i18n "recentArticles" | default "Recent articles") "nameAsHeading" true) }}
+    {{ partial "summary-list.html" (dict "page" .Page  "pages" $sectionPages "numPosts" $n_posts "sectionName" (i18n "recentArticles" | default "Recent articles") "nameAsHeading" true "ignoreWeight" true) }}
     {{- with .Params.page_footnote | default .Params.footnotePage }}
     <div class="page-footnote">{{- . | $ctx.RenderString -}}</div>
     {{- end -}}

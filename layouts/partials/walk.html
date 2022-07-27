@@ -4,7 +4,7 @@
 {{- $curPage := .page -}}
 {{- $showNumBelow := .showNumBelow -}}
     <ul class="walk-page-list">
-{{- $pages := partial "helpers/find-ordered-pages.html" $curPage -}}
+{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" $curPage "Pages" $curPage.Pages) -}}
 {{- range $pages -}}
     {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
         <li class="walk-page-list-item">

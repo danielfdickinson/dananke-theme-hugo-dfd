@@ -3,7 +3,7 @@
 {{- $newerInSection := $newScratch.Get "nonexistant-returns-nil" -}}
 {{- $upLevel := .Parent -}}
 {{- if .Parent -}}
-    {{- $siblings := partial "helpers/find-ordered-pages.html" .Parent -}}
+    {{- $siblings := partial "helpers/find-ordered-pages.html" (dict "Page" .Parent "Pages" .Parent.Pages) -}}
     {{- $self := .Page -}}
     {{- $foundSelf := false -}}
     {{- $foundNext := false -}}

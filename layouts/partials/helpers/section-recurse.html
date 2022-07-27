@@ -1,0 +1,22 @@
+{{- $pctx := . -}}
+{{- $pages := slice -}}
+{{- if .IsHome -}}
+    {{- $pctx = .Site -}}
+    {{- range site.Home.Sections -}}
+        {{- $pages = $pages | append .RegularPages -}}
+        {{- $pages = $pages | append (where .Sections "Params.layout" "eq" "list-content") -}}
+        {{- range .Sections -}}
+            {{- $pages = $pages | append (partial "helpers/section-recurse.html" .) -}}
+        {{- end -}}
+    {{- end -}}
+{{- else if .IsSection -}}
+    {{- $pages = $pages | append .RegularPages -}}
+    {{- $pages = $pages | append (where .Sections "Params.layout" "eq" "list-content") -}}
+    {{- range .Sections -}}
+        {{- $pages = $pages | append (partial "helpers/section-recurse.html" .) -}}
+    {{- end -}}
+{{- else -}}
+    {{- $pages = $pctx.Pages -}}
+{{- end -}}
+{{- return $pages -}}
+{{- /* Remove trailing newlines */ -}}

@@ -5,8 +5,9 @@
 {{- $numPosts := .numPosts -}}
 {{- $sectionName := .sectionName -}}
 {{- $nameAsHeading := .nameAsHeading -}}
+{{- $ignoreWeight := .ignoreWeight -}}
 {{- $textOnly := $curPage.Params.summaryTextOnly | default $curPage.Site.Params.summaryTextOnly | default false -}}
-{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections)) -}}
+{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections) "ignoreWeight" $ignoreWeight) -}}
 {{- if $numPosts -}}
     {{- $pages = first $numPosts $pages -}}
 {{- end -}}
@@ -14,7 +15,7 @@
         {{- if $nameAsHeading }}
             <h2 class="featured-title">{{ $sectionName }}</h2>
         {{- end -}}
-{{- range ($curPage.Paginate $pages).Pages }}
+{{- range ($curPage.Paginate $pages).Pages -}}
     {{- partial "summary-with-image" (dict "page" . "textOnly" $textOnly) -}}
 {{- end -}}
         </section>

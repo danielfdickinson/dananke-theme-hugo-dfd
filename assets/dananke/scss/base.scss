@@ -1114,6 +1114,8 @@ pre, pre code {
         color: var(--main-nav-bg-colour, #00449e);
 
         & .link-dananke {
+            background-color: rgba(255, 255, 255, .8);
+            border-radius: 9999px;
             color: var(--main-nav-bg-colour, #00449e);
             text-decoration: underline;
         }

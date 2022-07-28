@@ -1,8 +1,5 @@
 {{- define "main" }}
-    <article class="list-article">
-        <p class="main-article-content taxonomy-note">{{ i18n "taxonomyPageList" . }}</p>
-    </article>
-    <section class="articles-summaries">
+    <section class="articles-summaries" aria-label="{{ i18n "taxonomyPageList" . }}">
     {{ partial "summary-list.html" (dict "page" .Page "pages" .Pages "sectionName" "Articles") }}
     </section>
 {{- end -}}

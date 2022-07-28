@@ -782,6 +782,15 @@ pre, pre code {
     z-index: 0;
 }
 
+.featured-image-link {
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: revert;
+        color: revert;
+    }
+}
+
 .main-nav-details[open] ~ .site-header .featured-image-link {
     display: flex;
 }

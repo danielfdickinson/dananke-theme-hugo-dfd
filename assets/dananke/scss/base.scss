@@ -702,6 +702,13 @@ pre, pre code {
     color: inherit;
     display: block;
     text-decoration: none;
+
+    &:active,
+    &:focus,
+    &:hover {
+        background-color: inherit;
+        color: inherit;
+    }
 }
 
 .page-title-banner {
@@ -841,10 +848,15 @@ pre, pre code {
 }
 
 .summary-from-metadata {
-  & a,
-  & a:link {
+    & a,
+    & a:link {
         color: var(--summary-link-colour);
         overflow-wrap: break-word;
+    }
+    & a:active,
+    & a:focus,
+    & a:hover {
+        color: #fff;
     }
 }
 

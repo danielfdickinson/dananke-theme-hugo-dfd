@@ -6,8 +6,9 @@
 {{- $sectionName := .sectionName -}}
 {{- $nameAsHeading := .nameAsHeading -}}
 {{- $ignoreWeight := .ignoreWeight -}}
+{{- $omitableList := .omitableList -}}
 {{- $textOnly := $curPage.Params.summaryTextOnly | default $curPage.Site.Params.summaryTextOnly | default false -}}
-{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections) "ignoreWeight" $ignoreWeight) -}}
+{{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections) "ignoreWeight" $ignoreWeight "omitableList" $omitableList) -}}
 {{- if $numPosts -}}
     {{- $pages = first $numPosts $pages -}}
 {{- end -}}

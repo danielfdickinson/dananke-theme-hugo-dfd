@@ -12,6 +12,12 @@
     {{- with .Params.colourMainText | default .Params.text_color | default .Site.Params.colourMainText | default .Site.Params.text_color | default "#333" }}
     --main-text-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourLink | default .Site.Params.colourLink | default "rgb(0, 0, 238)" }}
+    --link-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkSumamry | default .Site.Params.colourLinkSummary | default "#024baa" }}
+    --summary-link-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.defaultFontFamily | default .Site.Params.defaultFontFamily | default "avenir" }}
     @include chooseFontFamily("--default-font-family", "{{ . }}");
     {{- end -}}

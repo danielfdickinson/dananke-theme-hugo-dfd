@@ -24,6 +24,15 @@ body, input, textarea, button {
     font-size: var(--base-font-size, 14pt);
 }
 
+a, a:link {
+    color: var(--link-colour, rgb(0, 0, 238));
+}
+
+a:active, a:focus, a:hover {
+    background-color: var(--main-nav-bg-colour);
+    color: #fff;
+}
+
 .whole-body {
     background-color: var(--whole-doc-bg-colour, #eee);
     display: flex;
@@ -213,7 +222,8 @@ pre, pre code {
     line-height: 2;
 }
 
-.title-menu-link {
+.title-menu-link,
+.title-menu-link:link {
     color: rgba(255, 255, 255, 0.9);
 }
 
@@ -379,8 +389,6 @@ pre, pre code {
     & a:active,
     & a:focus,
     & a:hover {
-        background-color: #00449e;
-        color: #eee;
         text-decoration: underline;
     }
 }
@@ -823,12 +831,15 @@ pre, pre code {
     margin-top: 1.5em;
 }
 
-.summary-from-metadata a {
-    color: #024baa;
+.summary-from-metadata {
+  & a,
+  & a:link {
+        color: var(--summary-link-colour);
+        overflow-wrap: break-word;
+    }
 }
-  
+
 .summary-from-metadata a:focus, .summary-from-metadata a:hover {
-    color: #00338d;
     overflow-wrap: break-word;
 }
 
@@ -848,7 +859,8 @@ pre, pre code {
     width: 100%;
 }
 
-.footer-copyright {
+.footer-copyright,
+.footer-copyright:link {
     color: rgba(255, 255, 255, .8);
     display: inline-block;
     font-weight: 400;
@@ -864,7 +876,8 @@ pre, pre code {
     text-decoration: underline;
 }
 
-.footer-link {
+.footer-link,
+.footer-link:link {
     color: rgba(255, 255, 255, .8);
     display: inline-block;
     font-weight: 400;
@@ -902,9 +915,7 @@ pre, pre code {
 }
 
 .walk-page-link:focus, .walk-page-link:hover {
-    background-color: #00449e;
     text-decoration: underline;
-    color: #fff;
 }
 
 .article-tags {
@@ -960,8 +971,6 @@ pre, pre code {
     & .terms-link:hover,
     & .taxonomies-link:focus,
     & .taxonomies-link:hover {
-        background-color: #00449e;
-        color: #fff;
         text-decoration: underline;
     }
 }

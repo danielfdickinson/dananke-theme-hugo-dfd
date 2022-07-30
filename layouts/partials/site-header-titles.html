@@ -6,7 +6,7 @@
     {{- $h1Class = "page-title-banner homepage-title-banner" -}}
     {{- $h2Class = "page-description-banner homepage-description-banner" -}}
 {{- end -}}
-{{- if not (or .Params.omit_header_text .Params.headerTextOmit) }}
+{{- if not (or $curPage.Params.omit_header_text $curPage.Params.headerTextOmit) }}
         <h1 class="{{ $h1Class }}">
     {{- index $pageMetadata "title-page" -}}
         </h1>

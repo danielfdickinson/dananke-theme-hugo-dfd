@@ -10,7 +10,7 @@
 {{- if $numPosts -}}
     {{- $pages = first $numPosts $pages -}}
 {{- end -}}
-        <section class="articles-summaries{{ if $textOnly }} text-only{{ end }}"{{ if not $nameAsHeading }}{{ with $sectionName }}aria-label="{{ $sectionName }}"{{ end }}{{ end }}>
+        <section class="articles-summaries{{ if $textOnly }} text-only{{ end }}"{{ if not $nameAsHeading }}{{ with $sectionName }} aria-label="{{ $sectionName }}"{{ end }}{{ end }}>
         {{- if $nameAsHeading }}
             <h2 class="featured-title">{{ $sectionName }}</h2>
         {{- end -}}

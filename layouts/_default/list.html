@@ -11,7 +11,7 @@
     {{- end }}
         {{- partial "handle-content" .Content }}
     </article>
-    {{ partial "summary-list.html" (dict "page" .Page  "pages" .Pages "section" .Sections "sectionName" "Articles") }}
+    {{ partial "summary-list.html" (dict "page" .Page  "pages" .Pages "section" .Sections "sectionName" (i18n "Articles" | default "Articles")) }}
     {{- template "_internal/pagination.html" . }}
     {{- with .Params.page_footnote | default .Params.footnotePage }}
     <div class="page-footnote">{{- . | $ctx.RenderString -}}</div>

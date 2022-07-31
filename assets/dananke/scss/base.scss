@@ -368,6 +368,16 @@ pre, pre code {
     min-width: 48px;
     padding: 0;
     text-decoration: none;
+    
+    & em,
+    & i,
+    & bold,
+    & strong,
+    & span,
+    & code {
+        padding-left: .4em;
+        padding-right: .4em;
+    }
 }
 
 .see-also-list-item {

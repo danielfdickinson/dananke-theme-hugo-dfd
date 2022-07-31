@@ -128,3 +128,10 @@ other = "Main site menu"
 
 [by]
 other = "By"
+
+[recentArticles]
+other = "Recent articles"
+
+[Articles]
+other = "Articles"
+

@@ -32,7 +32,7 @@ other = "Message"
 other = "Une adresse e-mail est requise."
 
 [nameRequiredNote]
-other = "Une nomme est resquise."
+other = "Une nomme est requise."
 
 [messageRequiredNote]
 other = "Une message est requise."
@@ -127,3 +127,9 @@ other = "Menu principal du site"
 
 [by]
 other = "Aux"
+
+[recentArticles]
+other = "Les articles récent"
+
+[Articles]
+other = "Les articles"

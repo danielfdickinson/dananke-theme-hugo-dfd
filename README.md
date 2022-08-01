@@ -1,4 +1,4 @@
-# Dananke, a theme for [Hugo](http://gohugo.io/)
+# Dananke, a theme for [Hugo](https://gohugo.io/)
 
 ## Status
 
@@ -47,7 +47,7 @@ Currently imported modules include:
 go version
 ```
 
-> Go modules were considered production ready in v1.14. [Download Go](https://golang.org/dl/).
+> Go modules were considered production ready in v1.14. [Download Go](https://go.dev/dl/).
 
 1. From your project's root directory, initiate the hugo module system if you haven't already:
 
@@ -69,7 +69,7 @@ Inside the folder of your Hugo site run:
 git submodule add https://github.com/danielfdickinson/dananke-theme-hugo-dfd.git themes/ananke
 ```
 
-For more information read the official [setup guide](//gohugo.io/overview/installing/) of Hugo.
+For more information read the official [setup guide](https://gohugo.io/getting-started/installing/) of Hugo.
 
 ## Getting started
 
@@ -95,7 +95,7 @@ You don't need an image though. The default background color is black, but you c
 
 ### Activate the contact form
 
-This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](//formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
+This theme includes a shortcode for a contact form that you can add to any page (there is an example on the contact page in the exampleSite folder). One option is to use [formspree.io](https://formspree.io/) as proxy to send the actual email. Each month, visitors can send you up to one thousand emails without incurring extra charges. Visit the Formspree site to get the "action" link and add it to your shortcode like this:
 
 ```html
 {{</* form-contact action="https://formspree.io/x/dfdasdfa" */>}}
@@ -253,7 +253,7 @@ In order to see your site in action, run Hugo's built-in local server.
 hugo server
 ```
 
-Now enter [`localhost:1313`](http://localhost:1313/) in the address bar of your browser.
+Now enter `http://localhost:1313/` in the address bar of your browser.
 
 ## Production
 

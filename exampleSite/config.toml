@@ -97,8 +97,8 @@ url = "/tags"
 
 [params]
 author = "Daniel F. Dickinson"
-favicon = ""
-site_logo = ""
+favicon = "/favicon.png"
+site_logo = "/dananke/images/dananke-logo.png"
 description = "Definitely not the last theme you'll ever need."
 readingTimeShow = true
 mainSections = ["post","examples"]

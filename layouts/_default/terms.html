@@ -5,8 +5,7 @@
         {{- partial "handle-content" .Content -}}
         </div>
     </article>
-    <section class="main-article terms-block">
-        <h2 class="terms-title">{{ i18n "listOfTitle" | default "List of" }} {{ $data.Plural | humanize | lower }}</h2>
+    <section class="main-article terms-block" aria-label="{{ i18n "listOfTitle" | default "List of" }} {{ $data.Plural | humanize | lower }}">
         <ul class="terms-list">
             {{- range $key, $value := .Data.Terms }}
                 <li class="terms-item"><a class="terms-link" href="{{ (printf "/%s/%s" ($.Data.Plural | urlize) ($key | urlize)) | relLangURL }}">

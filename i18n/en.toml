@@ -44,7 +44,7 @@ other = "indicates a required field"
 other = "Send"
 
 [taxonomyPageList]
-other = "Below you will find pages that utilize the taxonomy term “{{ .Title }}”"
+other = "List of pages that utilize the taxonomy term “{{ .Title }}”"
 
 [readingTime]
 one = "One minute read"

@@ -8,13 +8,7 @@
 {{- end -}}
 {{- if not (or .Params.omit_header_text .Params.headerTextOmit) }}
         <h1 class="{{ $h1Class }}">
-    {{- if not .Data.Singular -}}
-        {{- index $pageMetadata "title-page" -}}
-    {{- else if not .Data.Terms -}}
-        {{ .Data.Singular | humanize }}: {{ index $pageMetadata "title-page" | humanize | title -}}
-    {{- else -}}
-        {{ i18n "taxonomyTitle" | default "Taxonomy" }}: {{ index $pageMetadata "title-page" -}}
-    {{- end -}}
+    {{- index $pageMetadata "title-page" -}}
         </h1>
     {{- with (index $pageMetadata "description-no-fallback") }}
         <h2 class="{{ $h2Class }}">

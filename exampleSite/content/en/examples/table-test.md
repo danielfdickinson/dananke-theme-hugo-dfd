@@ -6,6 +6,7 @@ author: Daniel F. Dickinson
 summary: "A post to demo table formatting in Dananke"
 tags:
   - a-really-really-supercalifragilistically-long-tag-for-testing
+  - examples
 ---
 
 | Heading 1 | Heading 2 | Heading 3 |

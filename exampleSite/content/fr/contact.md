@@ -1,6 +1,6 @@
 ---
 title: Contact
-author: "Auteurs Ananke"
+author: false
 featured_image:
     src: "images/notebook.jpg"
     alt: "Un cahier et un stylo a côte d'une plante"

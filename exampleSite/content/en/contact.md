@@ -1,6 +1,6 @@
 ---
 title: Contact
-author: "Ananke authors"
+author: false
 imageFeatured: "images/notebook.jpg"
 imageFeaturedAlt: "A notebook beside a pen and a plant"
 omit_header_text: true

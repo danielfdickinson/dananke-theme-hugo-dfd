@@ -78,7 +78,7 @@ pre, pre code {
 }
 
 .main-navigation {
-    background-color: var(--main-nav-bg-colour, #00449e);
+    background-color: var(--main-nav-bg-colour, #227);
 }
 
 .main-navigation {
@@ -234,9 +234,9 @@ pre, pre code {
 @include clear-fix(article-404);
 
 .message-404-title {
-    background-color: #111;
+    background-color: var(--message-404-title-background-colour, #111);
     border-radius: 9999px;
-    color: #ccc;
+    color: var(--message-404-title-colour, #ccc);
     display: block;
     font-family: var(--message-404-title-font-family);
     font-size: 2.5rem;
@@ -250,9 +250,9 @@ pre, pre code {
 }
 
 .message-404-box {
-    background-color: #cdecff;
+    background-color: var(--message404box-background-colour, #888);
     border-radius: 1rem;
-    color: navy;
+    color: var(--message404box-colour, #000);
     font-size: 1.5rem;
     padding: 2rem;
     width: 100%;
@@ -267,7 +267,7 @@ pre, pre code {
 }
 
 .message-404-box .message-404-item a {
-    color: #038;
+    color: var(--message404box-link-colour, #fff);
 }
 
 .list-article {

@@ -6,7 +6,7 @@
     {{- with .Params.colourBackgroundDocument | default .Site.Params.colorBackgroundDocument | default "#eee" }}
     --whole-doc-bg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBackgroundMainNav | default .Site.Params.colourBackgroundMainNav | default .Site.Params.background_color_class | default "#00449e" }}
+    {{- with .Params.colourBackgroundMainNav | default .Site.Params.colourBackgroundMainNav | default .Site.Params.background_color_class | default "#111" }}
     --main-nav-bg-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourMainText | default .Params.text_color | default .Site.Params.colourMainText | default .Site.Params.text_color | default "#333" }}
@@ -15,8 +15,20 @@
     {{- with .Params.defaultFontFamily | default .Site.Params.defaultFontFamily | default "avenir" }}
     @include chooseFontFamily("--default-font-family", "{{ . }}");
     {{- end -}}
-    {{- with .Site.Params.message404FontFamily | default "avenir" }}
+    {{- with .Site.Params.message404TitleFontFamily | default "avenir" }}
     @include chooseFontFamily("--message-404-title-font-family", "{{ . }}");
+    {{- end -}}
+    {{- with .Site.Params.message404TitleBackgroundColour | default "#111" }}
+    --message404-title-background-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Site.Params.message404TitleColour | default "#ccc" }}
+    --message404-title-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Site.Params.message404BoxColor | default "#000" }}
+    --message404box-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Site.Params.message404BoxLinkColor | default "#fff" }}
+    --message404box-link-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.titleOverImageColour | default .Params.title_over_image_color_class | default .Site.Params.titleOverImageColour | default .Site.Params.title_over_image_color_class | default "rgba(255, 255, 255, .8)" }}
     --title-over-image-colour: {{ . -}};

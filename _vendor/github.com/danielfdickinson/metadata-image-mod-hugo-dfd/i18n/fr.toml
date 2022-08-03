@@ -1,0 +1,9 @@
+[taxonomy-list-description]
+other = "Pages qui utilise la terme taxonomique '{{ . }}'"
+
+[taxonomy-term-description]
+other = "Les termes aux '{{ . }}' taxonomie"
+
+[taxonomyTitle]
+other = "Taxonomie"
+

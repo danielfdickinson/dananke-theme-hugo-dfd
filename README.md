@@ -10,7 +10,7 @@ Documentation is incomplete and not in sync with current state of theme.
 
 The intent of this theme is to provide a fairly complete framework for Daniel F. Dickinson's Hugo sites with important features, and including best practices for performance and accessibility.
 
-It is derived from [Ananke Hugo theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
+It is derived from the [Ananke Hugo theme](https://github.com/theNewDynamic/gohugo-theme-ananke) with many thanks to Bud Parr, Regis Philbert, and all contributors.
 
 It has removed the use of Tachyons.
 

@@ -13,4 +13,4 @@ cascade:
 
 Welcome to my theme sample site.
 
-You can see some recently updated content, below.
+Below, you can see some recently updated, or featured, content.

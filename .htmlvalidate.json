@@ -1,12 +1,7 @@
 {
     "root": true,
-    "extends": [
-        "html-validate:recommended",
-        "html-validate:document"
-    ],
-    "elements": [
-        "html5",
-        {
+    "extends": ["html-validate:recommended","html-validate:document"],
+    "elements": ["html5",{
             "th": {
                 "flow": true,
                 "implicitClosed": ["td", "th"],
@@ -55,8 +50,7 @@
                 "permittedContent": ["@flow"],
                 "permittedDescendants": [{ "exclude": ["header", "footer", "@sectioning", "@heading"] }]
             }
-        }
-    ],
+        }],
     "rules": {
         "svg-focusable": "off",
         "no-raw-characters": "off",
@@ -64,11 +58,6 @@
         "prefer-tbody": "off",
         "no-inline-style": "off",
         "prefer-native-element": "off",
-        "valid-id": [
-            "error",
-            {
-                "relaxed": true
-            }
-        ]
+        "valid-id": ["error", {"relaxed": true}]
     }
 }

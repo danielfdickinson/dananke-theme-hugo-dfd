@@ -10,6 +10,6 @@ summaryTextOnly: true
 cascade:
     pageCanonical: false
 ---
-Bienvenu sur mon blog aux exemples!
+Bienvenu au mon site d'example du mon thème.
 
-Vous pouvez lire mon exemple du thème ici.
+Plus bas sont les articles récent que vous lussiez.

@@ -9,6 +9,7 @@ pageCanonical: false
 cascade:
     pageCanonical: false
 ---
-Welcome to my blog of examples.
 
-You can see my example theme here.
+Welcome to my theme sample site.
+
+You can see some recently updated content, below.

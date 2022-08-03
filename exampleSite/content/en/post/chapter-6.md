@@ -8,6 +8,7 @@ tags: []
 title: "Chapter VI: Esmeralda"
 series:
     - hunchback-of-notre-dame
+weight: 100
 ---
 We are delighted to be able to inform the reader, that during the whole of
 this scene, Gringoire and his piece had stood firm. His actors, spurred on

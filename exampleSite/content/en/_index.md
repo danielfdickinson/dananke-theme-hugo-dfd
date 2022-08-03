@@ -8,6 +8,7 @@ summaryTextOnly: true
 pageCanonical: false
 cascade:
     pageCanonical: false
+    weight: 1000
 ---
 
 Welcome to my theme sample site.

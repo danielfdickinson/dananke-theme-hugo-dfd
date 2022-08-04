@@ -7,6 +7,7 @@ featured_image:
 description: "Vraiment, ce n'est pas le dernier thème dont vous aurez besoin."
 pageCanonical: false
 summaryTextOnly: true
+ignoreWeight: false
 cascade:
     pageCanonical: false
 ---

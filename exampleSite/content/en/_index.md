@@ -6,6 +6,7 @@ imageFeatured: "/dananke/images/gohugo-default-sample-hero-image.jpg"
 imageFeaturedAlt: "A picture of modern Paris as seen from Notre-Dame Cathedral, with a cornice with a gargoyle on the left and dominating the scene"
 summaryTextOnly: true
 pageCanonical: false
+ignoreWeight: false
 cascade:
     pageCanonical: false
     weight: 1000

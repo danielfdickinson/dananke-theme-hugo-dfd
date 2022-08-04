@@ -7,6 +7,7 @@
 {{- $nameAsHeading := .nameAsHeading -}}
 {{- $ignoreWeight := .ignoreWeight -}}
 {{- $omitableList := .omitableList -}}
+{{- $usePagination := .usePagination | default true -}}
 {{- $textOnly := $curPage.Params.summaryTextOnly | default $curPage.Site.Params.summaryTextOnly | default false -}}
 {{- $pages := partial "helpers/find-ordered-pages.html" (dict "Page" .Page "Pages" (union $inPages $inSections) "ignoreWeight" $ignoreWeight "omitableList" $omitableList) -}}
 {{- if $numPosts -}}
@@ -16,8 +17,14 @@
         {{- if $nameAsHeading }}
             <h2 class="featured-title">{{ $sectionName }}</h2>
         {{- end -}}
-{{- range ($curPage.Paginate $pages).Pages -}}
-    {{- partial "summary-with-image" (dict "page" . "textOnly" $textOnly) -}}
+{{- if $usePagination -}}
+    {{- range ($curPage.Paginate $pages).Pages -}}
+        {{- partial "summary-with-image" (dict "page" . "textOnly" $textOnly) -}}
+    {{- end -}}
+{{- else -}}
+    {{- range $pages -}}
+        {{- partial "summary-with-image" (dict "page" . "textOnly" $textOnly) -}}
+    {{- end -}}
 {{- end -}}
         </section>
 {{- /* Trim trailing newlines */ -}}

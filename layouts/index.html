@@ -15,9 +15,9 @@
         {{- end -}}
     {{- end -}}
     {{- /* Check to see if the section is defined for ranging through it */ -}}
-    {{- $n_posts := $.Param "recent_posts_number" | default 3 -}}
+    {{- $n_posts := $.Param "recent_posts_number" | default 4 -}}
     {{- $ignoreWeight := $.Param "ignoreWeight" | default true }}
-    {{ partial "summary-list.html" (dict "page" .Page  "pages" $sectionPages "numPosts" $n_posts "sectionName" (i18n "recentArticles" | default "Recent articles") "nameAsHeading" true "ignoreWeight" $ignoreWeight "omitableList" true) }}
+    {{ partial "summary-list.html" (dict "page" .Page  "pages" $sectionPages "numPosts" $n_posts "sectionName" (i18n "recentArticles" | default "Recent articles") "nameAsHeading" true "ignoreWeight" $ignoreWeight "omitableList" true "usePagination" false) }}
     {{- with .Params.page_footnote | default .Params.footnotePage }}
     <div class="page-footnote">{{- . | $ctx.RenderString -}}</div>
     {{- end -}}

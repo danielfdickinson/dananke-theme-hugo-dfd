@@ -8,6 +8,7 @@ cascade:
         alt: "Paris moderne avec une gargouille au premiere plan"
     shareDisable: true
     pageCanonical: false
+    imageFeaturedOpacity: .3
 menu:
     main:
         weight: 100

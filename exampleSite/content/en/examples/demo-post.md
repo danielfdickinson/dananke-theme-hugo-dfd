@@ -38,6 +38,6 @@ Just to make sure the site works[^1] and audit check doesn't fail when there is 
    ```
 
 [^1]: But let's also throw a footnote in here too, so that the html validator
-      doesn't complain about our 'relaxing' (to specifiction instead of stricter!)
+      doesn't complain about our 'relaxing' (to specification instead of stricter!)
       the CSS `id` check when there are not any `id`s that need that loosening. I
       really need to report this upstream…

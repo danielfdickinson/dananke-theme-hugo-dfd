@@ -1,37 +1,31 @@
-.dananke-socials a {
+.dananke-social-list-item a {
     display: inline-block;
     vertical-align: middle;
     color: #BABABA;
     fill: currentColor;
 }
 
-.dananke-socials a .icon {
+.dananke-social-list-item a .icon {
     display: block;
     line-height: 1;
     padding: .1em;
 }
 
-.dananke-socials a .icon svg {
-    width: 32px;
-    height: 32px;
+.dananke-social-list-item a .icon svg {
+    height: auto;
+    min-height: 32px;
+    min-width: 32px;
+    width: auto;
 }
 
-.dananke-socials a {
+.dananke-social-list-item a {
+    height: 48px;
+    width: 48px;
     padding: 1px;
 }
 
-.dananke-socials a:focus, .dananke-socials a:hover {
+.dananke-social-list-item a:focus, .dananke-social-list-item a:hover {
     border: 1px solid;
     color: rgb(107, 114, 128);
-    padding: 0;
 }
 
-.new-window {
-    opacity: 0;
-    display: inline-block;
-    vertical-align: top;
-}
-
-.link-transition:hover .new-window {
-      opacity: 1;
-}

@@ -1,13 +1,15 @@
 {{- /* Add newline before footer */}}
     <footer class="site-footer">
-        <a class="footer-copyright" href="{{ .Site.BaseURL }}">
+        <ul class="site-footer-link-list">
+            <li class="footer-link-list-item"><a class="footer-copyright footer-link" href="{{ .Site.BaseURL }}">
         {{- with .Site.Copyright | default .Site.Title }} {{ . | safeHTML }} {{ end -}}
-        </a>
+        </a></li>
     {{- with site.Menus.footer_links -}}
         {{- range . }}
-        <a class="footer-link" href="{{ .URL }}">{{ .Name }}</a>
+            <li class="footer-link-list-item"><a class="footer-link" href="{{ .URL }}">{{ .Name }}</a></li>
         {{- end -}}
     {{- end }}
     {{- partial "social-follow.html" . }}
+        </ul>
     </footer>
 {{- /* Remove trailing newlines */ -}}

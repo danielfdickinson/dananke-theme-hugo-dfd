@@ -7,7 +7,7 @@
     {{- $h2Class = "page-description-banner homepage-description-banner" -}}
 {{- end -}}
 {{- if not (or $curPage.Params.omit_header_text $curPage.Params.headerTextOmit) }}
-        <h1 class="{{ $h1Class }}">
+        <h1 id="{{ printf "title-%s" (index $pageMetadata "title-page" | anchorize) }}" class="{{ $h1Class }}">
     {{- index $pageMetadata "title-page" -}}
         </h1>
     {{- with (index $pageMetadata "description-no-fallback") }}

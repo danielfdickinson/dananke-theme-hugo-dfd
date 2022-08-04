@@ -1,9 +1,9 @@
 {{- $curPage := .Page -}}
-{{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
+{{- $pageMetadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-page")) }}
             <header class="main-header">
     {{- if $curPage.Params.headerTextOmit | default $curPage.Params.omit_header_text | default false }}
-                <h1 class="main-title">
-                {{- index $page_metadata "title-page" -}}
+                <h1 id="{{ printf "title-%s" (replace (index $pageMetadata "title-page" | plainify | urlize) "/" "-") }}" class="main-title">
+                {{- index $pageMetadata "title-page" -}}
                 </h1>
     {{- end }}
             </header>

@@ -10,6 +10,7 @@ ignoreWeight: false
 cascade:
     pageCanonical: false
     weight: 1000
+imageFeaturedOpacity: .4
 ---
 
 Welcome to my theme sample site.

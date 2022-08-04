@@ -8,6 +8,7 @@ tags: ["scene"]
 title: "Chapter I: The Grand Hall"
 series:
     - hunchback-of-notre-dame
+shareDisable: false
 ---
 
 Three hundred and forty-eight years, six months, and nineteen days ago

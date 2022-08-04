@@ -9,14 +9,14 @@
 {{- $hrefs := dict "facebook" $facebook_href "twitter" $twitter_href "linkedin" $linkedin_href -}}
 {{- $services := where (partialCached "helpers/socials/get-enabled-services" "dananke/socials/get") "share" true -}}
 {{- if ne (.Page.Params.shareDisable | default .Page.Site.Params.shareDisable ) true }}
-            <aside id="sharing" class="socials-share dananke-socials">
+            <ul id="sharing" class="socials-share dananke-socials">
     {{- range $service := $services -}}
         {{- $href := index $hrefs .name }}
-                <a href="{{ $href }}" class="dananke-social-link {{ .name }} no-underline" aria-label="share on {{ .label }}">
+                <li class="dananke-social-list-item"><a href="{{ $href }}" class="dananke-social-link {{ .name }} no-underline" aria-label="share on {{ .label }}">
         {{- with .icon -}}
                     <span class="icon"> {{ . }}</span>
         {{- end -}}
-                </a>
+                </a></li>
     {{- end }}
-            </aside>
+            </ul>
 {{- end }}

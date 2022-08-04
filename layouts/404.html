@@ -1,11 +1,11 @@
 {{ define "main" }}
-    <article class="article-404">
-      <h2 class="message-404-title">{{ i18n "pageYouSeekNotHere" | default "The page which you seek is not here" }}</h2>
-      <ul class="message-404-box">
+    <article class="article-intense-notice">
+      <h2 class="intense-notice-title">{{ i18n "pageYouSeekNotHere" | default "The page which you seek is not here" }}</h2>
+      <ul class="intense-notice-box">
         {{- with .GetPage ( .Site.Params.sitemap404 | default "/about/user-sitemap") }}
-        <li class="message-404-item">{{ i18n "youMayWishToView" | default "You may wish to view" }} <a href="{{ .RelPermalink }}">{{ i18n "theSiteMap" | default "the Site Map" }}</a></li>
+        <li class="intense-notice-item">{{ i18n "youMayWishToView" | default "You may wish to view" }} <a href="{{ .RelPermalink }}">{{ i18n "theSiteMap" | default "the Site Map" }}</a></li>
         {{- end }}
-        <li class="message-404-item">{{ i18n "orGoto" | default "Or, go to" }} <a href="/">{{ i18n "theHomePage" | default "the Home Page" }}</a></li>
+        <li class="intense-notice-item">{{ i18n "orGoto" | default "Or, go to" }} <a href="/">{{ i18n "theHomePage" | default "the Home Page" }}</a></li>
       </ul>
     </article>
 {{ end }}

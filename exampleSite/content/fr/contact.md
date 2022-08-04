@@ -12,6 +12,7 @@ menu:
     main:
         weight: 1000
 shareDisable: true
+imageFeaturedOpacity: 1
 ---
 
 Il s'agit de la page de contact Français. Ceci est un exemple de shortcode personnalisé que vous pouvez mettre directement dans votre contenu. Vous devrez ajouter une action de formulaire au shortcode pour le faire fonctionner. Consultez [Formspree](https://formspree.io/) pour un service de formulaire simple et gratuit.

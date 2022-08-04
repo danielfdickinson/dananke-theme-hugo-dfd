@@ -7,7 +7,7 @@
     {{- range $service := . -}}
         {{- with .color -}}
             {{- $rule := printf `
-                .dananke-socials a.%s:hover {
+                .dananke-social-list-item a.%s:hover {
                     color: %s;
                 }` $service.name $service.color -}}
             {{- $socials_rules = $socials_rules | append $rule -}}

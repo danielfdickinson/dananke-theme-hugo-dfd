@@ -48,7 +48,7 @@
                     }
                 },
                 "permittedContent": ["@flow"],
-                "permittedDescendants": [{ "exclude": ["header", "footer", "@sectioning", "@heading"] }]
+                "permittedDescendants": [{"exclude": ["header", "footer", "@sectioning", "@heading"]}]
             }
         }],
     "rules": {
@@ -57,12 +57,6 @@
         "require-sri": "off",
         "prefer-tbody": "off",
         "no-inline-style": "off",
-        "prefer-native-element": "off",
-        "valid-id": [
-            "error",
-            {
-                "relaxed": true
-            }
-        ]
+        "prefer-native-element": "off"
     }
 }

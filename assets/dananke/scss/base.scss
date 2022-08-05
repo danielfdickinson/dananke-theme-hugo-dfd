@@ -515,7 +515,7 @@ code {
 
 .main-article .context-menu-item {
     background-color: #e0e0e0;
-    border-radius: 1em;
+    border-radius: 1rem;
     line-height: 1.5;
     padding: .875rem 1.5rem;
 }
@@ -562,7 +562,7 @@ code {
 .main-article .context-menu-item li ol, .main-article .context-menu-item li ul {
     list-style: none;
     margin-left: 0;
-    padding-left: 1.5em;
+    padding-left: 1.5rem;
 }
 
 .main-article .context-menu-item .context-title {
@@ -571,7 +571,7 @@ code {
 }
 
 .main-article .context-menu-item[open] .context-title {
-    margin-bottom: 1em;
+    margin-bottom: 1rem;
 }
 
 .main-article-see-also {
@@ -583,7 +583,7 @@ code {
 }
 
 .see-also-list-item {
-    margin-bottom: .25em;
+    margin-bottom: .25rem;
 }
 
 .socials-share {
@@ -1452,7 +1452,7 @@ code {
     }
 
     .main-article-context-menu {
-        max-width: 42em;
+        max-width: 48rem;
     }
 
     .list-buttons-bar {

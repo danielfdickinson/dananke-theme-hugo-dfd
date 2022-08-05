@@ -754,6 +754,7 @@ code {
 
 
 .summary-title {
+    margin-bottom: .5rem;
     margin-left: .25rem;
     margin-right: .25rem;
     max-width: 36rem;
@@ -764,7 +765,10 @@ code {
     border-radius: 6px;
     display: block;
     height: 100%;
-    padding: 1rem;
+    padding-bottom: .25rem;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    padding-top: .25rem;
     padding-left: 2rem;
     text-decoration: none;
     width: 100%;
@@ -787,13 +791,13 @@ code {
         border: solid 1px var(--main-text-colour);
         border-radius: 1rem;
         display: block;
-        font-size: 1.5rem;
-        font-weight: 100;
+        font-size: 1.33rem;
+        font-weight: 150;
         line-height: 1.25;
         max-width: inherit;
         opacity: 1;
-        padding-left: 1rem;
-        padding-right: 1rem;
+        padding-left: .75rem;
+        padding-right: .75rem;
         text-align: left;
 
         @include chooseFontFamily("font-family", "athelas");
@@ -819,7 +823,7 @@ code {
 }
 
 .main-block .articles-summaries .featured-title {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
     text-align: center;
 }
@@ -835,8 +839,9 @@ code {
     color: var(--main-text-colour);;
     display: flex;
     flex-direction: column;
+    font-size: 1.125rem;
     justify-content: center;
-    margin-bottom: .5em;
+    margin-bottom: .5rem;
     position: relative;
     text-decoration: none;
     width: 100%;
@@ -995,7 +1000,6 @@ code {
 }
 
 .summary-from-metadata {
-    font-size: 1.25rem;
     line-height: 1.5;
     margin-bottom: 1rem;
     padding-left: .5rem;
@@ -1421,7 +1425,7 @@ code {
     }
 
     .summary-from-metadata {
-        font-size: 1.33rem;
+        font-size: 1.25rem;
     }
 
     .summary-from-metadata {
@@ -1442,7 +1446,7 @@ code {
     }
 
     .main-block .articles-summaries.text-only {
-        max-width: 44em;
+        max-width: 48rem;
     }
 
     .contact-form-article .main-article-content {
@@ -1630,7 +1634,7 @@ main table tbody tr:nth-of-type(even) {
     background-color: #191919;
     color: #dfdfdf;
     min-width: min-content;
-    padding: .4em;
+    padding: .4rem;
     white-space: pre-wrap;
 }
 

@@ -165,10 +165,10 @@ code {
 .main-nav-details > summary {
     background-color: var(--main-nav-bg-colour, #111);
     list-style-image: var(--hamburger-icon);
-    height: 32px;
+    height: 28px;
     left: 0;
     top: 0;
-    padding: 8px;
+    padding: 10px; // So size is 48px == minimum tap point size
     position: relative;
     z-index: 3;
 }
@@ -204,12 +204,7 @@ code {
 .site-title {
     color: var(--main-nav-fg-colour, #ddd);
     font-weight: 400;
-}
-
-@media screen and (min-width: 48rem) {
-    .site-title {
-        margin-right: 2rem;
-     }
+    text-align: center;
 }
 
 .main-navigation-mobile .site-title {
@@ -259,6 +254,7 @@ code {
         list-style: none;
 
         & .dananke-social-link {
+            align-items: center;
             display: flex;
             justify-content: center;
             line-height: 2;
@@ -273,7 +269,7 @@ code {
 .footer-link-list-item {
     display: block;
     flex: 1 1 max-content;
-    font-weight: 400;
+    font-weight: 510;
     list-style: none;
 }
 
@@ -315,25 +311,10 @@ code {
         & .title-menu-item,
         & .dananke-social-list-item {
             & a {
-                margin-bottom: 4px;
+                margin-bottom: 4px; // Minimum tap target separation
                 margin-top: 4px;
-                padding-bottom: 4px;
-                padding-top: 4px;
-            }
-        }
-    }
-}
-
-.main-navigation-mobile {
-    & .lang-list {
-        line-height: 2;
-
-        & .title-nav-item {
-            & a {
-                margin-bottom: 4px;
-                margin-top: 4px;
-                padding-bottom: 4px;
-                padding-top: 4px;
+                padding-bottom: 8px;
+                padding-top: 8px;
             }
         }
     }
@@ -345,23 +326,22 @@ code {
 .footer-link:link,
 .lang-link,
 .lang-link:link {
-    color: rgba(255, 255, 255, 0.9);
+    color: var(--main-nav-fg-colour, #ddd);
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 8px; // Tap target separation
     margin-left: 4px;
     margin-top: 8px;
     margin-right: 4px;
-    min-height: 48px;
-    min-width: 48px;
+    min-height: 32px;
+    min-width: 32px;  // Minimum tap target size
     padding: 8px;
 }
 
 .social-title-link {
-    margin-bottom: 8px;
+    margin-bottom: 8px; // Minimum tap target separation
     margin-left: 4px;
     margin-top: 8px;
     margin-right: 4px;
-    padding: 8px;
     z-index: 999;
 }
 
@@ -912,19 +892,25 @@ code {
 }
 
 .page-title-banner {
-    font-size: 2.5em;
-    font-weight: 400;
     color: var(--title-over-image-colour, #ddd);
+    font-size: 2rem;
+    font-weight: 510;
     margin-bottom: 0;
     width: 100%;
 }
 
 .page-description-banner {
-    font-size: 1.75em;
     color: var(--title-over-image-colour, #ddd);
+    font-size: 1.33rem;
     width: 100%;
 
     @include center-block;
+}
+
+.main-nav-details,
+.main-navigation,
+.site-footer {
+    font-size: 1.1875rem;
 }
 
 .site-header {
@@ -940,7 +926,6 @@ code {
 }
 
 .site-header .page-title-banner {
-    font-size: 2em;
     padding-bottom: 1rem;
     padding-top: 1rem;
     position: relative;
@@ -948,7 +933,6 @@ code {
 }
 
 .site-header .page-description-banner {
-    font-size: 1.5em;
     position: relative;
     z-index: 1;
 }
@@ -956,16 +940,6 @@ code {
 .site-header-with-image {
     height: auto;
     min-height: auto;
-}
-
-@media screen and (min-width: 48rem) {
-    .site-header .page-title-banner {
-        font-size: 2.5em;
-    }
-
-    .site-header .page-description-banner {
-        font-size: 1.875em;
-    }
 }
 
 .main-nav-details + .main-navigation.show-on-mobile ~ .site-header {
@@ -1319,7 +1293,6 @@ code {
 @media screen and (min-width: 48rem) {
     .site-footer {
         flex-flow: row wrap;
-        font-size: 1.125em;
     }
 
     .list-buttons-bar {
@@ -1329,16 +1302,13 @@ code {
         width: 100%;
     }
 
-    .lang-item {
-        font-size: 1.25rem;
-    }
-
     .contact-form-article .main-article-content {
         width: 36em;
     }
 
     .featured-image-link {
         display: flex;
+        z-index: 0;
     }
 
     .featured-image {
@@ -1355,7 +1325,7 @@ code {
     }
 
     .site-image {
-        max-width: 20rem;
+        max-width: 20vw;
     }
 
     .site-link {
@@ -1365,7 +1335,6 @@ code {
     .main-navigation {
         align-items: center;
         flex-flow: row wrap;
-        font-size: 1.125em;
         padding: 1rem;
     }
 
@@ -1384,7 +1353,7 @@ code {
     .main-nav-details + .main-navigation {
         display: flex;
         visibility: visible;
-        z-index: 1;
+        z-index: 0;
     }
 
     .title-menu-list,
@@ -1508,7 +1477,6 @@ code {
         padding-bottom: 0;
     }
 
-    .list-article,
     .main-block .page-footnote {
         padding-left: 4rem;
         padding-right: 4rem;
@@ -1520,39 +1488,10 @@ code {
         padding-right: 0;
     }
 
-    .page-title-banner {
-        font-size: 3rem;
-    }
-
     .page-description-banner {
-        font-size: 1.5rem;
-        max-width: 34em;
+        max-width: 38em;
     }
 
-    .homepage-title-banner {
-        font-size: 5rem;
-    }
-
-    .homepage-description-banner {
-        font-size: 2rem;
-        max-width: 34em;
-    }
-
-    .site-header .page-title-banner {
-        font-size: 3rem;
-    }
-    
-    .site-header .page-description-banner {
-        font-size: 1.5rem;
-    }
-
-    .site-header .homepage-title-banner {
-        font-size: 5rem;
-    }
-
-    .site-header .homepage-description-banner {
-        font-size: 2rem;
-    }
 }
 
 .about-photo {
@@ -1625,7 +1564,7 @@ code {
     align-items: center;
     display: inline-flex;
     flex-flow: row nowrap;
-    margin-right: 1em;
+    margin-right: 1rem;
     min-height: 48px;
     min-width: 48px;
     vertical-align: middle;

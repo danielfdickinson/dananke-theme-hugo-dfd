@@ -189,8 +189,10 @@ code {
     font-weight: 400;
 }
 
-@media screen and (min-width: 30em) {
-    padding-bottom: 1rem;
+@media screen and (min-width: 48rem) {
+    .site-title {
+        margin-right: 2rem;
+     }
 }
 
 .main-navigation-mobile .site-title {
@@ -418,7 +420,7 @@ code {
     }
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 84rem) {
     .article-intense-notice {
 
         & .intense-notice-box {
@@ -944,6 +946,16 @@ code {
     min-height: auto;
 }
 
+@media screen and (min-width: 48rem) {
+    .site-header .page-title-banner {
+        font-size: 2.5em;
+    }
+
+    .site-header .page-description-banner {
+        font-size: 1.875em;
+    }
+}
+
 .main-nav-details + .main-navigation.show-on-mobile ~ .site-header {
     height: 2rem;
     width: 100%;
@@ -1279,62 +1291,21 @@ code {
     content: "»";
 }
 
-@media screen and (min-width: 30em) {
+@media screen and (min-width: 48rem) {
     .site-footer {
         flex-flow: row wrap;
-    }
-
-    .main-navigation {
-        align-items: center;
-        padding-right: 1rem;
+        font-size: 1.125em;
     }
 
     .list-dananke {
         align-items: center;
         padding-left: 2rem;
         padding-right: 2rem;
-    }
-
-    .list-dananke {
         width: 100%;
-    }
-
-    .main-navigation {
-        flex-flow: row wrap;
     }
 
     .lang-item {
         font-size: 1.25rem;
-    }
-
-    .title-menu-list,
-    .site-footer-link-list,
-    .lang-list {
-        flex: 1 1 max-content;
-    }
-
-
-    .title-menu-list {
-        margin-bottom: 0;
-    }
-
-    .site-header .page-title-banner {
-        font-size: 2.25rem;
-    }
-    
-    .site-header .page-description-banner {
-        font-size: 1.25rem;
-    }
-
-    .site-header .homepage-description-banner {
-        font-size: 1.5rem;
-    }
-}
-
-@media screen and (min-width: 48rem) {
-    .main-article {
-        padding-left: 3rem;
-        padding-right: 3rem;
     }
 
     .contact-form-article .main-article-content {

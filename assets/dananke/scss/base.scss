@@ -185,7 +185,6 @@ code {
 
 .site-title {
     color: rgba(255, 255, 255, 0.8);
-    font-size: 1.5rem;
     font-weight: 400;
 }
 
@@ -897,7 +896,7 @@ code {
 
 .page-title-banner {
     color: var(--title-over-image-colour, rgba(255, 255, 255, .8));
-    font-size: 2.25rem;
+    font-size: 2.5em;
     font-weight: 400;
     margin-bottom: 0;
     width: 100%;
@@ -905,14 +904,10 @@ code {
 
 .page-description-banner {
     color: var(--title-over-image-colour, rgba(255, 255, 255, .8));
-    font-size: 1.25rem;
+    font-size: 1.75em;
     width: 100%;
 
     @include center-block;
-}
-
-.homepage-description-banner {
-    font-size: 1.5rem;
 }
 
 .site-header {
@@ -928,7 +923,7 @@ code {
 }
 
 .site-header .page-title-banner {
-    font-size: 2.25rem;
+    font-size: 2em;
     padding-bottom: 1rem;
     padding-top: 1rem;
     position: relative;
@@ -936,7 +931,7 @@ code {
 }
 
 .site-header .page-description-banner {
-    font-size: 14pt;
+    font-size: 1.5em;
     position: relative;
     z-index: 1;
 }

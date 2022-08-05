@@ -17,46 +17,46 @@
             {{- $older = $parentSiblings.olderInSection -}}
         {{- end -}}
     {{- end }}
-    <nav aria-label="{{ i18n "sitePageNavigation" | default "Inter-page navigation"}}" class="nav-page-dananke">
-        <ul class="list-dananke bar-dananke linkbar-dananke">
-            <li class="list-item-dananke{{- if not .Next }} none-dananke{{- end }} section-other-newer">
+    <nav aria-label="{{ i18n "sitePageNavigation" | default "Inter-page navigation"}}" class="{{ .Param "barPageNav" | default "nav-page-dananke" }} {{ .Param "barButtonsNav" | default "nav-buttons-bar" }}">
+        <ul class="{{ .Param "barListButtons" | default "list-buttons-bar" }} {{ .Param "barListPageNav" | default "list-dananke" }} {{ .Param "barLinks" | default "linkbar-dananke" }}">
+            <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $newer }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-other-newer">
         {{- if $newer -}}
-                <a class="link-dananke" href="{{ $newer.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>
+                <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $newer.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "newer" }}: </span>
             {{- partial "helpers/page-title.html" $newer -}}</a>
         {{- else -}}
-                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "newer" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "newer" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
-            <li class="list-item-dananke{{- if not $newerInSection }} none-dananke{{- end }} section-newer">
+            <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $newerInSection }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-newer">
         {{- if $newerInSection -}}
-                <a class="link-dananke" href="{{ $newerInSection.RelPermalink }}"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>
+                <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $newerInSection.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{i18n "newerThisSection"}}: </span>
             {{- partial "helpers/page-title.html" $newerInSection -}}</a>
         {{- else -}}
-                <span class="link-dananke"><span class="list-item-label-dananke">{{i18n "newerThisSection"}}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{i18n "newerThisSection"}}: </span>&squarf;</span>
         {{- end -}}
             </li>
-            <li class="list-item-dananke{{- if not $upLevel }} none-dananke{{- end }} up-level">
+            <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $upLevel }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} up-level">
         {{- if .Parent -}}
-                <a class="link-dananke" href="{{ $upLevel.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "upLevel" }}</span>
+                <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $upLevel.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "upLevel" }}</span>
             {{- partial "helpers/page-title.html" $upLevel -}}</a>
         {{- else -}}
-            <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "atTop" }}</span>&equiv;</span>
+            <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "atTop" }}</span>&equiv;</span>
         {{- end -}}
             </li>
-            <li class="list-item-dananke{{- if not $olderInSection }} none-dananke{{- end }} section-older">
+            <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $olderInSection }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-older">
         {{- if $olderInSection -}}
-                <a class="link-dananke" href="{{ $olderInSection.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>
+                <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $olderInSection.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "olderThisSection" }}: </span>
             {{- partial "helpers/page-title.html" $olderInSection -}}</a>
         {{- else -}}
-                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "olderThisSection" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "olderThisSection" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
-            <li class="list-item-dananke{{- if not $older }} none-dananke{{- end }} section-other-older">
+            <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $older }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-other-older">
         {{- if $older -}}
-                <a class="link-dananke" href="{{ $older.RelPermalink }}"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>
+                <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $older.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "older" }}: </span>
             {{- partial "helpers/page-title.html" $older -}}</a>
         {{- else -}}
-                <span class="link-dananke"><span class="list-item-label-dananke">{{ i18n "older" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "older" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
         </ul>

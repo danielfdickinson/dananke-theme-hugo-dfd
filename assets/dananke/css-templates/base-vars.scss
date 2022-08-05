@@ -2,11 +2,8 @@
 @import '../scss/common-mixins.scss';
 
 :root {
-    {{- with .Params.fontSizeBase | default .Site.Params.fontSizeBase | default "12pt" }}
+    {{- with .Params.fontSizeBase | default .Site.Params.fontSizeBase | default "16px" }}
     --base-font-size: {{ . }};
-    {{- end -}}
-    {{- with .Params.fontSizeWholeBody | default .Site.Params.fontSizeWholeBody | default "16pt" }}
-    --whole-body-font-size: {{ . }};
     {{- end -}}
     {{- with .Params.colourBackgroundDocument | default .Site.Params.colorBackgroundDocument | default "#eee" }}
     --whole-doc-bg-colour: {{ . -}};

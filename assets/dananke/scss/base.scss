@@ -17,17 +17,8 @@
 }
 
 
-* {
-    margin-top: 0;
-    padding-top: 0;
-}
-
 html {
-    font-size: var(--base-font-size, 12pt);
-}
-
-input, textarea, button {
-    font-size: var(--base-font-size, 12pt);
+    font-size: var(--base-font-size, 16px);
 }
 
 .whole-body, body {
@@ -35,7 +26,7 @@ input, textarea, button {
     display: flex;
     flex-flow: column nowrap;
     font-family: var(--default-font-family, sans-serif);
-    font-size: calc(var(--whole-body-font-size, 16pt) - 2pt);
+    font-size: var(--base-font-size, 16px);
     left: 0;
     line-height: 1.33;
     margin: 0;
@@ -44,18 +35,45 @@ input, textarea, button {
     z-index: 0;
 }
 
-@media screen and (min-width: 48rem) {
-    .whole-body, body {
-        font-size: var(--whole-body-font-size, 16pt);
+@media screen and (max-resolution: 96dpi) and (max-width: 1024px) {
+    .whole-body, body, html {
+        font-size: calc(var(--base-font-size, 16px) * 1.125);
     }
+}
+
+@media screen and (max-resolution: 96dpi) and (min-width: 1025px) {
+    .whole-body, body, html {
+        font-size: var(--base-font-size, 16px);
+     }
+}
+
+@media screen and (min-resolution: 192dpi) {
+    .whole-body, body, html {
+        font-size: calc(var(--base-font-size, 16px) * 2);
+    }
+}
+
+@media screen and (min-resolution: 384dpi) {
+    .whole-body, body, html {
+        font-size: calc(var(--base-font-size, 16px) * 3);
+    }
+}
+
+*, .content-box, hr {
+    box-sizing: content-box;
 }
 
 .border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, ol, p, pre, section, table, td, textarea, th, tr, ul {
     box-sizing: border-box;
 }
 
-*, .content-box, hr {
-    box-sizing: content-box;
+* {
+    margin-top: 0;
+    padding-top: 0;
+}
+
+input, textarea, button {
+    font-size: 1rem;
 }
 
 a, code {

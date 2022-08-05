@@ -8,11 +8,20 @@
     {{- with .Params.colourBackgroundDocument | default .Site.Params.colorBackgroundDocument | default "#eee" }}
     --whole-doc-bg-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourBackgroundSectionMap | default .Site.Params.colorBackgroundSectionMap | default "#ccc" }}
+    --section-map-bg-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.colourBackgroundMainNav | default .Site.Params.colourBackgroundMainNav | default .Site.Params.background_color_class | default "#111" }}
     --main-nav-bg-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourMainNav | default .Site.Params.colourMainNav | default "#ddd" }}
+    --main-nav-fg-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.colourMainText | default .Params.text_color | default .Site.Params.colourMainText | default .Site.Params.text_color | default "#333" }}
     --main-text-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourInactiveText |  default .Site.Params.colourInactiveText | default "#888" }}
+    --inactive-text-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourLink | default .Site.Params.colourLink | default "#00d" }}
     --link-colour: {{ . -}};
@@ -38,7 +47,7 @@
     {{- with .Site.Params.messageIntenseNoticeBoxLinkColor | default "#fff" }}
     --message-intense-notice-box-link-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.titleOverImageColour | default .Params.title_over_image_color_class | default .Site.Params.titleOverImageColour | default .Site.Params.title_over_image_color_class | default "rgba(255, 255, 255, .8)" }}
+    {{- with .Params.titleOverImageColour | default .Params.title_over_image_color_class | default .Site.Params.titleOverImageColour | default .Site.Params.title_over_image_color_class | default "#ddd" }}
     --title-over-image-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.imageFeaturedPaddingColour | default .Params.image_padding_color_class | default .Site.Params.imageFeaturedPaddingColour | default .Site.Params.image_padding_color_class | default "#333" }}

@@ -964,13 +964,10 @@ code {
 
 .featured-image-link {
     bottom: 0;
-    align-items: center;
-    align-content: center;
     display: none;
-    flex-flow: column nowrap;
-    justify-content: center;
     left: 0;
-    max-height: 100%;
+    max-width: 100%;
+    overflow: clip;
     position: absolute;
     right: 0;
     top: 0;
@@ -984,9 +981,11 @@ code {
 .featured-image {
     border-style: none;
     display: none;
-    height: auto;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
     max-height: 100%;
-    max-width: 100%;
+    max-width: max-content;
     opacity: var(--featured-image-opacity);
     width: auto;
 }
@@ -1002,10 +1001,6 @@ code {
     display: block;
     opacity: 1;
     width: 100%;
-}
-
-.featured-image:not([src*=".svg"]) {
-    height: max-content;
 }
 
 .featured-image[src*=".svg"] {

@@ -240,7 +240,8 @@ code {
         list-style: none;
 
         & .dananke-social-link {
-            display: block;
+            display: flex;
+            justify-content: center;
             line-height: 2;
             margin-left: auto;
             margin-right: auto;
@@ -1361,6 +1362,21 @@ code {
         max-width: 20rem;
     }
 
+    .site-link {
+        flex: 0 1 auto;
+    }
+
+    .main-navigation {
+        align-items: center;
+        flex-flow: row wrap;
+        font-size: 1.125em;
+        padding: 1rem;
+    }
+
+    .main-navigation-with-image {
+        justify-content: flex-start;
+    }
+
     .main-nav-details {
         & summary,
         & .main-navigation-mobile {
@@ -1377,7 +1393,7 @@ code {
 
     .title-menu-list,
     .site-footer-link-list {
-        flex: 1 1 auto;
+        flex: 1 1 min-content;
     }
 
     .title-menu-list {

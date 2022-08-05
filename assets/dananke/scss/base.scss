@@ -109,7 +109,7 @@ pre {
 }
 
 code {
-    font-size: .875em;
+    font-size: .875rem;
 }
 
 .tag-link {
@@ -464,9 +464,11 @@ code {
 
 @include clear-fix("page-footnote");
 
-.main-article {
+.main-article,
+.list-article {
     display: flex;
     flex-flow: row wrap;
+    font-size: 1.125rem;
     color: var(--main-text-colour);
     line-height: 1.5;
     padding-left: 1rem;
@@ -544,8 +546,8 @@ code {
     & strong,
     & span,
     & code {
-        padding-left: .4em;
-        padding-right: .4em;
+        padding-left: .4rem;
+        padding-right: .4rem;
     }
 }
 
@@ -633,11 +635,11 @@ code {
     align-self: baseline;
     display: inline-block;
     flex: 0 1 max-content;
-    letter-spacing: .1em;
+    letter-spacing: .1rem;
     line-height: 1;
     margin-bottom: 1.5rem;
     margin-left: 2rem;
-    margin-right: .4em;
+    margin-right: .4rem;
 }
 
 .no-article-author .article-author {
@@ -653,7 +655,7 @@ code {
 }
 
 .article-timeinfo {
-    font-size: 14pt;
+    font-size: 1rem;
     letter-spacing: .1rem;
     line-height: 1;
 }
@@ -1369,10 +1371,22 @@ code {
         flex: 0 1 min-content;
     }
 
+    .page-title-banner {
+        font-size: 3rem;
+    }
+
+    .page-description-banner {
+        font-size: 2rem;
+    }
+
+    .main-block .list-article {
+        font-size: 1.25rem;
+    }
+
     .main-article {
         padding-left: 3rem;
         padding-right: 3rem;
-        width: 42em;
+        max-width: 44rem;
     }
 
     .main-block .articles-summaries.text-only {
@@ -1434,12 +1448,8 @@ code {
 }
 
 @media screen and (min-width: 84rem) {
-    .main-block {
-        font-size: 1.75rem;
-    }
-
     .main-article {
-        max-width: 44em;
+        max-width: 48rem;
     }
 
     .main-block .articles-summaries.text-only {

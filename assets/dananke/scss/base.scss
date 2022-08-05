@@ -289,7 +289,6 @@ code {
 .title-menu-list,
 .footer-link-list,
 .lang-list {
-    font-size: 1.25rem;
     line-height: 2;
 }
 
@@ -1367,8 +1366,7 @@ code {
     }
 
     .lang-list {
-        flex: 0 1 auto;
-        justify-self: flex-start;
+        flex: 0 1 min-content;
     }
 
     .main-article {

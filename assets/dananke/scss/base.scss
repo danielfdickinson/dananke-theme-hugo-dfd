@@ -104,7 +104,7 @@ code {
 }
 
 .nav-page-dananke {
-    font-size: 1.25rem;
+    font-size: 1.25em;
     overflow: visible;
     padding-left: 1rem;
     padding-right: 1rem;
@@ -377,7 +377,7 @@ code {
     color: var(--intense-notice-title-colour, #ccc);
     display: block;
     font-family: var(--intense-notice-title-font-family);
-    font-size: 2rem;
+    font-size: 1.875em;
     overflow: clip;
     padding: 2rem;
     width: max-content;
@@ -1377,6 +1377,8 @@ code {
     }
 
     .main-article {
+        padding-left: 3rem;
+        padding-right: 3rem;
         width: 42em;
     }
 

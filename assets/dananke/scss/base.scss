@@ -26,22 +26,28 @@ html {
     font-size: var(--base-font-size, 12pt);
 }
 
-body, input, textarea, button {
+input, textarea, button {
     font-size: var(--base-font-size, 12pt);
 }
 
-.whole-body {
+.whole-body, body {
     background-color: var(--whole-doc-bg-colour, #eee);
     display: flex;
     flex-flow: column nowrap;
     font-family: var(--default-font-family, sans-serif);
-    font-size: var(--whole-body-font-size, 16pt);
+    font-size: calc(var(--whole-body-font-size, 16pt) - 2pt);
     left: 0;
     line-height: 1.33;
     margin: 0;
     position: relative;
     top: 0;
     z-index: 0;
+}
+
+@media screen and (min-width: 48rem) {
+    .whole-body, body {
+        font-size: var(--whole-body-font-size, 16pt);
+    }
 }
 
 .border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, ol, p, pre, section, table, td, textarea, th, tr, ul {

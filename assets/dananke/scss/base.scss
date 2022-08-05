@@ -359,7 +359,17 @@ code {
     }
 
     & .intense-notice-item {
-        padding: .75rem;
+        padding-bottom: 1rem;
+        padding-left: .75rem;
+        padding-right: .75rem;
+
+        &:first-child {
+            padding-top: .75rem;
+        }
+
+        &:last-child {
+            padding-bottom: .75rem;
+        }
     }
 
     @include center-block;
@@ -373,7 +383,7 @@ code {
     color: var(--intense-notice-title-colour, #ccc);
     display: block;
     font-family: var(--intense-notice-title-font-family);
-    font-size: 1.875em;
+    font-size: 1.875rem;
     overflow: clip;
     padding: 2rem;
     width: max-content;
@@ -386,9 +396,9 @@ code {
     background-color: var(--intense-notice-box-background-colour, #888);
     border-radius: 4rem;
     color: var(--intense-notice-box-colour, #000);
-    font-size: 1.33em;
+    font-size: 1.5rem;
     overflow: clip;
-    padding: 1.5rem;
+    padding: 1.75rem;
     width: max-content;
 
     @include center-block;
@@ -413,27 +423,6 @@ code {
 @media screen and (min-width: 30em) {
     #site-header-404-page-not-found ~ .nav-buttons-bar .list-buttons-bar {
         margin-bottom: 3rem;
-    }
-}
-
-@media screen and (min-width: 84rem) {
-    .article-intense-notice {
-
-        & .intense-notice-box {
-            font-size: 1.75rem;
-            padding: 2rem;
-            width: max-content;
-
-            @include center-block;
-        }
-
-        & .intense-notice-title {
-            font-size: 2.5rem;
-        }
-    }
-
-    #site-header-404-page-not-found {
-        margin-bottom: 4rem;
     }
 }
 

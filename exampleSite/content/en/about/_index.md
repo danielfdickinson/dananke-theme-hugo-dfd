@@ -13,7 +13,7 @@ menu:
 shareDisable: true
 ---
 
->Or see [documentation of the Dananke theme](README.md)
+>Or see [documentation of the Dananke theme](../examples/README.md)
 
 {{< figure src="/images/Victor_Hugo-Hunchback.jpg" title="Illustration from Victor Hugo et son temps (1881)" alt="Illustration of a person hanging onto a cornice of a Gothic building with gargoyles watching and large birds flying">}}
 

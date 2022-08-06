@@ -319,7 +319,6 @@ figure figcaption {
     height: 100px;
     max-width: 300px;
     vertical-align: middle;
-    width: 100%;
 }
 
 .main-navigation,
@@ -1566,10 +1565,6 @@ main table tbody tr:nth-of-type(even) {
 
     .site-title-item {
         flex: 0 1 auto;
-    }
-
-    .site-image {
-        max-width: 20vw;
     }
 
     .main-navigation,

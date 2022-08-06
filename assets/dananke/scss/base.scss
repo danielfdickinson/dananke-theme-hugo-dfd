@@ -902,11 +902,6 @@ code {
     min-height: auto;
 }
 
-.main-nav-details + .main-navigation.show-on-mobile ~ .site-header {
-    height: 2rem;
-    width: 100%;
-}
-
 .main-nav-details[open] + .main-navigation.show-on-mobile ~ .site-header {
     height: auto;
     min-height: auto;

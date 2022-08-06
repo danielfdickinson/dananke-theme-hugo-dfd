@@ -7,10 +7,12 @@
     {{- $siteHeaderFeaturedClass = "site-header-with-image" -}}
 {{- end }}
 {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page")) -}}
+{{- if not (or $curPage.Params.omit_header_text $curPage.Params.headerTextOmit) -}}
     <header id="{{ printf "site-header-%s" (index $pageMetadata "title-page" | anchorize) }}" class="site-header{{ with $siteHeaderFeaturedClass }} {{ . }}{{ end }}">
         {{- partial "site-header-titles" . }}
-{{- if and $featuredImage (not $imageFeaturedCardOnly) }}
+    {{- if and $featuredImage (not $imageFeaturedCardOnly) }}
         {{ partial "helpers/wrapped-image" (dict "page" .Page "image" $featuredImage "alt" (cond (isset $featuredImage "alt") $featuredImage.alt "") "title" (cond (isset $featuredImage "title") $featuredImage.title "") "link" "" "noVisibleCaption" true "noImageWrapper" true "class" "featured-image" "linkClass" "featured-image-link" "loading" "lazy" "sizesAttr" "100vw") -}}
-{{- end }}
+    {{- end }}
     </header>
+{{- end -}}
 {{- /* Remove trailing newlines */ -}}

@@ -822,10 +822,18 @@ figure figcaption {
 .summary-title-link,
 .terms-link {
     border-radius: 6px;
+    &:link {
+        border-radius: 6px;
+    }
+}
+
+.walk-page-link,
+.summary-title-link,
+.terms-link,
+.tag-link {
     color: var(--link-colour);
 
     &:link {
-        border-radius: 6px;
         color: var(--link-colour);
     }
 }
@@ -858,9 +866,29 @@ figure figcaption {
 .summary-title-link:active,
 .summary-title-link:hover {
     border-radius: 6px;
+}
+
+.terms-link:focus,
+.terms-link:active,
+.terms-link:hover,
+.taxonomies-link:focus,
+.taxonomies-link:active,
+.taxonomies-link:hover,
+.walk-page-link:focus,
+.walk-page-link:active,
+.walk-page-link:hover,
+.summary-title-link:focus,
+.summary-title-link:active,
+.summary-title-link:hover,
+.tag-link:focus,
+.tag-link:active,
+.tag-link:hover {
     text-decoration: underline;
 }
 
+.tag-link:focus,
+.tag-link:active,
+.tag-link:hover,
 .terms-link:focus,
 .terms-link:active,
 .terms-link:hover,
@@ -874,6 +902,9 @@ figure figcaption {
     color: var(--whole-doc-bg-colour, #eee);
 }
 
+.tag-link:visited:focus,
+.tag-link:visited:active,
+.tag-link:visited:hover,
 .terms-link:visited:focus,
 .terms-link:visited:active,
 .terms-link:visited:hover,
@@ -884,6 +915,7 @@ figure figcaption {
     color: var(--whole-doc-bg-colour, #eee);
 }
 
+.tag-link:visited,
 .terms-link:visited,
 .walk-page-link:visited,
 .summary-title-link:visited,

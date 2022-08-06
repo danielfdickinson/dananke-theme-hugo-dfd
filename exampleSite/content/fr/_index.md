@@ -1,5 +1,5 @@
 ---
-title: "Dananke: Un thème pour Hugo"
+title: "Dananke: Un thème au Hugo"
 author: "Auteurs Ananke"
 featured_image:
     src: '/dananke/images/gohugo-default-sample-hero-image.jpg'
@@ -14,6 +14,6 @@ cascade:
 imageFeaturedOpacity: .3
 logoSite:
 ---
-Bienvenu au mon site d'example du mon thème.
+Bienvenu au mon site d'exemple du mon thème.
 
 Plus bas sont les articles récent que vous lussiez.

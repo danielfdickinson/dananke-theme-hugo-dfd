@@ -7,7 +7,7 @@
     {{- $siteHeaderFeaturedClass = "site-header-with-image" -}}
 {{- end }}
 {{- $pageMetadata := partial "helpers/return-metadata" (dict "page" $curPage "requestedData" (slice "title-page")) -}}
-{{- if not (or $curPage.Params.omit_header_text $curPage.Params.headerTextOmit) -}}
+{{- if or (not (or $curPage.Params.omit_header_text $curPage.Params.headerTextOmit)) (eq $siteHeaderFeaturedClass "site-header-with-image") -}}
     <header id="{{ printf "site-header-%s" (index $pageMetadata "title-page" | anchorize) }}" class="site-header{{ with $siteHeaderFeaturedClass }} {{ . }}{{ end }}">
         {{- partial "site-header-titles" . }}
     {{- if and $featuredImage (not $imageFeaturedCardOnly) }}

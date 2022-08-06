@@ -24,7 +24,7 @@
                 <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $newer.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "newer" }}: </span>
             {{- partial "helpers/page-title.html" $newer -}}</a>
         {{- else -}}
-                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "newer" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" aria-disabled="true"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "newer" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $newerInSection }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-newer">
@@ -32,7 +32,7 @@
                 <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $newerInSection.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{i18n "newerThisSection"}}: </span>
             {{- partial "helpers/page-title.html" $newerInSection -}}</a>
         {{- else -}}
-                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{i18n "newerThisSection"}}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" aria-disabled="true"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{i18n "newerThisSection"}}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $upLevel }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} up-level">
@@ -40,7 +40,7 @@
                 <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $upLevel.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "upLevel" }}</span>
             {{- partial "helpers/page-title.html" $upLevel -}}</a>
         {{- else -}}
-            <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "atTop" }}</span>&equiv;</span>
+            <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"  aria-disabled="true"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "atTop" }}</span>&equiv;</span>
         {{- end -}}
             </li>
             <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $olderInSection }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-older">
@@ -48,7 +48,7 @@
                 <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $olderInSection.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "olderThisSection" }}: </span>
             {{- partial "helpers/page-title.html" $olderInSection -}}</a>
         {{- else -}}
-                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "olderThisSection" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" aria-disabled="true"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "olderThisSection" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
             <li class="{{ .Param "barListItemButtons" | default "list-item-buttons-bar" }} {{ .Param "barListItemPageNav" | default "list-item-dananke" }}{{- if not $older }} {{ .Param "barItemNoneButtons" | default "none-buttons-bar" }}{{- end }} section-other-older">
@@ -56,7 +56,7 @@
                 <a class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" href="{{ $older.RelPermalink }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "older" }}: </span>
             {{- partial "helpers/page-title.html" $older -}}</a>
         {{- else -}}
-                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "older" }}: </span>&squarf;</span>
+                <span class="{{ .Param "barLinkButtons" | default "link-buttons-bar" }} {{ .Param "barLinkPageNav" | default "link-dananke" }}" aria-disabled="true"><span class="{{ .Param "barListItemLabelButtons" | default "list-item-label-buttons-bar" }} {{ .Param "barListItemLabelPageNav" | default "list-item-label-dananke" }}">{{ i18n "older" }}: </span>&squarf;</span>
         {{- end -}}
             </li>
         </ul>

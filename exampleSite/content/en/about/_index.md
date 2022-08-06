@@ -11,6 +11,7 @@ menu:
     main:
         weight: 10
 shareDisable: true
+toCanonical: https://gohugo-ananke-theme-demo.netlify.app/about/
 ---
 
 >Or see [documentation of the Dananke theme](../examples/README.md)

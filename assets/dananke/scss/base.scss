@@ -35,6 +35,9 @@ html {
     z-index: 0;
 }
 
+/* <= 1024 pixel displays are probably a cell phone or similarly small screen,
+   so we compensate by making the base fonts slightly larger
+ */
 @media screen and (max-resolution: 96dpi) and (max-width: 1024px) {
     .whole-body, body, html {
         font-size: calc(var(--base-font-size, 16px) * 1.125);
@@ -47,12 +50,24 @@ html {
      }
 }
 
+/* On some OS fonts are rendered smaller on large screens, even without double
+   or higher density displays. Also one tends to sit further away from the
+   screen when it large.
+ */
+@media screen and (max-resolution: 96dpi) and (min-width: 1441px) {
+    .whole-body, body, html {
+        font-size: calc(var(--base-font-size, 16px) * 1.25);
+     }
+}
+
+/* And of course double density is, well, double */
 @media screen and (min-resolution: 192dpi) {
     .whole-body, body, html {
         font-size: calc(var(--base-font-size, 16px) * 2);
     }
 }
 
+/* And triple density is, well, treble */
 @media screen and (min-resolution: 384dpi) {
     .whole-body, body, html {
         font-size: calc(var(--base-font-size, 16px) * 3);

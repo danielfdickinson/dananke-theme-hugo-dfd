@@ -4,7 +4,7 @@ date: 2022-08-03T23:01:06Z
 publishDate: 2022-08-03T23:01:06Z
 author: Daniel F. Dickinson
 tags:
-    - example
+    - examples
     - formatting
 description: "Test formatting of italic/bold titles in Table of Contents"
 summary: "Test formatting of italic/bold titles in Table of Contents"

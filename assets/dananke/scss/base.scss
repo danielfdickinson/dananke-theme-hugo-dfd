@@ -190,10 +190,6 @@ figure figcaption {
     padding: 0;
 }
 
-.tag-link {
-    text-overflow: ellipsis;
-}
-
 .main-block {
     display: block;
     padding-bottom: 0;
@@ -1176,6 +1172,7 @@ figure figcaption {
 }
 
 .article-tags {
+    align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
@@ -1190,10 +1187,6 @@ figure figcaption {
     margin-left: 0;
     margin-right: 1rem;
     padding-left: 0;
-}
-
-.article-tags .article-tag:last-of-type {
-    margin-right: 0;
 }
 
 .tag-link {

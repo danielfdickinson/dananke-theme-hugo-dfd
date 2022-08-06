@@ -7,6 +7,7 @@ summary: "A post to demo table formatting in Dananke"
 tags:
   - a-really-really-supercalifragilistically-long-tag-for-testing
   - examples
+  - formatting
 ---
 
 ## A simple table

@@ -14,6 +14,18 @@
     {{- with .Params.colourBackgroundNoticeSubtle | default .Site.Params.colorBackgroundNoticeSubtle | default "#f9f9f9" }}
     --subtle-notice-bg-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourMenuContext | default .Site.Params.colorMenuContext | default "#333" }}
+    --context-menu-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundMenuContext | default .Site.Params.colorBackgroundMenuContext | default "#d0d0d0" }}
+    --context-menu-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkMenuContext | default .Site.Params.colorLinkMenuContext | default "#0000c9" }}
+    --context-menu-link-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkVisiteMenuContext | default .Site.Params.colorLinkVisitedMenuContext | default "#c900c9" }}
+    --context-menu-visited-link-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.colourNoticeSubtle | default .Site.Params.colorNoticeSubtle | default "#494949" }}
     --subtle-notice-colour: {{ . -}};
     {{- end -}}

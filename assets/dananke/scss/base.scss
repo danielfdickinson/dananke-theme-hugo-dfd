@@ -133,8 +133,9 @@ pre {
     min-width: auto;
 }
 
+/* We want titles to be title size but slightly smaller, so 'em' *not* 'rem' */
 code {
-    font-size: .875rem;
+    font-size: .875em;
 }
 
 blockquote {
@@ -543,47 +544,41 @@ figure figcaption {
 }
 
 .main-article .context-menu-item {
-    background-color: #e0e0e0;
+    background-color: var(--context-menu-bg-colour, #d0d0d0);
     border-radius: 1rem;
     line-height: 1.5;
-    padding: .875rem 1.5rem;
+    padding-bottom: .875rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    padding-top: .875rem;
 }
 
-.main-article .context-menu-item a {
+.main-article .context-menu-item li {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
-    min-height: 48px;
-    min-width: 48px;
-    padding: 0;
-    text-decoration: none;
-    
-    & em,
-    & i,
-    & bold,
-    & strong,
-    & span,
-    & code {
-        padding-left: .4rem;
-        padding-right: .4rem;
-    }
+    margin-bottom: 8px;
+    text-align: center;
 }
 
-.see-also-list-item {
+.main-article .context-menu-item li:last-of-type {
+    margin-bottom: 0;
+}
+
+.main-article .context-menu-item a {
+    display: block;
+    min-height: 40px;
+    min-width: 40px;
+    padding-bottom: 8px;
     padding-left: 1rem;
     padding-right: 1rem;
-}
-
-.main-article .context-menu-item {
-    & a:active,
-    & a:focus,
-    & a:hover {
-        text-decoration: underline;
-    }
+    padding-top: 8px;
+    text-decoration: none;
 }
 
 .main-article .context-menu-item ol, .main-article .context-menu-item ul {
     list-style: none;
+    margin-bottom: 0;
     margin-left: 0;
     padding-left: 0;
 }
@@ -600,19 +595,50 @@ figure figcaption {
 }
 
 .main-article .context-menu-item[open] .context-title {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
 }
 
 .main-article-see-also {
     margin-bottom: 1.5rem;
 }
 
-.see-also-list {
-    padding: 0;
+.main-article .context-menu-item {
+    & a:active,
+    & a:focus,
+    & a:hover {
+        text-decoration: underline;
+    }
 }
 
-.see-also-list-item {
-    margin-bottom: .25rem;
+.main-article .context-menu-item {
+    & a,
+    & a:link {
+        color: var(--context-menu-link-colour, #0000c9)
+    }
+}
+
+.main-article .context-menu-item {
+    & a:visited {
+        color: var(--context-menu-link-visited-colour, #c900c9)
+    }
+}
+
+.main-article .context-menu-item {
+    & a:active,
+    & a:focus,
+    & a:hover {
+        background-color: var(--context-menu-link-colour, #0000c9);
+        color: var(--context-menu-bg-colour, #d0d0d0)
+    }
+}
+
+.main-article .context-menu-item {
+    & a:visited:active,
+    & a:visited:focus,
+    & a:visited:hover {
+        background-color: var(--context-menu-visited-link-colour, #c900c9);
+        color: var(--context-menu-bg-colour, #d0d0d0)
+    }
 }
 
 .socials-share {

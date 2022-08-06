@@ -62,10 +62,6 @@
     text-decoration-line: line-through;
 }
 
-#TableOfContents ul li {
-    margin-bottom: .25rem;
-}
-
 .pagination .page-item {
     margin-bottom: 1rem;
 }

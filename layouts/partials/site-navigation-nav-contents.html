@@ -4,20 +4,20 @@
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
 {{- with $curPage.Site.Params.site_logo }}
             {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" site.Home.Page "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" site.Home.Page "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title" "link" $curPage.Site.Home.RelPermalink "noVisibleCaption" true) }}
+                <li class="title-nav-item title-menu-item site-title-item nav-menu-item">{{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" site.Home.Page "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" site.Home.Page "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title title-nav-link nav-link" "link" $curPage.Site.Home.RelPermalink "noVisibleCaption" true) }}</li>
 {{- else }}
-            <a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-link">
+                <li class="title-nav-item title-menu-item site-title-item nav-menu-item"><a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-nav-link title-link title-menu-link nav-link">
             {{- index $page_metadata "title-site" -}}
-            </a>
+                </a></li>
 {{- end }}
 {{- partial "i18nlist.html" . -}}
 {{- if $curPage.Site.Menus.main }}
-            <ul class="title-menu-list">
     {{- range $curPage.Site.Menus.main }}
-                <li class="title-nav-item title-menu-item"><a class="title-link title-menu-link" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
+                <li class="title-nav-item title-menu-item title-section-menu-item nav-menu-item"><a class="title-link title-nav-link title-menu-link nav-link" href="{{ .URL }}" title="{{ i18n "pageTitle" . }}">
                 {{- .Name -}}
                 </a></li>
     {{- end }}
     {{- partial "social-follow.html" $curPage }}
-            </ul>
 {{- end -}}
+            </ul>
 {{- /* Remove trailing newlines */ -}}

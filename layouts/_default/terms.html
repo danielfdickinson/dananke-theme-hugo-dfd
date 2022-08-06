@@ -14,11 +14,11 @@
         </ul>
     </section>
     {{- if gt (len .Site.Taxonomies) 1 }}
-    <aside class="terms-taxonomies-aside terms-block">
-        <h2 class="terms-taxonomies-title">{{ i18n "seeMoreTaxonomies" | default "See more taxonomies" }}</h2>
-        <ul class="terms-taxonomies-list">
+    <aside class="terms-taxonomies-aside terms-block subtle-notice">
+        <h2 class="terms-taxonomies-title subtle-notice-title">{{ i18n "seeMoreTaxonomies" | default "See more taxonomies" }}</h2>
+        <ul class="terms-taxonomies-list subtle-notice-list">
             {{- range $key, $value := .Site.Taxonomies }}
-                <li class="taxonomies-list-item"><a class="taxonomies-link" href="{{ (printf "/%s" ($key | urlize)) | relLangURL }}">{{ $key | pluralize }}</a></li>
+                <li class="taxonomies-list-item subtle-notice-list-item"><a class="taxonomies-link subtle-notice-link" href="{{ (printf "/%s" ($key | urlize)) | relLangURL }}">{{ $key | pluralize }}</a></li>
             {{- end }}
         </ul>
     </aside>

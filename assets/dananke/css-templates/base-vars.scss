@@ -11,6 +11,27 @@
     {{- with .Params.colourBackgroundSectionMap | default .Site.Params.colorBackgroundSectionMap | default "#ccc" }}
     --section-map-bg-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourBackgroundNoticeSubtle | default .Site.Params.colorBackgroundNoticeSubtle | default "#f9f9f9" }}
+    --subtle-notice-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourNoticeSubtle | default .Site.Params.colorNoticeSubtle | default "#494949" }}
+    --subtle-notice-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkNoticeSubtle | default .Site.Params.colorLinkNoticeSubtle | default "#0000c9" }}
+    --subtle-notice-link-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkVisitedNoticeSubtle | default .Site.Params.colorLinkVisitedNoticeSubtle | default "#c900c9" }}
+    --subtle-notice-visited-link-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLink | default .Site.Params.colourLink | default "#00a" }}
+    --link-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourVisitedLink | default .Site.Params.colourVisitedLink | default "#a0a" }}
+    --link-visited-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourLinkSummary | default .Site.Params.colourLinkSummary | default "#05a" }}
+    --summary-link-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.colourBackgroundMainNav | default .Site.Params.colourBackgroundMainNav | default .Site.Params.background_color_class | default "#111" }}
     --main-nav-bg-colour: {{ . -}};
     {{- end -}}
@@ -23,11 +44,17 @@
     {{- with .Params.colourInactiveText |  default .Site.Params.colourInactiveText | default "#888" }}
     --inactive-text-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLink | default .Site.Params.colourLink | default "#00d" }}
-    --link-colour: {{ . -}};
+    {{- with .Params.colourPreCode | default .Site.Params.colourPreCode | default "#dfdfdf" }}
+    --pre-code-fg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLinkSummary | default .Site.Params.colourLinkSummary | default "#05a" }}
-    --summary-link-colour: {{ . -}};
+    {{- with .Params.colourBackgroundPreCode | default .Site.Params.colourBackgroundPreCode | default "#191919" }}
+    --pre-code-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundTableHeading | default .Site.Params.colourBackgoundTableHeading | default "silver" }}
+    --table-heading-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundTableRowEven | default .Site.Params.colourBackgoundTableRowEven | default "lightgray" }}
+    --table-even-row-bg-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.defaultFontFamily | default .Site.Params.defaultFontFamily | default "avenir" }}
     @include chooseFontFamily("--default-font-family", "{{ . }}");
@@ -43,6 +70,9 @@
     {{- end -}}
     {{- with .Site.Params.messageIntenseNoticeBoxColor | default "#000" }}
     --message-intense-notice-box-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Site.Params.messageIntenseNoticeBoxBackgroundColour | default "#888" }}
+    --message-intense-notice-box-background-colour: {{ . -}};
     {{- end -}}
     {{- with .Site.Params.messageIntenseNoticeBoxLinkColor | default "#fff" }}
     --message-intense-notice-box-link-colour: {{ . -}};
@@ -63,5 +93,8 @@
     {{- end }}
     {{- with .Params.backgroundDefaultColour | default .Params.background_color_class | default .Site.Params.backgroundDefaultColour | default .Site.Params.background_color_class | default "#000" }}
     --default-background-colour: {{ . -}};
+    {{- end }}
+    {{- with .Params.socialHoverBackgroundColour | default .Site.Params.socialHoverBackgroundColour | default "#2a2a2a" }}
+    --social-hover-bg-colour: {{. -}};
     {{- end }}
 }

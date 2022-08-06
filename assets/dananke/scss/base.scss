@@ -54,9 +54,19 @@ html {
    or higher density displays. Also one tends to sit further away from the
    screen when it large.
  */
-@media screen and (max-resolution: 96dpi) and (min-width: 1441px) {
+@media screen and (max-resolution: 96dpi) and (min-width: 1220px) {
     .whole-body, body, html {
         font-size: calc(var(--base-font-size, 16px) * 1.25);
+     }
+}
+
+/* On some OS fonts are rendered smaller on large screens, even without double
+   or higher density displays. Also one tends to sit further away from the
+   screen when it large. Larger screens are worse.
+ */
+@media screen and (max-resolution: 96dpi) and (min-width: 2047px) {
+    .whole-body, body, html {
+        font-size: calc(var(--base-font-size, 16px) * 1.33);
      }
 }
 
@@ -240,10 +250,6 @@ code {
     max-width: 100%;
     vertical-align: middle;
     width: 100%;
-
-.hide {
-    display: none;
-}
 }
 
 .main-navigation,
@@ -382,12 +388,6 @@ code {
 
 #title-404-page-not-found .list-buttons-bar {
     margin-bottom: 2rem;
-}
-
-@media screen and (min-width: 30em) {
-    #site-header-404-page-not-found ~ .nav-buttons-bar .list-buttons-bar {
-        margin-bottom: 3rem;
-    }
 }
 
 .list-article,
@@ -861,7 +861,7 @@ code {
 
 .page-description-banner {
     color: var(--title-over-image-colour, #ddd);
-    font-size: 1.33rem;
+    font-size: 1.25rem;
     width: 100%;
 
     @include center-block;
@@ -870,13 +870,13 @@ code {
 .main-nav-details,
 .main-navigation,
 .site-footer {
-    font-size: 1.1875rem;
+    font-size: 1.25rem;
 }
 
 .site-header {
     background-color: var(--featured-image-padding-colour);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     padding: 1rem;
     position: relative;
     text-align: center;
@@ -1009,7 +1009,7 @@ code {
     border-radius: 9999px;
     display: inline-block;
     font-family: sans-serif;
-    font-size: 1.4rem;
+    font-size: 1.125rem;
     max-width: 90vw;
     min-height: 48px;
     min-width: 5rem;
@@ -1241,10 +1241,6 @@ code {
 }
 
 @media screen and (min-width: 48rem) {
-    .contact-form-article .main-article-content {
-        width: 36rem;
-    }
-
     .featured-image-link {
         display: flex;
         z-index: 0;
@@ -1308,7 +1304,7 @@ code {
     }
 
     .page-description-banner {
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 
     .main-block .list-article {
@@ -1319,6 +1315,10 @@ code {
         padding-left: 3rem;
         padding-right: 3rem;
         max-width: 44rem;
+    }
+
+    .contact-form-article .main-article-content {
+        width: 36rem;
     }
 
     .main-block .articles-summaries.text-only {

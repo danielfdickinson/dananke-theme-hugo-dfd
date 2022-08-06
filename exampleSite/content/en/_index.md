@@ -11,6 +11,7 @@ cascade:
     pageCanonical: false
     weight: 1000
 imageFeaturedOpacity: .4
+logoSite:
 ---
 
 Welcome to my theme sample site.

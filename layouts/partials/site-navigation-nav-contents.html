@@ -2,8 +2,12 @@
 {{- $curPage := .Page -}}
 {{- $self_close := eq ( .Params.emptyElementStyle | default .Site.Params.emptyElementStyle ) "self-close" -}}
 {{- $page_metadata := partial "helpers/return-metadata" (dict "page" .Page "requestedData" (slice "title-site" "title-page")) }}
-{{- with $curPage.Site.Params.site_logo }}
-            {{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" site.Home.Page "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" site.Home.Page "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title" "link" $curPage.Site.Home.RelPermalink "noVisibleCaption" true) }}
+{{- $siteLogo := $curPage.Params.logoSite -}}
+{{- if not (isset $curPage.Params "logosite") -}}
+    {{- $siteLogo = $curPage.Site.Params.logoSite | default $curPage.Site.Params.site_logo -}}
+{{- end -}}
+            <ul class="title-menu-list nav-menu-list">
+{{- with $siteLogo }}
                 <li class="title-nav-item title-menu-item site-title-item nav-menu-item">{{ partial "helpers/wrapped-image" (dict "image" (partial "helpers/lib/image-handling/find-image-src" (dict "src" . "page" site.Home.Page "finalSearch" true)) "alt" (cond (isset $curPage.Site.Params "site_logo_alt") $curPage.Site.Params.site_logo_alt (index $page_metadata "title-site")) "title" (cond (isset $curPage.Site.Params "site_logo_title") $curPage.Site.Params.site_logo_title "") "page" site.Home.Page "noImageWrapper" true "class" "site-image" "linkClass" "site-link site-title title-nav-link nav-link" "link" $curPage.Site.Home.RelPermalink "noVisibleCaption" true) }}</li>
 {{- else }}
                 <li class="title-nav-item title-menu-item site-title-item nav-menu-item"><a href="{{ $curPage.Site.Home.RelPermalink }}" class="site-link site-title title-nav-link title-link title-menu-link nav-link">

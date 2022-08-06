@@ -8,4 +8,5 @@ tags:
 description: "Sample and documentation pages"
 summary: "Sample and documentation pages"
 summaryTextOnly: true
+logoSite:
 ---

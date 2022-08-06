@@ -883,10 +883,7 @@ figure figcaption {
 .terms-link:visited:hover,
 .walk-page-link:visited:focus,
 .walk-page-link:visited:active,
-.walk-page-link:visited:hover,
-.summary-title-link:visited:focus,
-.summary-title-link:visited:active,
-.summary-title-link:visited:hover {
+.walk-page-link:visited:hover {
     background-color: var(--link-visited-colour, #00d);
     color: var(--whole-doc-bg-colour, #eee);
 }

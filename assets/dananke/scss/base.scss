@@ -446,6 +446,17 @@ figure figcaption {
 
 .intense-notice-box a {
     color: var(--message-intense-notice-box-link-colour, #fff);
+
+    &:link {
+        color: var(--message-intense-notice-box-link-colour, #fff);
+    }
+
+    &:focus,
+    &:active,
+    &:hover {
+        background-color: var(--message-intense-notice-box-link-colour, #fff);
+        color: var(--message-intense-notice-box-background-colour, #000);
+    }
 }
 
 #site-header-404-page-not-found {

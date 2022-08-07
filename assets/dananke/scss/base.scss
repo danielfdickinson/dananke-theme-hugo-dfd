@@ -1020,6 +1020,7 @@ figure figcaption {
         &:visited,
         &:active,
         &:link {
+           border-radius: 1rem;
            color: inherit;
         }
 

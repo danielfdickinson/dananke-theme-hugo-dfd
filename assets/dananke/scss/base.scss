@@ -1252,28 +1252,32 @@ figure figcaption {
 }
 
 .article-tags .article-tag {
+    display: block;
+    flex: 0 1 auto;
+    font-family: sans-serif;
+    font-size: 1.125rem;
+    height: max-content;
     list-style: none;
     margin-bottom: 1rem;
     margin-left: 0;
     margin-right: 1rem;
-    padding-left: 0;
+    max-width: 90vw;
+    min-height: 48px;
+    min-width: 5rem;
+    padding: 0;
+    text-align: center;
 }
 
 .tag-link {
     border: solid 1px;
     border-radius: 9999px;
+    box-sizing: border-box;
     display: inline-block;
-    font-family: sans-serif;
-    font-size: 1.125rem;
-    max-width: 90vw;
-    min-height: 48px;
-    min-width: 5rem;
     overflow: hidden;
     padding: .5em;
     text-decoration: none;
     text-overflow: ellipsis;
     white-space: nowrap;
-    width: auto;
 }
 
 .contact-form-article ~ .context-box {

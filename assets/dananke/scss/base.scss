@@ -1360,7 +1360,7 @@ figure figcaption {
 }
 
 .input-required {
-    color: #c00;
+    color: var(--contact-form-required-colour, #c00);
 }
 
 .required-note {

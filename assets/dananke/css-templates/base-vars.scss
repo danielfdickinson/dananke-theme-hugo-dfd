@@ -112,6 +112,9 @@
     {{- with .Params.colourFormContact | default .Site.Params.colorFormContact | default "#1f1f1f" }}
     --contact-form-colour: {{ . -}};
     {{- end -}}
+    {{- with .Params.colourRequiredFormContact | default .Site.Params.colorRequiredFormContact | default "#c00" }}
+    --contact-form-required-colour: {{ . -}};
+    {{- end -}}
     {{- with .Params.colourBorderFormContact | default .Site.Params.colorBorderFormContact | default "#777" }}
     --contact-form-border-colour: {{ . -}};
     {{- end -}}

@@ -109,4 +109,28 @@
     {{- with .Params.socialHoverBackgroundColour | default .Site.Params.socialHoverBackgroundColour | default "#2a2a2a" }}
     --social-hover-bg-colour: {{. -}};
     {{- end }}
+    {{- with .Params.colourFormContact | default .Site.Params.colorFormContact | default "#1f1f1f" }}
+    --contact-form-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBorderFormContact | default .Site.Params.colorBorderFormContact | default "#777" }}
+    --contact-form-border-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundFormContact | default .Site.Params.colorBackgroundFormContact | default "#d0d0d0" }}
+    --contact-form-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourPreCode | default .Site.Params.colorPreCode | default "#f8f8f2" }}
+    --pre-code-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundPreCode | default .Site.Params.colorBackgroundPreCode | default "#000" }}
+    --pre-code-bg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBorderPreCode | default .Site.Params.colorBorderPreCode | default "#ddd" }}
+    --pre-code-border-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourPCode | default .Site.Params.colorPCode | default "#444" }}
+    --p-code-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourBackgroundCode | default .Site.Params.colorBackgroundCode | default "#fff" }}
+    --p-code-bg-colour: {{ . -}};
+    {{- end -}}
 }

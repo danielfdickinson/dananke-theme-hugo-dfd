@@ -122,11 +122,20 @@ pre code {
 }
 
 pre {
-  background-color: #222;
-  color: #ddd;
+  background-color: var(--pre-code-bg-colour, #000);
+  color: var(--pre-code-colour, #f8f8f2);
 
   hyphens: none;
   position: relative;
+}
+
+p code {
+  background-color: var(--p-code-bg-colour, #000);
+  color: var(--p-code-colour, #f8f8f2);
+  padding-bottom: 2px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 2px;
 }
 
 .main-block li pre {
@@ -169,8 +178,8 @@ figure figcaption {
 }
 
 .main-block pre {
-    background-color: var(--pre-code-bg-colour, #191919);
-    color: var(--pre-code-fg-colour, #dfdfdf);
+    background-color: var(--pre-code-bg-colour, #000);
+    color: var(--pre-code-colour, #f8f8f2);
     min-width: min-content;
     padding: .4rem;
     white-space: pre-wrap;
@@ -1294,10 +1303,10 @@ figure figcaption {
 }
 
 .contact-form {
-    background-color: #d0d0d0;
-    border: 3px inset #999;
+    background-color: var(--contact-form-background-colour, #d0d0d0);
+    border: 3px solid var(--contact-form-border-colour, #777);
     border-radius: 3rem;
-    color: #1f1f1f;
+    color: var(--contact-form-colour, #1f1f1f);
     display: block;
     height: auto;
     margin-bottom: 1.5rem;

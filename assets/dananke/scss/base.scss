@@ -360,8 +360,10 @@ figure figcaption {
 
 .nav-link,
 .nav-link:link {
+    align-items: center;
     color: var(--main-nav-fg-colour, #ddd);
-    display: block;
+    display: flex;
+    justify-content: center;
     margin-bottom: 8px; // Tap target separation
     margin-left: 4px;
     margin-top: 8px;
@@ -499,8 +501,17 @@ figure figcaption {
 .main-block .page-footnote {
     border-top: 2px solid #444;
     font-size: 1.3rem;
-
+    padding-top: 1.5rem;
     padding-bottom: 1rem;
+}
+
+.main-block {
+    & .list-article,
+    & .page-footnote {
+        & p {
+            margin-bottom: .5rem;
+        }
+    }
 }
 
 @include clear-fix("page-footnote");
@@ -558,6 +569,10 @@ figure figcaption {
         max-width: 100%;
     }
 
+    & li p {
+        margin-bottom: 0;
+    }
+
     @include chooseFontFamily("font-family", "athelas");
 }
 
@@ -580,8 +595,8 @@ figure figcaption {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
     margin-bottom: 8px;
-    text-align: center;
 }
 
 .main-article .context-menu-item li:last-of-type {

@@ -5,7 +5,7 @@
     {{- with .Params.fontSizeBase | default .Site.Params.fontSizeBase | default "16px" }}
     --base-font-size: {{ . }};
     {{- end -}}
-    {{- with .Params.colourBackgroundDocument | default .Site.Params.colorBackgroundDocument | default "#eee" }}
+    {{- with .Params.colourBackgroundDocument | default .Site.Params.colourBackgroundDocument | default "#eee" }}
     --whole-doc-bg-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourBackgroundSectionMap | default .Site.Params.colorBackgroundSectionMap | default "#ccc" }}
@@ -14,25 +14,25 @@
     {{- with .Params.colourBackgroundNoticeSubtle | default .Site.Params.colorBackgroundNoticeSubtle | default "#f9f9f9" }}
     --subtle-notice-bg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourMenuContext | default .Site.Params.colorMenuContext | default "#333" }}
-    --context-menu-colour: {{ . -}};
+    {{- with .Params.colourMenuContext | default .Site.Params.colourMenuContext | default "#333" }}
+    --context-menu-fg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBackgroundMenuContext | default .Site.Params.colorBackgroundMenuContext | default "#d0d0d0" }}
+    {{- with .Params.colourBackgroundMenuContext | default .Site.Params.colourBackgroundMenuContext | default "#d0d0d0" }}
     --context-menu-bg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLinkMenuContext | default .Site.Params.colorLinkMenuContext | default "#0000c9" }}
+    {{- with .Params.colourLinkMenuContext | default .Site.Params.colourLinkMenuContext | default "#0000c9" }}
     --context-menu-link-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLinkVisiteMenuContext | default .Site.Params.colorLinkVisitedMenuContext | default "#c900c9" }}
+    {{- with .Params.colourLinkVisitedMenuContext | default .Site.Params.colourLinkVisitedMenuContext | default "#c900c9" }}
     --context-menu-visited-link-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourNoticeSubtle | default .Site.Params.colorNoticeSubtle | default "#494949" }}
+    {{- with .Params.colourNoticeSubtle | default .Site.Params.colourNoticeSubtle | default "#494949" }}
     --subtle-notice-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLinkNoticeSubtle | default .Site.Params.colorLinkNoticeSubtle | default "#0000c9" }}
+    {{- with .Params.colourLinkNoticeSubtle | default .Site.Params.colourLinkNoticeSubtle | default "#0000c9" }}
     --subtle-notice-link-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourLinkVisitedNoticeSubtle | default .Site.Params.colorLinkVisitedNoticeSubtle | default "#c900c9" }}
+    {{- with .Params.colourLinkVisitedNoticeSubtle | default .Site.Params.colourLinkVisitedNoticeSubtle | default "#c900c9" }}
     --subtle-notice-visited-link-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourLink | default .Site.Params.colourLink | default "#00a" }}
@@ -49,6 +49,9 @@
     {{- end -}}
     {{- with .Params.colourMainNav | default .Site.Params.colourMainNav | default "#ddd" }}
     --main-nav-fg-colour: {{ . -}};
+    {{- end -}}
+    {{- with .Params.colourButtonsNav | default .Site.Params.colourButtonsNav | default "#ddd" }}
+    --nav-buttons-fg-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourMainText | default .Params.text_color | default .Site.Params.colourMainText | default .Site.Params.text_color | default "#333" }}
     --main-text-colour: {{ . -}};
@@ -80,13 +83,13 @@
     {{- with .Site.Params.messageIntenseTitleColour | default "#ccc" }}
     --message-intense-title-colour: {{ . -}};
     {{- end -}}
-    {{- with .Site.Params.messageIntenseNoticeBoxColor | default "#000" }}
+    {{- with .Site.Params.messageIntenseNoticeBoxColour | default "#000" }}
     --message-intense-notice-box-colour: {{ . -}};
     {{- end -}}
     {{- with .Site.Params.messageIntenseNoticeBoxBackgroundColour | default "#888" }}
     --message-intense-notice-box-background-colour: {{ . -}};
     {{- end -}}
-    {{- with .Site.Params.messageIntenseNoticeBoxLinkColor | default "#fff" }}
+    {{- with .Site.Params.messageIntenseNoticeBoxLinkColour | default "#fff" }}
     --message-intense-notice-box-link-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.titleOverImageColour | default .Params.title_over_image_color_class | default .Site.Params.titleOverImageColour | default .Site.Params.title_over_image_color_class | default "#ddd" }}
@@ -112,28 +115,28 @@
     {{- with .Params.colourFormContact | default .Site.Params.colorFormContact | default "#1f1f1f" }}
     --contact-form-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourRequiredFormContact | default .Site.Params.colorRequiredFormContact | default "#c00" }}
+    {{- with .Params.colourRequiredFormContact | default .Site.Params.colourRequiredFormContact | default "#c00" }}
     --contact-form-required-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBorderFormContact | default .Site.Params.colorBorderFormContact | default "#777" }}
+    {{- with .Params.colourBorderFormContact | default .Site.Params.colourBorderFormContact | default "#777" }}
     --contact-form-border-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBackgroundFormContact | default .Site.Params.colorBackgroundFormContact | default "#d0d0d0" }}
+    {{- with .Params.colourBackgroundFormContact | default .Site.Params.colourBackgroundFormContact | default "#d0d0d0" }}
     --contact-form-bg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourPreCode | default .Site.Params.colorPreCode | default "#f8f8f2" }}
+    {{- with .Params.colourPreCode | default .Site.Params.colourPreCode | default "#f8f8f2" }}
     --pre-code-colour: {{ . -}};
     {{- end -}}
     {{- with .Params.colourBackgroundPreCode | default .Site.Params.colorBackgroundPreCode | default "#000" }}
     --pre-code-bg-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBorderPreCode | default .Site.Params.colorBorderPreCode | default "#ddd" }}
+    {{- with .Params.colourBorderPreCode | default .Site.Params.colourBorderPreCode | default "#ddd" }}
     --pre-code-border-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourPCode | default .Site.Params.colorPCode | default "#444" }}
+    {{- with .Params.colourPCode | default .Site.Params.colourPCode | default "#444" }}
     --p-code-colour: {{ . -}};
     {{- end -}}
-    {{- with .Params.colourBackgroundCode | default .Site.Params.colorBackgroundCode | default "#fff" }}
+    {{- with .Params.colourBackgroundCode | default .Site.Params.colourBackgroundCode | default "#fff" }}
     --p-code-bg-colour: {{ . -}};
     {{- end -}}
 }

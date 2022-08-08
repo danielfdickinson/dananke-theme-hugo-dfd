@@ -566,6 +566,7 @@ figure figcaption {
 .main-article .context-menu-item {
     background-color: var(--context-menu-bg-colour, #d0d0d0);
     border-radius: 1rem;
+    color: var(--context-menu-fg-colour, #d0d0d0);
     line-height: 1.5;
     padding-bottom: .875rem;
     padding-left: 1.25rem;
@@ -639,7 +640,7 @@ figure figcaption {
 
 .main-article .context-menu-item {
     & a:visited {
-        color: var(--context-menu-link-visited-colour, #c900c9)
+        color: var(--context-menu-visited-link-colour, #c900c9)
     }
 }
 

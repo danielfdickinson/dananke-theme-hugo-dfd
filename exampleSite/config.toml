@@ -168,7 +168,14 @@ disable = true
 disable = true
 
 [module]
-replacements = "github.com/danielfdickinson/dananke-theme-hugo-dfd -> ../.."
+
+replacements = [
+    "github.com/danielfdickinson/dananke-theme-hugo-dfd -> ../.."
+#    "github.com/danielfdickinson/link-handling-mod-hugo-dfd -> ../../../link-handling-mod-hugo-dfd",
+#    "github.com/danielfdickinson/metadata-image-mod-hugo-dfd -> ../../../metadata-image-mod-hugo-dfd",
+#    "github.com/danielfdickinson/image-handling-mod-hugo-dfd -> ../../../image-handling-mod-hugo-dfd",
+#    "github.com/danielfdickinson/metadata-mod-hugo-dfd -> ../../../metadata-mod-hugo-dfd"
+]
 
 [[module.imports]]
 path = "github.com/danielfdickinson/dananke-theme-hugo-dfd"

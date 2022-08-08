@@ -251,7 +251,7 @@ figure figcaption {
     justify-content: space-between;
     position: absolute;
     top: 48px;
-    visibility: visible;
+    visibility: hidden;
     z-index: -1;
 
     @include center-block;
@@ -264,6 +264,7 @@ figure figcaption {
 }
 
 .main-nav-details[open] .main-navigation-mobile {
+    visibility: visible;
     z-index: 2;
 }
 
@@ -485,7 +486,7 @@ figure figcaption {
 @include clear-fix("list-article");
 
 .main-block .page-footnote {
-    border-top: 2px solid #444;
+    border-top: 2px solid var(--main-text-colour, #444);
     font-size: 1.3rem;
     padding-top: 1.5rem;
     padding-bottom: 1rem;
@@ -507,7 +508,7 @@ figure figcaption {
     display: flex;
     flex-flow: row wrap;
     font-size: 1.125rem;
-    color: var(--main-text-colour);
+    color: var(--main-text-colour, #333);
     line-height: 1.5;
     padding-left: 1rem;
     padding-bottom: 0;
@@ -539,7 +540,7 @@ figure figcaption {
 }
 
 .main-article-content {
-    color: var(--main-text-colour);
+    color: var(--main-text-colour, #333);
     display: block;
     flex: 1 1 100%;
     line-height: 1.5;
@@ -1199,6 +1200,7 @@ figure figcaption {
 
 .main-nav-details[open] + .main-navigation.show-on-mobile ~ .site-header .featured-image-link {
     position: relative;
+    visibility: visible;
 }
 
 .featured-image {

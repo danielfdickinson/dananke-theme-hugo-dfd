@@ -70,20 +70,6 @@ html {
      }
 }
 
-/* And of course double density is, well, double */
-@media screen and (min-resolution: 192dpi) {
-    .whole-body, body, html {
-        font-size: calc(var(--base-font-size, 16px) * 2);
-    }
-}
-
-/* And triple density is, well, treble */
-@media screen and (min-resolution: 384dpi) {
-    .whole-body, body, html {
-        font-size: calc(var(--base-font-size, 16px) * 3);
-    }
-}
-
 *, .content-box, hr {
     box-sizing: content-box;
 }

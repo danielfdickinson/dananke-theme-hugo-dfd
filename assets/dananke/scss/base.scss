@@ -129,13 +129,15 @@ pre {
   position: relative;
 }
 
-p code {
-  background-color: var(--p-code-bg-colour, #000);
-  color: var(--p-code-colour, #f8f8f2);
-  padding-bottom: 2px;
-  padding-left: 6px;
-  padding-right: 6px;
-  padding-top: 2px;
+p, li {
+    & > code {
+        background-color: var(--p-code-bg-colour, #000);
+        color: var(--p-code-colour, #f8f8f2);
+        padding-bottom: 2px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-top: 2px;
+    }
 }
 
 .main-block li pre {

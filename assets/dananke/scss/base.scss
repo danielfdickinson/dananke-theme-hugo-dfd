@@ -1509,6 +1509,136 @@ figure figcaption {
     }
 }
 
+/* pagination.html: https://github.com/gohugoio/hugo/blob/master/tpl/tplimpl/template_embedded.go#L117 */
+.pagination {
+    align-content: space-between;
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    margin-bottom: 1rem;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    width: 100%;
+}
+
+.pagination li {
+    border-radius: 6px;
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: row nowrap;
+    font-size: 1.1rem;
+    justify-content: center;
+    list-style: none;
+    margin-left: 0;
+    margin-right: .8rem;
+    padding-left: 0;
+    min-height: 48px;
+    min-width: 48px;
+    text-align: center;
+}
+
+.pagination li:last-of-type {
+    margin-right: 0;
+}
+
+.pagination li a {
+    align-items: center;
+    border-radius: 6px;
+    display: inline-flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    width: 100%;
+    z-index: 0;
+}
+
+.pagination li a span {
+    position: absolute;
+    z-index: 1;
+}
+
+
+.pagination .page-item {
+    margin-bottom: 1rem;
+    & .page-link,
+    & .page-link:link,
+    & .page-link:visited {
+        background-color: var(--main-nav-bg-colour, #111);
+        border: 1px solid var(--main-nav-bg-colour, #111);
+        color: var(--nav-buttons-fg-colour, #ddd);
+    }
+}
+
+.pagination .page-item {
+    & .page-link:active,
+    & .page-link:focus,
+    & .page-link:hover,
+    & .page-link:visited:active,
+    & .page-link:visited:focus,
+    & .page-link:visited:hover {
+        background-color: var(--nav-buttons-fg-colour, #ddd);
+        color: var(--main-nav-bg-colour, #111);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+}
+
+.pagination .page-item.active {
+    & .page-link,
+    & .page-link:link,
+    & .page-link:visited {
+        background-color: var(--inactive-text-colour, #888);
+        border: 1px solid var(--main-nav-bg-colour, #111);
+        color: var(--main-nav-bg-colour, #ddd);
+    }
+}
+
+.pagination .page-item.active {
+    & .page-link:active,
+    & .page-link:focus,
+    & .page-link:hover,
+    & .page-link:visited:active,
+    & .page-link:visited:focus,
+    & .page-link:visited:hover {
+        background-color: var(--main-nav-fg-colour, #ddd);
+        color: var(--main-nav-bg-colour, #111);
+        text-decoration: underline;
+        text-decoration-thickness: 2px;
+    }
+}
+
+.pagination .page-item .page-link:first-of-type, .pagination .page-item .page-link:last-of-type {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.pagination .page-item.disabled {
+    &:active,
+    &:focus,
+    &:hover,
+    & .page-link,
+    & .page-link:active,
+    & .page-link:link,
+    & .page-link:focus,
+    & .page-link:hover,
+    & .page-link:visited:link,
+    & .page-link:visited:focus,
+    & .page-link:visited:hover {
+        background-color: var(--main-nav-bg-colour, #111);
+        color: var(--inactive-text-colour, #888);
+        padding-left: 0;
+        padding-right: 0;
+        text-decoration-line: line-through;
+    }
+}
+
 .about-photo {
     display: inline-block;
     vertical-align: middle;
@@ -1516,7 +1646,8 @@ figure figcaption {
 
 .side-by-figure {
     display: inline-block;
-    width: 31%;
+    vertical-align: top;
+    width: 44%;
 }
 
 .side-by-figure a {

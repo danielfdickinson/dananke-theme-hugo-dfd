@@ -5,7 +5,9 @@
 {{- if .IsHome -}}
     {{- $pctx = .Site -}}
 {{- end -}}
-{{- $pages = (($pages.ByWeight).ByPublishDate).Reverse }}
+{{- if gt (len $pages) 0 -}}
+    {{- $pages = (($pages.ByWeight).ByPublishDate).Reverse }}
+{{- end -}}
 {{- $limit := .Site.Config.Services.RSS.Limit -}}
 {{- if ge $limit 1 -}}
     {{- $pages = $pages | first $limit -}}

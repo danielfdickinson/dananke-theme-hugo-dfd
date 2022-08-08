@@ -1,8 +1,6 @@
 github.com/danielfdickinson/image-handling-mod-hugo-dfd v0.4.3-0.20220803024241-ea3af1845f95/go.mod h1:h+vNqbDFVmrcnlUq1GsWtKS3HWw7wLDqM1PahGQjSOY=
 github.com/danielfdickinson/link-handling-mod-hugo-dfd v0.3.2 h1:hRLX/qaBWrGAIGTRFnG2vTygF3LIZDIDCJI7Az962kc=
 github.com/danielfdickinson/link-handling-mod-hugo-dfd v0.3.2/go.mod h1:ajYr1qZHU5FJloKLT9rF8jSzKhuv5uSzQ/kA5M1vsY8=
-github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220803040712-7c0ce61db55c h1:koZjceAd9I7ubP0417RnKvMZH3BHzBglre6oQZvh6UI=
-github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220803040712-7c0ce61db55c/go.mod h1:G5iqcfxYVbbQ0AbK4a2s+VznqL/OgQ80F5p1MNd/tTw=
-github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220803062319-62cf0c5af893 h1:klqMojeN/NeGQYUIx8fEV02irv76GVM2qF7gWdN+E5s=
-github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220803062319-62cf0c5af893/go.mod h1:G5iqcfxYVbbQ0AbK4a2s+VznqL/OgQ80F5p1MNd/tTw=
-github.com/danielfdickinson/metadata-mod-hugo-dfd v0.3.2-0.20220803035633-41b839c636ed/go.mod h1:QcTLK04wrA/TEvdjNn/v7zk0XGU31DHmRJeRVJeH73k=
+github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220808045403-6034d6c2d5e9 h1:BuAe94g6KnxJNzUy/9jPzBF/SBpDnEZ7mhnk79oEs0Y=
+github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220808045403-6034d6c2d5e9/go.mod h1:yGVTUQbg7keRsLKDt34meyvf8CVn3Lt069CGAXbd2gM=
+github.com/danielfdickinson/metadata-mod-hugo-dfd v0.3.2-0.20220808044440-db58a03314d5/go.mod h1:QcTLK04wrA/TEvdjNn/v7zk0XGU31DHmRJeRVJeH73k=

@@ -1,4 +1,4 @@
-# github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220803062319-62cf0c5af893
-# github.com/danielfdickinson/image-handling-mod-hugo-dfd v0.4.3-0.20220803024241-ea3af1845f95
-# github.com/danielfdickinson/metadata-mod-hugo-dfd v0.3.2-0.20220803035633-41b839c636ed
 # github.com/danielfdickinson/link-handling-mod-hugo-dfd v0.3.2
+# github.com/danielfdickinson/metadata-image-mod-hugo-dfd v0.0.0-20220808045403-6034d6c2d5e9
+# github.com/danielfdickinson/image-handling-mod-hugo-dfd v0.4.3-0.20220803024241-ea3af1845f95
+# github.com/danielfdickinson/metadata-mod-hugo-dfd v0.3.2-0.20220808044440-db58a03314d5

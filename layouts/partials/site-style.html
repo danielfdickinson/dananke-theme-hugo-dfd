@@ -86,9 +86,7 @@
 {{- end -}}
 
 {{- with $baseStyle -}}
-    <style>
-        {{ .Content | safeCSS }}
-    </style>
+    <link rel="stylesheet" href="{{ .RelPermalink }}"{{ if $self_close }} /{{ end }}>
 {{- end -}}
 
 {{- with $mainStyle }}

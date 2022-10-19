@@ -70,12 +70,12 @@ html {
      }
 }
 
-*, .content-box, hr {
-    box-sizing: content-box;
-}
-
 .border-box, a, article, aside, blockquote, body, code, dd, div, dl, dt, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, html, input[type=email], input[type=number], input[type=password], input[type=tel], input[type=text], input[type=url], legend, li, main, nav, object, ol, p, pre, section, table, td, textarea, th, tr, ul {
     box-sizing: border-box;
+}
+
+*, .content-box, hr {
+    box-sizing: content-box;
 }
 
 * {
@@ -85,6 +85,11 @@ html {
 
 input, textarea, button {
     font-size: 1rem;
+}
+
+code,
+pre {
+	tab-size: 3;
 }
 
 a, code {
@@ -144,6 +149,10 @@ blockquote {
 
     & p {
         margin-bottom: 0;
+
+        & ~ p {
+            margin-top: 1em;
+        }
     }
 }
 
@@ -565,6 +574,10 @@ figure figcaption {
 
 .list-article .main-article-content.taxonomy-note {
     @include chooseFontFamily("font-family", "avenir");
+}
+
+.context-menu-item a {
+    flex: 1 1 100%;
 }
 
 .main-article .context-menu-item {
@@ -1230,6 +1243,10 @@ figure figcaption {
 
 .featured-image[src*=".svg"] {
     height: auto;
+}
+
+.site-header-with-image .featured-image[src*=".svg"] {
+    max-width: revert;
 }
 
 .summary-from-metadata {

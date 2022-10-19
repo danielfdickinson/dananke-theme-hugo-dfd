@@ -140,9 +140,7 @@ name = "rss"
 url = "/index.xml"
 
 [frontmatter]
-lastmod = ["lastmod", ":git", ":fileModTime", "date", "publishDate"]
-date = ["date", "publishDate", ":git", "lastmod", ":fileModTime"]
-publishDate = ["publishDate", "date", ":git", "lastmod", ":fileModTime"]
+lastmod = [":git", "lastmod", ":fileModTime", "date", "publishDate"]
 
 [markup]
 [markup.highlight]

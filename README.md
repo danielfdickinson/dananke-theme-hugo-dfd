@@ -6,6 +6,10 @@
 
 Documentation is incomplete and not in sync with current state of theme.
 
+## ARCHIVED
+
+This module is no longer maintained (archived for historical purposes), and will not receive updates, even security updates.
+
 ## Overview
 
 The intent of this theme is to provide a fairly complete framework for Daniel F. Dickinson's Hugo sites with important features, and including best practices for performance and accessibility.
